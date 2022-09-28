@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8139533673911292526}
+  - component: {fileID: -4933473410919092753}
   m_Layer: 0
   m_Name: Ring Manager
   m_TagString: Untagged
@@ -31,3 +32,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4933473410919092753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706017804085780470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703791bb5d982c643a263fe4e6bf7cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 0
+  NumberOfRings: 0
+  Ring: []
