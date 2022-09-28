@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    [System.Serializable]
     public class AttackSettings {
         public float damage;
         public float damageMultiplier = 1;
