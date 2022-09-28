@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 [Serializable]
@@ -10,8 +11,6 @@ public struct Coordinates
     {
         x = X;
         y = Y;
-
-        //Debug.Log(X + " , " + Y);
     }
     public float x;
     public float y;
@@ -20,26 +19,21 @@ public struct Coordinates
 public class RingSystem : MonoBehaviour
 {
     [SerializeField]
-    float Radius = 3;
+    public float Radius = 3;
     [SerializeField]
-    Coordinates Origin;
+    public Coordinates Origin;
     [SerializeField]
     [Range(0, 90)]
-    int QuarterOfPathingPoints = 6;
+    public int QuarterOfPathingPoints = 6;
 
     [SerializeField]
-    List<Coordinates> Ring;
+    public List<Coordinates> Ring;
 
     [SerializeField]
     GameObject Point;
 
-    //[SerializeField]
-    //List<List<Coordinates>> Rings;
-
-
-    private void Start()
+    public void GenerateRing()
     {
-        //Rings = new List<List<Coordinates>>();
         Ring = new List<Coordinates>();
 
         Radius = Mathf.Sqrt(Radius);
@@ -54,20 +48,18 @@ public class RingSystem : MonoBehaviour
                 Ring.Add(new Coordinates(x, Radius));
                 Ring.Add(new Coordinates(x, x - Radius));
             }
-            else if(x == Radius)
+            else if (x == Radius)
             {
                 Ring.Add(new Coordinates(x, Origin.y));
                 Ring.Add(new Coordinates(x - Radius * 2, Origin.y));
             }
 
-            float y = Mathf.Sqrt(Mathf.Pow(Radius,2) - Mathf.Pow(x, 2));
+            float y = Mathf.Sqrt(Mathf.Pow(Radius, 2) - Mathf.Pow(x, 2));
             y -= Mathf.Pow(Origin.x, 2);
             y += Mathf.Pow(Origin.y, 2);
 
-            Debug.Log("ID: " + index + " | (" + x + "," + y + ")");
-
-            Ring.Add(new Coordinates(x, y)); // GOOD
-            Ring.Add(new Coordinates(Origin.x - x, y)); // WHY DOES THIS WORK
+            Ring.Add(new Coordinates(x, y));
+            Ring.Add(new Coordinates(Origin.x - x, y));
 
             Ring.Add(new Coordinates(Origin.x - x, Origin.y - y));
             Ring.Add(new Coordinates(x, Origin.y - y));
@@ -75,7 +67,7 @@ public class RingSystem : MonoBehaviour
 
         foreach (Coordinates PathPoint in Ring)
         {
-            Instantiate(Point, new Vector3(PathPoint.x, 0, PathPoint.y), transform.rotation,transform);
+            Instantiate(Point, new Vector3(PathPoint.x, 0, PathPoint.y), transform.rotation, transform);
         }
     }
 }
