@@ -70,6 +70,16 @@ public class RingSystem : MonoBehaviour
             Instantiate(Point, new Vector3(PathPoint.x, 0, PathPoint.y), transform.rotation, transform);
         }
     }
+
+    public int GetNumberOfCoordinates()
+    {
+        return Ring.Count;
+    }
+
+    public Vector3 GetNextPosition(int index)
+    {
+        return new Vector3(Ring[index].x, 0, Ring[index].y);
+    }
 }
 
 
