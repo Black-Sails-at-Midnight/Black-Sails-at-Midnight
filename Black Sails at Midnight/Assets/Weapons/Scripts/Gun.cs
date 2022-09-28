@@ -35,13 +35,25 @@ public class Gun : Attack
     [SerializeField]
     public KeyCode reloadKey = KeyCode.R;
 
+    [SerializeField]
+    public float muzzleLength = 2.5f;
+
     [Header("VFX")]
     [SerializeField]
     public ParticleSystem muzzleFlash;
 
+
     [Header("SFX")]
     [SerializeField]
     public AudioClip shootAudio;
+
+    [SerializeField]
+    [Range(-3, 3)]
+    public float lowerShotPitchRange = 1;
+
+    [SerializeField]
+    [Range(-3, 3)]
+    public float upperShotPitchRange = 1;
 
     [SerializeField]
     public AudioClip reloadAudio;
@@ -87,12 +99,16 @@ public class Gun : Attack
                                 Quaternion.AngleAxis(Random.Range(-gunSettings.palletSpread, gunSettings.palletSpread), Vector3.Cross((transform.forward).normalized, Vector3.up)) * (transform.forward).normalized +
                                 Quaternion.AngleAxis(Random.Range(-gunSettings.palletSpread, gunSettings.palletSpread), Vector3.Cross((transform.forward).normalized, Vector3.right)) * (transform.forward).normalized;
 
-                    GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-                    bullet.GetComponent<Rigidbody>().AddForce(randomVector.normalized * gunSettings.bulletVelocity, ForceMode.Impulse);
-                    bullet.GetComponent<Bullet>().ShotBy = this;
+                    GameObject _bullet = Instantiate(bulletPrefab, transform.position + ((transform.forward.normalized) * muzzleLength), transform.rotation);
+                    _bullet.GetComponent<Rigidbody>().AddForce(randomVector.normalized * gunSettings.bulletVelocity, ForceMode.Impulse);
+                    _bullet.GetComponent<Bullet>().ShotBy = this;
                 }
 
-                audioSource.PlayOneShot(shootAudio);
+                ParticleSystem _muzzleFlash = Instantiate(muzzleFlash, transform.position + ((transform.forward.normalized) * muzzleLength), transform.rotation);
+                Destroy(_muzzleFlash.gameObject, 2.5f);
+
+                audioSource.pitch = Random.Range(lowerShotPitchRange, upperShotPitchRange);
+                audioSource.PlayOneShot(shootAudio, 1);
                 clip--;
 
                 if (clip > 0)
