@@ -75,7 +75,7 @@ public class RingSystem : MonoBehaviour
 
         foreach (Coordinates PathPoint in Ring)
         {
-            Instantiate(Point, new Vector3(PathPoint.x, 0, PathPoint.y), transform.rotation);
+            Instantiate(Point, new Vector3(PathPoint.x, 0, PathPoint.y), transform.rotation,transform);
         }
     }
 }
