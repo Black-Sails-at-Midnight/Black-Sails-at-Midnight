@@ -60,8 +60,11 @@ MonoBehaviour:
     bulletVelocity: 100
   bulletPrefab: {fileID: 2153877398472805027, guid: 884a44b06bdd03a4cbfa8be6e4ad2c8c, type: 3}
   reloadKey: 114
-  muzzleFlash: {fileID: 0}
-  shootAudio: {fileID: 0}
+  muzzleLength: 2.5
+  muzzleFlash: {fileID: 19832170, guid: 37a14e1121b33c641b1361344a4a856a, type: 3}
+  shootAudio: {fileID: 8300000, guid: 5daa88681505320428e068d78de78072, type: 3}
+  lowerShotPitchRange: 0.6
+  upperShotPitchRange: 1
   reloadAudio: {fileID: 0}
 --- !u!114 &289963813156138035
 MonoBehaviour:
