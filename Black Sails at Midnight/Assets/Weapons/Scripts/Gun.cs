@@ -32,6 +32,9 @@ public class Gun : Attack
     [SerializeField]
     public GameObject bulletPrefab;
 
+    [SerializeField]
+    public KeyCode reloadKey = KeyCode.R;
+
     [Header("VFX")]
     [SerializeField]
     public ParticleSystem muzzleFlash;
@@ -43,19 +46,30 @@ public class Gun : Attack
     [SerializeField]
     public AudioClip reloadAudio;
 
-
-    private bool isReloading = false;
     private int clip;
+    private bool isReloading = false;
+    
     private Animator animator;
     private AudioSource audioSource;
 
     // Monobehaviour Methods
     public void Start()
     {
+        clip = gunSettings.clipSize;
+    }
+
+    public void OnEnable() 
+    {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
 
         StartCoroutine(ShootHandler());
+
+        Debug.Log("Enabled: " + gameObject.name);
+    }
+
+    public void OnDisable() {
+        isReloading = false;
     }
 
     // Public Methods
@@ -65,7 +79,7 @@ public class Gun : Attack
     {
         while(true)
         {
-            if (Input.GetMouseButton(0) && clip > 0 && !isReloading)
+            if (Input.GetButton("Fire1") && clip > 0 && !isReloading)
             {
                 for (int i = 0; i < gunSettings.palletsPerShot; i++)
                 {
@@ -85,7 +99,7 @@ public class Gun : Attack
                     yield return new WaitForSeconds(60 / gunSettings.RPM);                
             }
 
-            if (clip == 0 && !isReloading)
+            if ((clip == 0 || Input.GetKey(reloadKey)) && !isReloading)
             {
                 StartCoroutine(Reload());
                 isReloading = true;

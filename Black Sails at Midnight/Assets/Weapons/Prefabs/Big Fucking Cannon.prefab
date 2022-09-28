@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5729406795340064448}
   - component: {fileID: 9068158188516620986}
   - component: {fileID: 4871194767865840695}
-  - component: {fileID: 4083186820504579038}
+  - component: {fileID: 4618160684741276483}
   m_Layer: 0
   m_Name: Big Fucking Cannon
   m_TagString: Untagged
@@ -135,6 +135,8 @@ MonoBehaviour:
     damageMultiplier: 1
   gunSettings:
     RPM: 60
+    palletsPerShot: 1
+    palletSpread: 0
     clipSize: 1
     reloadTime: 5
     bulletVelocity: 50
@@ -238,7 +240,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &4083186820504579038
+--- !u!95 &4618160684741276483
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -248,7 +250,7 @@ Animator:
   m_GameObject: {fileID: 2164260557924040618}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dae21c251c2700542b90df9db8807d26, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

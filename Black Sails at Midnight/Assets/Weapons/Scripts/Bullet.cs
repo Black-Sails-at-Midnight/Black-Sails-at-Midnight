@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) 
     {
-        if (other.gameObject.tag == "Projectile")
+        if (other.gameObject.tag == "Projectile" || other.gameObject.tag == "Player")
             return;
         
         IAttackable attackable = other.gameObject.GetComponentInChildren<IAttackable>();

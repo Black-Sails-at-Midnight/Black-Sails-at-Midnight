@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5729406795340064448}
   - component: {fileID: 9068158188516620986}
+  - component: {fileID: 289963813156138035}
   - component: {fileID: 4871194767865840695}
   - component: {fileID: 6860751083639000230}
   m_Layer: 0
@@ -144,6 +145,21 @@ MonoBehaviour:
   muzzleFlash: {fileID: 0}
   shootAudio: {fileID: 0}
   reloadAudio: {fileID: 0}
+--- !u!114 &289963813156138035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164260557924040618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a2cab87e7cadf4fb3fb8a87e9d60ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimReticle: {fileID: 0}
+  sensitivityModifier: 0.5
+  FOV: 60
 --- !u!82 &4871194767865840695
 AudioSource:
   m_ObjectHideFlags: 0
@@ -250,7 +266,7 @@ Animator:
   m_GameObject: {fileID: 2164260557924040618}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4520ee21322e9642ac60c16f68231c6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
