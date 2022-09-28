@@ -36,6 +36,12 @@ public class RingSystem : MonoBehaviour
     {
         Ring = new List<Coordinates>();
 
+        //List<Coordinates> TopRight, TopLeft, BottomLeft, BottomRight;
+        //TopRight = new List<Coordinates>();
+        //TopLeft = new List<Coordinates>();
+        //BottomLeft = new List<Coordinates>();
+        //BottomRight = new List<Coordinates>();
+
         Radius = Mathf.Sqrt(Radius);
 
         for (int index = 0; index < QuarterOfPathingPoints + 1; index++)

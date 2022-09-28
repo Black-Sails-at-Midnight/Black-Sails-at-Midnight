@@ -44,12 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42ca6cb1106e104a8530a68a74ad429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 144
+  Radius: 64
   Origin:
     x: 0
     y: 0
   QuarterOfPathingPoints: 12
-  SpaceBetweenRings: 20
+  SpaceBetweenRings: 400
   NumberOfRings: 6
   Rings: []
   Ring: {fileID: 1706017804085780470, guid: 8bec060568d724049a298603ada8e4b4, type: 3}
