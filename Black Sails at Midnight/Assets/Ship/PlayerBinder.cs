@@ -33,7 +33,7 @@ public class PlayerBinder : MonoBehaviour
         if (parentedPlayer != null)
         {
             FirstPersonController FPController = parentedPlayer.GetComponent<FirstPersonController>();
-            FPController.m_CharacterController.SimpleMove(transform.forward.normalized * gameObject.GetComponent<NavMeshAgent>().speed);
+            FPController.m_CharacterController.SimpleMove(gameObject.GetComponent<NavMeshAgent>().velocity);
 
             if (Time.realtimeSinceStartup - timeOfLastContact > lostContactTimer)
             {
