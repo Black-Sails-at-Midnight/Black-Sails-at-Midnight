@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4765928284424677812}
   - component: {fileID: 939014026617807334}
   - component: {fileID: 2714946913182468090}
+  - component: {fileID: 6128182952747497842}
   m_Layer: 0
   m_Name: Water Collider Surface
   m_TagString: Untagged
@@ -97,6 +98,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6128182952747497842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6370099290896541392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84889172c896fcb43ad058b7b9afe1da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7589089558130526445
 GameObject:
   m_ObjectHideFlags: 0
