@@ -39,4 +39,16 @@ public class RingsManager : MonoBehaviour
             Rings.Add(ring);
         }
     }
+
+    public RingSystem GetRing(int number)
+    {
+        if (number > Rings.Count || number < 0)
+        {
+            return null;
+        }
+        else
+        {
+            return Rings[number].GetComponent<RingSystem>();
+        }
+    }
 }

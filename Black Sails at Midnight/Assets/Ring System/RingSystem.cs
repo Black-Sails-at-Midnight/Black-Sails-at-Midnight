@@ -14,6 +14,28 @@ public struct Coordinates
     }
     public float x;
     public float y;
+
+    public bool IsSame(Coordinates other)
+    {
+        if (other.x == this.x && other.y == this.y)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public float GetDistance(Coordinates other)
+    {
+        float distance = (other.y - other.y) / (this.x - other.x);
+        if (distance < 0)
+        {
+            distance *= -1;
+        }
+        return distance;
+    }
 }
 
 public class RingSystem : MonoBehaviour
@@ -36,11 +58,11 @@ public class RingSystem : MonoBehaviour
     {
         Ring = new List<Coordinates>();
 
-        //List<Coordinates> TopRight, TopLeft, BottomLeft, BottomRight;
-        //TopRight = new List<Coordinates>();
-        //TopLeft = new List<Coordinates>();
-        //BottomLeft = new List<Coordinates>();
-        //BottomRight = new List<Coordinates>();
+        List<Coordinates> TopLeft, BottomLeft, BottomRight, TopRight;
+        TopLeft = new List<Coordinates>();
+        BottomLeft = new List<Coordinates>();
+        BottomRight = new List<Coordinates>();
+        TopRight = new List<Coordinates>();
 
         Radius = Mathf.Sqrt(Radius);
 
@@ -51,30 +73,49 @@ public class RingSystem : MonoBehaviour
 
             if (Origin.x == x)
             {
-                Ring.Add(new Coordinates(x, Radius));
-                Ring.Add(new Coordinates(x, x - Radius));
+                TopLeft.Add(new Coordinates(x, Radius));
+                BottomRight.Add(new Coordinates(x, x - Radius));
             }
             else if (x == Radius)
             {
-                Ring.Add(new Coordinates(x, Origin.y));
-                Ring.Add(new Coordinates(x - Radius * 2, Origin.y));
+                TopRight.Add(new Coordinates(x, Origin.y));
+                BottomLeft.Add(new Coordinates(x - Radius * 2, Origin.y));
             }
+            else
+            {
+                float y = Mathf.Sqrt(Mathf.Pow(Radius, 2) - Mathf.Pow(x, 2));
+                y -= Mathf.Pow(Origin.x, 2);
+                y += Mathf.Pow(Origin.y, 2);
 
-            float y = Mathf.Sqrt(Mathf.Pow(Radius, 2) - Mathf.Pow(x, 2));
-            y -= Mathf.Pow(Origin.x, 2);
-            y += Mathf.Pow(Origin.y, 2);
+                TopLeft.Add(new Coordinates(x, y));
+                BottomLeft.Add(new Coordinates(Origin.x - x, y));
 
-            Ring.Add(new Coordinates(x, y));
-            Ring.Add(new Coordinates(Origin.x - x, y));
-
-            Ring.Add(new Coordinates(Origin.x - x, Origin.y - y));
-            Ring.Add(new Coordinates(x, Origin.y - y));
+                BottomRight.Add(new Coordinates(Origin.x - x, Origin.y - y));
+                TopRight.Add(new Coordinates(x, Origin.y - y));
+            }
         }
+
+        TopRight.Reverse();
+        BottomLeft.Reverse();
+
+        AddToList(Ring, TopLeft);
+        AddToList(Ring, TopRight);
+        AddToList(Ring, BottomRight);
+        AddToList(Ring, BottomLeft);
 
         foreach (Coordinates PathPoint in Ring)
         {
             Instantiate(Point, new Vector3(PathPoint.x, 0, PathPoint.y), transform.rotation, transform);
         }
+    }
+
+    private void AddToList(List<Coordinates> destination, List<Coordinates> source)
+    {
+        foreach (var item in source)
+        {
+            destination.Add(item);
+        }
+        source.Clear();
     }
 
     public int GetNumberOfCoordinates()
