@@ -46,7 +46,7 @@ public class RingSystem : MonoBehaviour
     public Coordinates Origin;
     [SerializeField]
     [Range(0, 90)]
-    public int QuarterOfPathingPoints = 6;
+    public int NumberOfPathingPoints = 6;
 
     [SerializeField]
     public List<Coordinates> Ring;
@@ -65,11 +65,11 @@ public class RingSystem : MonoBehaviour
         TopRight = new List<Coordinates>();
 
         Radius = Mathf.Sqrt(Radius);
+        NumberOfPathingPoints /= 4;
 
-        for (int index = 0; index < QuarterOfPathingPoints + 1; index++)
+        for (int index = 0; index < NumberOfPathingPoints + 1; index++)
         {
-            float x = Origin.x + (Radius / QuarterOfPathingPoints * index);
-
+            float x = Origin.x + (Radius / NumberOfPathingPoints * index);
 
             if (Origin.x == x)
             {
@@ -83,9 +83,7 @@ public class RingSystem : MonoBehaviour
             }
             else
             {
-                float y = Mathf.Sqrt(Mathf.Pow(Radius, 2) - Mathf.Pow(x, 2));
-                y -= Mathf.Pow(Origin.x, 2);
-                y += Mathf.Pow(Origin.y, 2);
+                float y = Mathf.Sqrt(Mathf.Pow(Radius, 2) - Mathf.Pow(x, 2)) - Mathf.Pow(Origin.x, 2) + Mathf.Pow(Origin.y, 2);
 
                 TopLeft.Add(new Coordinates(x, y));
                 BottomLeft.Add(new Coordinates(Origin.x - x, y));

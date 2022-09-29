@@ -55,7 +55,7 @@ public class DemoPatrol : MonoBehaviour
     {
         isCheckingForRing = true;
         Ring = GameObject.Find("Rings").GetComponent<RingsManager>().GetRing(RingNumber);
-        NumberOfCoordinates = Ring.GetNumberOfCoordinates();
+        NumberOfCoordinates = Ring.GetNumberOfCoordinates() - 1;
         if (Ring != null)
         {
             agent.destination = Ring.GetNextPosition(CurrentPosition);

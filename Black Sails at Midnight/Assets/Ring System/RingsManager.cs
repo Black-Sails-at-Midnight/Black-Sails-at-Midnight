@@ -10,7 +10,7 @@ public class RingsManager : MonoBehaviour
     public Coordinates Origin;
     [SerializeField]
     [Range(0, 90)]
-    public int QuarterOfPathingPoints = 6;
+    public int NumberOfPathingPoints = 6;
     [SerializeField]
     [Range(0, 100000)]
     float SpaceBetweenRings = 64;
@@ -33,7 +33,7 @@ public class RingsManager : MonoBehaviour
             GameObject ring = Instantiate(Ring,transform);
             RingSystem temp = ring.GetComponent<RingSystem>();
             temp.Origin = Origin;
-            temp.QuarterOfPathingPoints = QuarterOfPathingPoints;
+            temp.NumberOfPathingPoints = NumberOfPathingPoints;
             temp.Radius = Radius + SpaceBetweenRings * i;
             temp.GenerateRing();
             Rings.Add(ring);
