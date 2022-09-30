@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8207001392120961314, guid: 21e1ab0ecba711e459a1905b7afbd395, type: 3}
       propertyPath: brightnessVariation
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8207001392120961319, guid: 21e1ab0ecba711e459a1905b7afbd395, type: 3}
       propertyPath: m_Name
