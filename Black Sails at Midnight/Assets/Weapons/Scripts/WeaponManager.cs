@@ -105,7 +105,7 @@ public class WeaponManager : MonoBehaviour
     {
         foreach(Attack weapon in AllWeapons)
         {
-            weapon.canAttack = active;
+            weapon.attackSettings.canAttack = active;
         }
     }
 

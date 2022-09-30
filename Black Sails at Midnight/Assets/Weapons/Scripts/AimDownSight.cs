@@ -22,6 +22,7 @@ public class AimDownSight : MonoBehaviour
     private FirstPersonController FPController;
     private Camera FPCamera;
     private Animator animator;
+    private Gun gun;
 
     // Monobehaviour Methods
     public void Start() {
@@ -29,6 +30,7 @@ public class AimDownSight : MonoBehaviour
         animator = GetComponent<Animator>();
         FPCamera = Camera.main;
         FOV = FPCamera.fieldOfView;
+        gun = GetComponent<Gun>();
 
         defaultValues = new();
         defaultValues.Add("Sensitivity", FPController.m_MouseLook.XSensitivity);
@@ -36,12 +38,12 @@ public class AimDownSight : MonoBehaviour
 
     public void Update() 
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && gun.attackSettings.canAttack)
         {
             ScopeIn();
         }
 
-        if (Input.GetButtonUp("Fire2"))
+        if (Input.GetButtonUp("Fire2") || (gun.attackSettings.canAttack == false && scopedIn))
         {
             ScopeOut();
         }

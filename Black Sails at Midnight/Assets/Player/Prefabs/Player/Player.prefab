@@ -89,7 +89,7 @@ MonoBehaviour:
   RespawnPoint: {fileID: 0}
   DistaceToLandingPoint: 1
   Angle: 45
-  phantomLayer:
+  inFlightLayer:
     serializedVersion: 2
     m_Bits: 0
 --- !u!1001 &7752562942282274186
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 260789405816878093, guid: e3ee4d5751e59d4489540376fdba7990, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 785307264788880355, guid: e3ee4d5751e59d4489540376fdba7990, type: 3}
       propertyPath: FOV
@@ -177,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 8a0d28a9c952ba34ca8e1ac65e5c4b73, type: 2}
     - target: {fileID: 3283016803146732148, guid: e3ee4d5751e59d4489540376fdba7990, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4800896393578246115, guid: e3ee4d5751e59d4489540376fdba7990, type: 3}
       propertyPath: m_Controller
