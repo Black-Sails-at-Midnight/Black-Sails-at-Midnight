@@ -16,6 +16,8 @@ public class AimDownSight : MonoBehaviour
     [SerializeField] 
     public float FOV = 60;
 
+    public bool scopedIn {get; private set;} = false;
+
     private Dictionary<string, float> defaultValues;
     private FirstPersonController FPController;
     private Camera FPCamera;
@@ -36,24 +38,12 @@ public class AimDownSight : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2"))
         {
-            animator.StopPlayback();
-            animator.SetTrigger("ScopeIn");
-
-            if (aimReticle != null)
-                aimReticle.enabled = false;
-
-            FPController.m_MouseLook.XSensitivity = FPController.m_MouseLook.YSensitivity = defaultValues["Sensitivity"] * sensitivityModifier;
+            ScopeIn();
         }
 
         if (Input.GetButtonUp("Fire2"))
         {
-            animator.StopPlayback();
-            animator.SetTrigger("ScopeOut");
-
-            if (aimReticle != null)
-                aimReticle.enabled = true;
-
-            FPController.m_MouseLook.XSensitivity = FPController.m_MouseLook.YSensitivity = defaultValues["Sensitivity"];
+            ScopeOut();
         }
 
         FPCamera.fieldOfView = FOV;
@@ -61,5 +51,34 @@ public class AimDownSight : MonoBehaviour
 
     // Public Methods
 
-    // Private Methods  
+    // Private Methods
+    private void ScopeIn()
+    {
+        if (scopedIn)
+            return;
+
+        animator.StopPlayback();
+        animator.SetTrigger("ScopeIn");
+
+        if (aimReticle != null)
+            aimReticle.enabled = false;
+
+        FPController.m_MouseLook.XSensitivity = FPController.m_MouseLook.YSensitivity = defaultValues["Sensitivity"] * sensitivityModifier;
+        scopedIn = true;
+    }
+
+    private void ScopeOut()
+    {
+        if (!scopedIn)
+            return;
+
+        animator.StopPlayback();
+        animator.SetTrigger("ScopeOut");
+
+        if (aimReticle != null)
+            aimReticle.enabled = true;
+
+        FPController.m_MouseLook.XSensitivity = FPController.m_MouseLook.YSensitivity = defaultValues["Sensitivity"];
+        scopedIn = false;
+    }
 }

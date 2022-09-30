@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8530204867023883134}
   - component: {fileID: 3663238493301140439}
   - component: {fileID: 8582603004340886954}
+  - component: {fileID: 3519229424988206430}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -72,6 +73,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd18f8b5e4d25442b6f06a9b7a87221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3519229424988206430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7619150740224659145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024ec939ac76f2a46bb8a23ad5f083bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToLauch: {fileID: 8078942694423808659}
+  RespawnPoint: {fileID: 0}
+  DistaceToLandingPoint: 1
+  Angle: 45
+  phantomLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &7752562942282274186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,5 +330,10 @@ Transform:
 --- !u!4 &8078942694418298323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+  m_PrefabInstance: {fileID: 8078942694418427731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &8078942694423808659 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
   m_PrefabInstance: {fileID: 8078942694418427731}
   m_PrefabAsset: {fileID: 0}

@@ -8,10 +8,11 @@ public class PlayerBinder : MonoBehaviour
 {
     [SerializeField]
     public float lostContactTimer = 1f;
+    public GameObject parentedPlayer {get; private set;}
 
-    private GameObject parentedPlayer;
     private float timeOfLastContact;
 
+    // Monobahaviour Methods
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.transform.parent != null && other.gameObject.transform.parent.gameObject.tag == "Player")
         {
@@ -43,5 +44,11 @@ public class PlayerBinder : MonoBehaviour
                 parentedPlayer = null;
             }
         }
+    }
+
+    // Public Methods
+    public void Unbind()
+    {
+        parentedPlayer = null;
     }
 }

@@ -12,4 +12,7 @@ public class Attack : MonoBehaviour
 
     [SerializeField]
     public AttackSettings attackSettings;
+
+    [SerializeField]
+    public bool canAttack;
 }

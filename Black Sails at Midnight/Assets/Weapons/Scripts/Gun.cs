@@ -89,7 +89,7 @@ public class Gun : Attack
     {
         while(true)
         {
-            if (Input.GetButton("Fire1") && clip > 0 && !isReloading)
+            if (Input.GetButton("Fire1") && clip > 0 && !isReloading && canAttack)
             {
                 for (int i = 0; i < gunSettings.palletsPerShot; i++)
                 {
@@ -113,7 +113,7 @@ public class Gun : Attack
                     yield return new WaitForSeconds(60 / gunSettings.RPM);                
             }
 
-            if ((clip == 0 || Input.GetKey(reloadKey)) && !isReloading)
+            if ((clip == 0 || Input.GetKey(reloadKey)) && !isReloading && canAttack)
             {
                 StartCoroutine(Reload());
                 isReloading = true;
