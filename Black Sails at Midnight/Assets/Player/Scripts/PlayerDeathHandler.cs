@@ -22,6 +22,8 @@ public class PlayerDeathHandler : MonoBehaviour
 
     bool isLaunched = false;
 
+    private Vector3 startPosition;
+
     private void Update()
     {
         if (Input.GetKeyDown("g"))
@@ -56,11 +58,15 @@ public class PlayerDeathHandler : MonoBehaviour
     {
         ObjectToLauch.GetComponentInChildren<FirstPersonController>().enabled = false;
         ObjectToLauch.GetComponentInChildren<Rigidbody>().isKinematic = false;
+
+        startPosition = ObjectToLauch.GetComponentInChildren<FirstPersonController>().transform.position;
     }
 
     private void PrepareForLanding()
     {
-        ObjectToLauch.GetComponentInChildren<FirstPersonController>().enabled = true;
+        FirstPersonController FPController = ObjectToLauch.GetComponentInChildren<FirstPersonController>();
+        FPController.m_CharacterController.Move(ObjectToLauch.transform.position - startPosition);
+        FPController.enabled = true;
         ObjectToLauch.GetComponentInChildren<Rigidbody>().isKinematic = true;
     }
 }
