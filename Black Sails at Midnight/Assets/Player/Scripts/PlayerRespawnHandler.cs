@@ -42,6 +42,7 @@ public class PlayerRespawnHandler : MonoBehaviour
     // Public Methods
     public void RespawnPlayer()
     {
+        Debug.Log("Respawning");
         PrepareForLaunch();
         ObjectToLauch.velocity = CalculateTrajectory();
         isLaunched = true;
