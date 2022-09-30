@@ -76,8 +76,6 @@ public class Gun : Attack
         audioSource = GetComponent<AudioSource>();
 
         StartCoroutine(ShootHandler());
-
-        Debug.Log("Enabled: " + gameObject.name);
     }
 
     public void OnDisable() {

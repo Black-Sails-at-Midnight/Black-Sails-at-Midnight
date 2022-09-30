@@ -159,5 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e44f50168be594c9eda0d6a1eb7951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFlightTime: 5
+  maxFlightTime: 30
   hitEffect: {fileID: 0}
