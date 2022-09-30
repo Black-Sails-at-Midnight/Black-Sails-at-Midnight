@@ -11,8 +11,16 @@ public class WaterSurfaceCollisionHandler : MonoBehaviour
         
         if (other.gameObject.transform.parent != null && other.gameObject.transform.parent.gameObject.tag == "Player")
         {
+            foreach(PlayerBinder playerBinder in FindObjectsOfType<PlayerBinder>())
+            {
+                if (playerBinder.parentedPlayer != null)
+                {
+                    playerBinder.Unbind();
+                }
+            }
+
             FirstPersonController FPController = other.gameObject.GetComponent<FirstPersonController>();
-            FPController.m_CharacterController.Move(playerRespawnPosition - FPController.transform.position);
+            FPController.gameObject.GetComponentInParent<PlayerRespawnHandler>().RespawnPlayer();
         }
     }
 }
