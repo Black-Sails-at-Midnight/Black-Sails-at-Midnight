@@ -8,6 +8,8 @@ public class Attack : MonoBehaviour
     public class AttackSettings {
         public float damage;
         public float damageMultiplier = 1;
+
+        public bool canAttack = true;
     }
 
     [SerializeField]
