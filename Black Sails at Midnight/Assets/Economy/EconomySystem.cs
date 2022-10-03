@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +28,7 @@ public class EconomySystem : MonoBehaviour
             return true;
         }
         Gold -= amount;
+        Debug.Log(Gold);
         return true;
     }
 
@@ -42,6 +44,28 @@ public class EconomySystem : MonoBehaviour
             return false;
         }
         Gold += amount;
+        Debug.Log(Gold);
+        return true;
+    }
+}
+
+class Vault : MonoBehaviour
+{
+    public bool Deposit(int value)
+    {
+        if (!GameObject.FindGameObjectWithTag("Player").GetComponent<EconomySystem>().Deposit(value))
+        {
+            throw new ArgumentOutOfRangeException(nameof(value), "Cannot deposit less than 0!");
+        }
+        return true;
+    }
+
+    public bool Withdraw(int value)
+    {
+        if (!GameObject.FindGameObjectWithTag("Player").GetComponent<EconomySystem>().Withdraw(value))
+        {
+            throw new ArgumentOutOfRangeException(nameof(value), "Cannot withdraw less than 0");
+        }
         return true;
     }
 }
