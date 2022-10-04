@@ -55,5 +55,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1636500478, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
+      propertyPath: CannonBallType
+      value: 
+      objectReference: {fileID: 2568958284410412930, guid: df29af9293a22974f8ba35157dd1a8cc, type: 3}
+    - target: {fileID: 1636500478, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
+      propertyPath: NumberOfCannonBalls
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
