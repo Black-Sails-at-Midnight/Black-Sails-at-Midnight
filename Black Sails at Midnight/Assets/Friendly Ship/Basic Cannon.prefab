@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 153108, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
       propertyPath: m_Name
-      value: BaseShipTemplate
+      value: Basic Cannon
       objectReference: {fileID: 0}
     - target: {fileID: 456082, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
       propertyPath: m_RootOrder

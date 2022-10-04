@@ -14,7 +14,7 @@ public class Gun : Attack
         public int palletsPerShot = 1;
 
         [Range(0, 90)]
-        public float palletSpread = 0;
+        public float pelletSpread = 0;
 
         [Min(0)]
         public int clipSize = 1;
@@ -94,8 +94,8 @@ public class Gun : Attack
                 for (int i = 0; i < gunSettings.palletsPerShot; i++)
                 {
                     Vector3 randomVector = 
-                                Quaternion.AngleAxis(Random.Range(-gunSettings.palletSpread, gunSettings.palletSpread), Vector3.Cross((transform.forward).normalized, Vector3.up)) * (transform.forward).normalized +
-                                Quaternion.AngleAxis(Random.Range(-gunSettings.palletSpread, gunSettings.palletSpread), Vector3.Cross((transform.forward).normalized, Vector3.right)) * (transform.forward).normalized;
+                                Quaternion.AngleAxis(Random.Range(-gunSettings.pelletSpread, gunSettings.pelletSpread), Vector3.Cross((transform.forward).normalized, Vector3.up)) * (transform.forward).normalized +
+                                Quaternion.AngleAxis(Random.Range(-gunSettings.pelletSpread, gunSettings.pelletSpread), Vector3.Cross((transform.forward).normalized, Vector3.right)) * (transform.forward).normalized;
 
                     GameObject _bullet = Instantiate(bulletPrefab, transform.position + ((transform.forward.normalized) * muzzleLength), transform.rotation);
                     _bullet.GetComponent<Rigidbody>().AddForce(randomVector.normalized * gunSettings.bulletVelocity, ForceMode.Impulse);
