@@ -110,10 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48284986a2fc7364798f067a1ac2f891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToLauch: {fileID: 0}
-  Origin: {fileID: 0}
-  Target: {fileID: 0}
-  angle: 0
 --- !u!114 &8582603004340886954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,9 +393,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
   m_PrefabInstance: {fileID: 8078942694418427731}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &8078942694418852819 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
 --- !u!1 &8078942694418524659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
@@ -419,6 +412,11 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!20 &8078942694418852819 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+  m_PrefabInstance: {fileID: 8078942694418427731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &8078942694423808659 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 5400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}

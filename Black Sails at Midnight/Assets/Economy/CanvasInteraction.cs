@@ -33,9 +33,9 @@ public class CanvasInteraction : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(new Ray(transform.position, FPCamera.transform.forward), out hit, 20f, layerMask))
             {
-                if (hit.collider.GetComponent<SpawnShip>().PurchaseShip())
+                if (vault.Withdraw(hit.collider.GetComponent<PurchaseOption>().Cost))
                 {
-                    vault.Withdraw(hit.collider.GetComponent<SpawnShip>().GetPriceOfShip());
+                    hit.collider.GetComponent<PurchaseOption>().Purchase();
                 }
             }
 
