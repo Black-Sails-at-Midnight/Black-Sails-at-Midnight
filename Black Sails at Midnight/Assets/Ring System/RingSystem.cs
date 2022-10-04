@@ -64,7 +64,6 @@ public class RingSystem : MonoBehaviour
         BottomRight = new List<Coordinates>();
         TopRight = new List<Coordinates>();
 
-        Radius = Mathf.Sqrt(Radius);
         NumberOfPathingPoints /= 4;
 
         for (int index = 0; index < NumberOfPathingPoints + 1; index++)
