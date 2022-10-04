@@ -944,7 +944,7 @@ MonoBehaviour:
   Ring: {fileID: 0}
   CurrentPosition: 0
   destination: {x: 0, y: 0, z: 0}
-  agent: {fileID: 0}
+  agent: {fileID: 5419154879821268968}
   direction: 0
 --- !u!1 &154540
 GameObject:
