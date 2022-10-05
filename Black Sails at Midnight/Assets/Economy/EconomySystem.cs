@@ -23,12 +23,12 @@ public class EconomySystem : MonoBehaviour
     /// <returns></returns>
     public bool Withdraw(int amount)
     {
-        if (amount > Gold)
+        if (Gold < amount)
         {
-            return true;
+            return false;
         }
+
         Gold -= amount;
-        Debug.Log(Gold);
         return true;
     }
 
@@ -44,7 +44,6 @@ public class EconomySystem : MonoBehaviour
             return false;
         }
         Gold += amount;
-        Debug.Log(Gold);
         return true;
     }
 }
@@ -62,10 +61,6 @@ class Vault
 
     public bool Withdraw(int value)
     {
-        if (!GameObject.FindGameObjectWithTag("Player").GetComponent<EconomySystem>().Withdraw(value))
-        {
-            throw new ArgumentOutOfRangeException(nameof(value), "Cannot withdraw less than 0");
-        }
-        return true;
+        return GameObject.FindGameObjectWithTag("Player").GetComponent<EconomySystem>().Withdraw(value);
     }
 }

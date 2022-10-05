@@ -11,6 +11,14 @@ public class PurchaseShip : PurchaseOption
 
     public override bool Purchase()
     {
-        throw new System.NotImplementedException();
+        GameObject ship = Instantiate(prefab, spawnPoint);
+
+        ShipNavigationAI shipNav = ship.GetComponent<ShipNavigationAI>();
+
+        shipNav.RingNumber = 1;
+        shipNav.StartNavigation();
+
+        Debug.Log("Ship Spawned");
+        return true;
     }
 }
