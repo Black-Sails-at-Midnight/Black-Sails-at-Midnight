@@ -29,7 +29,6 @@ public class SpecialEnemyNavigation : MonoBehaviour
     NavMeshAgent agent;
     [SerializeField]
     Direction direction;
-    bool isCheckingForRing = false;
 
     void Start()
     {

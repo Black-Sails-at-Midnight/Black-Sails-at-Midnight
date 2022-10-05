@@ -4,50 +4,64 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class ShipNavigationAI : MonoBehaviour
 {
     [Serializable]
-    enum Direction
+    public enum Direction
     {
         ClockWise = 0,
         Counter_Clockwise = 1
     }
     [Header("Ring Data")]
     [SerializeField]
-    int RingNumber = 0;
+    public int RingNumber = 0;
     [SerializeField]
     RingSystem Ring;
     [SerializeField]
-    int CurrentPosition = 0;
-    int NumberOfCoordinates = 0;
+    public int CurrentPosition = 0;
 
     [Header("Navigation Data")]
     [SerializeField]
-    Vector3 destination;
+    public Vector3 destination;
     [SerializeField]
-    NavMeshAgent agent;
+    public float distanceToDestination = 15f;
     [SerializeField]
-    Direction direction;
-    bool isCheckingForRing = false;
+    public NavMeshAgent agent;
+    [SerializeField]
+    public Direction direction;
+
+    private bool start = false;
+    private bool isCheckingForRing = false;
+
+    public float baseSpeed;
+
+    private void Start()
+    {
+        baseSpeed = agent.speed;
+        agent = GetComponent<NavMeshAgent>();
+    }
+
+    public void StartNavigation()
+    {
+        start = true;
+    }
 
     void Update()
     {
-        if (Ring == null)
+        if (Ring == null && !isCheckingForRing && start)
         {
             StartCoroutine(GetRing());
             return;
         }
-        switch (direction)
+        if (Ring == null)
         {
-            case Direction.ClockWise:
-                ClockWise();
-                break;
-            case Direction.Counter_Clockwise:
-                CounterClockWise();
-                break;
-            default:
-                Debug.Log("Invalid value in direction!");
-                break;
+            return;
+        }
+
+        if (Vector3.Distance(agent.transform.position, agent.destination) < distanceToDestination)
+        {
+            ShipReachedDestination();
         }
     }
 
@@ -55,7 +69,6 @@ public class ShipNavigationAI : MonoBehaviour
     {
         isCheckingForRing = true;
         Ring = GameObject.Find("Rings").GetComponent<RingsManager>().GetRing(RingNumber);
-        NumberOfCoordinates = Ring.GetNumberOfCoordinates() - 1;
         if (Ring != null)
         {
             agent.destination = Ring.GetNextPosition(CurrentPosition);
@@ -67,44 +80,40 @@ public class ShipNavigationAI : MonoBehaviour
             {
                 direction = Direction.Counter_Clockwise;
             }
+            Ring.AddShip(this);
         }
         yield return new WaitForSeconds(1);
         isCheckingForRing = false;
     }
 
-    private void ClockWise()
+    public void SetDestination(Vector3 destination)
     {
-        if (Vector3.Distance(agent.transform.position, destination) < 1f)
-        {
-            if (NumberOfCoordinates <= CurrentPosition)
-            {
-                CurrentPosition = 0;
-            }
-            else
-            {
-                CurrentPosition++;
-            }
+        agent.destination = destination;
+    }
 
-            destination = Ring.GetNextPosition(CurrentPosition);
-            agent.SetDestination(destination);
+    public void SetAgentSpeed(float speed)
+    {
+        agent.speed = speed;
+    }    
+
+    public void ResetAgentSpeed()
+    {
+        agent.speed = baseSpeed;
+    }
+
+    void ShipReachedDestination()
+    {
+        if(!Ring.CheckIfWaitingForUpdate(this))
+        {
+            Ring.TriggerDestinationUpdate(this);
         }
     }
 
-    private void CounterClockWise()
+    private void OnDestroy()
     {
-        if (Vector3.Distance(agent.transform.position, destination) < 15f)
+        if (Ring != null)
         {
-            if (NumberOfCoordinates <= 0)
-            {
-                CurrentPosition = NumberOfCoordinates;
-            }
-            else
-            {
-                CurrentPosition--;
-            }
-
-            destination = Ring.GetNextPosition(CurrentPosition);
-            agent.SetDestination(destination);
+            Ring.RemoveFromList(this);
         }
     }
 }
