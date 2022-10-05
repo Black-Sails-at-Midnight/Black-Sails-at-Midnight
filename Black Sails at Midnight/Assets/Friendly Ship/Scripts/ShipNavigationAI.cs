@@ -25,6 +25,8 @@ public class ShipNavigationAI : MonoBehaviour
     [SerializeField]
     Vector3 destination;
     [SerializeField]
+    float distanceToDestination = 15f;
+    [SerializeField]
     NavMeshAgent agent;
     [SerializeField]
     Direction direction;
@@ -74,7 +76,7 @@ public class ShipNavigationAI : MonoBehaviour
 
     private void ClockWise()
     {
-        if (Vector3.Distance(agent.transform.position, destination) < 1f)
+        if (Vector3.Distance(agent.transform.position, agent.destination) < distanceToDestination)
         {
             if (NumberOfCoordinates <= CurrentPosition)
             {
@@ -92,7 +94,7 @@ public class ShipNavigationAI : MonoBehaviour
 
     private void CounterClockWise()
     {
-        if (Vector3.Distance(agent.transform.position, destination) < 15f)
+        if (Vector3.Distance(agent.transform.position, agent.destination) < distanceToDestination)
         {
             if (NumberOfCoordinates <= 0)
             {
