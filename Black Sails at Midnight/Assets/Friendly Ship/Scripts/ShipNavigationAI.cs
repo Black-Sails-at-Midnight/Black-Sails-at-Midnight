@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class ShipNavigationAI : MonoBehaviour
 {
     [Serializable]
@@ -110,6 +111,9 @@ public class ShipNavigationAI : MonoBehaviour
 
     private void OnDestroy()
     {
-        Ring.RemoveFromList(this);
+        if (Ring != null)
+        {
+            Ring.RemoveFromList(this);
+        }
     }
 }
