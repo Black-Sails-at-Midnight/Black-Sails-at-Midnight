@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEditor.Progress;
 
 [Serializable]
 public struct Coordinates
@@ -264,14 +266,20 @@ public class RingSystem : MonoBehaviour
         {
             Debug.Log("Point: " + item.CurrentPosition);
         }
+        float AverageDistance = 0f;
 
         for (int i = 0; i < Ships.Count; i++)
         {
-            float speed = Mathf.Clamp(Ships[i].agent.remainingDistance, 0.5f, Ships[i].baseSpeed * 2);
-            Ships[i].SetAgentSpeed(speed);
-
-
             Ships[i].SetDestination(GetNextPosition(i * (int)segment));
+
+            AverageDistance += Ships[i].agent.remainingDistance;
+        }
+
+        AverageDistance /= Ships.Count;
+
+        foreach (var item in Ships)
+        {
+            item.SetAgentSpeed(MapValue(item.agent.remainingDistance, 0f, AverageDistance, item.baseSpeed * 0.5f, item.baseSpeed * 3));
         }
     }
 
@@ -289,6 +297,11 @@ public class RingSystem : MonoBehaviour
         {
             return 0;
         }
+    }
+
+    private float MapValue(float value, float fromLow, float fromHigh, float toLow, float toHigh)
+    {
+        return (value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow;
     }
 }
 
