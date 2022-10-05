@@ -271,6 +271,7 @@ public class RingSystem : MonoBehaviour
         for (int i = 0; i < Ships.Count; i++)
         {
             Ships[i].SetDestination(GetNextPosition(i * (int)segment));
+            Ships[i].CurrentPosition =  i * (int)segment;
 
             AverageDistance += Ships[i].agent.remainingDistance;
         }
