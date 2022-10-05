@@ -26,12 +26,12 @@ public class ShipNavigationAI : MonoBehaviour
     [SerializeField]
     public float distanceToDestination = 15f;
     [SerializeField]
-    public NavMeshAgent agent;
+    public readonly NavMeshAgent agent;
     [SerializeField]
     public Direction direction;
     private bool isCheckingForRing = false;
 
-    float baseSpeed;
+    public float baseSpeed;
 
     private void Start()
     {
@@ -81,9 +81,9 @@ public class ShipNavigationAI : MonoBehaviour
         agent.destination = destination;
     }
 
-    public void IncreaseAgentSpeed()
+    public void SetAgentSpeed(float speed)
     {
-        agent.speed *= 1.5f;
+        agent.speed = speed;
     }    
 
     public void ResetAgentSpeed()

@@ -59,26 +59,28 @@ public class RingSystem : MonoBehaviour
     [SerializeField]
     int ShipCapacity;
     [SerializeField]
-    List<ShipNavigationAI> ships;
+    List<ShipNavigationAI> Ships;
     [SerializeField]
-    List<ShipNavigationAI> shipsToUpdate;
+    List<ShipNavigationAI> ShipsToUpdate;
     bool isCheckingForNullShips = false;
+
+    bool isSyncing = false;
 
     private void Start()
     {
-        ships = new List<ShipNavigationAI>(ShipCapacity);
-        shipsToUpdate = new List<ShipNavigationAI>();
+        Ships = new List<ShipNavigationAI>(ShipCapacity);
+        ShipsToUpdate = new List<ShipNavigationAI>();
     }
 
     private void Update()
     {
-        if (shipsToUpdate.Count != 0)
+        if (ShipsToUpdate.Count != 0)
         {
-            foreach (var item in shipsToUpdate)
+            foreach (var item in ShipsToUpdate)
             {
                 UpdateShipNavigation(item);
             }
-            shipsToUpdate.Clear();
+            ShipsToUpdate.Clear();
         }
 
         if (!isCheckingForNullShips)
@@ -160,14 +162,14 @@ public class RingSystem : MonoBehaviour
 
     public void AddShip(ShipNavigationAI ship)
     {
-        foreach (var item in ships)
+        foreach (var item in Ships)
         {
             if (item == ship)
             {
                 return;
             }
         }
-        ships.Add(ship);
+        Ships.Add(ship);
     }
 
     public void RemoveFromList(ShipNavigationAI ship)
@@ -176,17 +178,22 @@ public class RingSystem : MonoBehaviour
         {
             return;
         }
-        ships.Remove(ship);
+        Ships.Remove(ship);
     }
 
     public IEnumerator CheckForNullShips()
     {
-        ships.RemoveAll(x => x == null);
+        Ships.RemoveAll(x => x == null);
         yield return new WaitForSeconds(30);
     }
 
     void UpdateShipNavigation(ShipNavigationAI ship)
     {
+
+        if (isSyncing)
+        {
+            ship.ResetAgentSpeed();
+        }
         switch (ship.direction)
         {
             case ShipNavigationAI.Direction.ClockWise:
@@ -234,12 +241,49 @@ public class RingSystem : MonoBehaviour
 
     public void TriggerDestinationUpdate(ShipNavigationAI ship)
     {
-        shipsToUpdate.Add(ship);
+        ShipsToUpdate.Add(ship);
     }
 
     public bool CheckIfWaitingForUpdate(ShipNavigationAI ship)
     {
-         return shipsToUpdate.Find(x => x == ship) != null;
+         return ShipsToUpdate.Find(x => x == ship) != null;
+    }
+
+    public void CalculateSyncSpeed()
+    {
+        float segment = Ring.Count / Ships.Count;
+
+        Ships.Sort(CompareShipLocation);
+
+        foreach (ShipNavigationAI item in Ships)
+        {
+            Debug.Log("Point: " + item.CurrentPosition);
+        }
+
+        for (int i = 0; i < Ships.Count; i++)
+        {
+            float speed = Mathf.Clamp(Ships[i].agent.remainingDistance, 0.5f, Ships[i].baseSpeed * 2);
+            Ships[i].SetAgentSpeed(speed);
+
+
+            Ships[i].SetDestination(GetNextPosition(i * (int)segment));
+        }
+    }
+
+    public int CompareShipLocation(ShipNavigationAI a, ShipNavigationAI b)
+    {
+        if(a.CurrentPosition > b.CurrentPosition)
+        {
+            return -1;
+        }
+        else if(a.CurrentPosition < b.CurrentPosition)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
     }
 }
 
