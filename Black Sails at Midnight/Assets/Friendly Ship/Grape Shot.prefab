@@ -58,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 1636500478, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
       propertyPath: CannonBallType
       value: 
-      objectReference: {fileID: 2568958284410412930, guid: df29af9293a22974f8ba35157dd1a8cc, type: 3}
+      objectReference: {fileID: 4111843339437084902, guid: fea48a06f4e38b44dbfc1e9a91e29cf1, type: 3}
     - target: {fileID: 1636500478, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
       propertyPath: NumberOfCannonBalls
       value: 10
