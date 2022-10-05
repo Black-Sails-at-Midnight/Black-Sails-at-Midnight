@@ -28,12 +28,13 @@ public class ShipNavigationAI : MonoBehaviour
     NavMeshAgent agent;
     [SerializeField]
     Direction direction;
-    bool isCheckingForRing = false;
+    private bool isNotCheckingForRing = false;
 
     void Update()
     {
-        if (Ring == null)
+        if (Ring == null && isNotCheckingForRing)
         {
+            StartCoroutine(GetRing());
             return;
         }
         switch (direction)
@@ -52,7 +53,7 @@ public class ShipNavigationAI : MonoBehaviour
 
     private IEnumerator GetRing()
     {
-        isCheckingForRing = true;
+        isNotCheckingForRing = true;
         Ring = GameObject.Find("Rings").GetComponent<RingsManager>().GetRing(RingNumber);
         NumberOfCoordinates = Ring.GetNumberOfCoordinates() - 1;
         if (Ring != null)
@@ -68,7 +69,7 @@ public class ShipNavigationAI : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(1);
-        isCheckingForRing = false;
+        isNotCheckingForRing = false;
     }
 
     private void ClockWise()
@@ -91,9 +92,9 @@ public class ShipNavigationAI : MonoBehaviour
 
     private void CounterClockWise()
     {
-        if (Vector3.Distance(agent.transform.position, destination) < 1f)
+        if (Vector3.Distance(agent.transform.position, destination) < 15f)
         {
-            if (NumberOfCoordinates >= 0)
+            if (NumberOfCoordinates <= 0)
             {
                 CurrentPosition = NumberOfCoordinates;
             }

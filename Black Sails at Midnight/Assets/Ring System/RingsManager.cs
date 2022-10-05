@@ -35,6 +35,7 @@ public class RingsManager : MonoBehaviour
             temp.NumberOfPathingPoints = NumberOfPathingPoints + 2;
             temp.Radius = Radius + SpaceBetweenRings * i;
             temp.GenerateRing();
+            temp.GetComponentInChildren<RingMarkerHandler>().Radius = temp.Radius;
             Rings.Add(ring);
         }
     }

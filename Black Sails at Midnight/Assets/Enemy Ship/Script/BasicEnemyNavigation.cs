@@ -18,7 +18,6 @@ public class BasicEnemyNavigation : MonoBehaviour
     Vector3 destination;
     [SerializeField]
     NavMeshAgent agent;
-    bool isCheckingForRing = false;
 
     void Start()
     {
