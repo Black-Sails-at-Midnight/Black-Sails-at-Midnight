@@ -902,6 +902,7 @@ MonoBehaviour:
   distanceToDestination: 15
   agent: {fileID: 5419154879821268968}
   direction: 0
+  baseSpeed: 0
 --- !u!1 &154540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,7 +1633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CannonBallType: {fileID: 5815674545810335273, guid: 038209526f04dd7419733a8c120c89eb, type: 3}
-  TimeBetweenShots: 1
+  TimeBetweenShots: 3
   CannonBallSpeed: 100
   FiringAngle: 30
   NumberOfCannonBalls: 1
