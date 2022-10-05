@@ -71,6 +71,7 @@ public class ShipNavigationAI : MonoBehaviour
             {
                 direction = Direction.Counter_Clockwise;
             }
+            Ring.AddShip(this);
         }
         yield return new WaitForSeconds(1);
         isCheckingForRing = false;
@@ -97,5 +98,10 @@ public class ShipNavigationAI : MonoBehaviour
         {
             Ring.TriggerDestinationUpdate(this);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Ring.RemoveFromList(this);
     }
 }

@@ -170,6 +170,7 @@ public class RingSystem : MonoBehaviour
             }
         }
         Ships.Add(ship);
+        CalculateSyncSpeed();
     }
 
     public void RemoveFromList(ShipNavigationAI ship)
@@ -179,11 +180,15 @@ public class RingSystem : MonoBehaviour
             return;
         }
         Ships.Remove(ship);
+        CalculateSyncSpeed();
     }
 
     public IEnumerator CheckForNullShips()
     {
-        Ships.RemoveAll(x => x == null);
+        if (Ships.RemoveAll(x => x == null) > 0)
+        {
+            CalculateSyncSpeed();
+        }
         yield return new WaitForSeconds(30);
     }
 
