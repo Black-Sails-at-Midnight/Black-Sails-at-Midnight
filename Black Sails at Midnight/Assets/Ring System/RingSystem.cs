@@ -282,6 +282,7 @@ public class RingSystem : MonoBehaviour
         {
             item.SetAgentSpeed(MapValue(item.agent.remainingDistance, 0f, AverageDistance, item.baseSpeed * 0.5f, item.baseSpeed * 3));
         }
+        isSyncing = true;
     }
 
     public int CompareShipLocation(ShipNavigationAI a, ShipNavigationAI b)
