@@ -29,6 +29,8 @@ public class ShipNavigationAI : MonoBehaviour
     public NavMeshAgent agent;
     [SerializeField]
     public Direction direction;
+
+    private bool start = false;
     private bool isCheckingForRing = false;
 
     public float baseSpeed;
@@ -39,9 +41,14 @@ public class ShipNavigationAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
+    public void StartNavigation()
+    {
+        start = true;
+    }
+
     void Update()
     {
-        if (Ring == null && !isCheckingForRing)
+        if (Ring == null && !isCheckingForRing && start)
         {
             StartCoroutine(GetRing());
             return;

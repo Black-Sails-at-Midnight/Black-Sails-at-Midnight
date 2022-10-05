@@ -902,6 +902,7 @@ MonoBehaviour:
   distanceToDestination: 15
   agent: {fileID: 5419154879821268968}
   direction: 0
+  baseSpeed: 0
 --- !u!1 &154540
 GameObject:
   m_ObjectHideFlags: 0

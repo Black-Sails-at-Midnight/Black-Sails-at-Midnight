@@ -172,7 +172,7 @@ public class RingSystem : MonoBehaviour
             }
         }
         Ships.Add(ship);
-        CalculateSyncSpeed();
+        StartCoroutine(CalculateSyncSpeed());
     }
 
     public void RemoveFromList(ShipNavigationAI ship)
@@ -182,14 +182,14 @@ public class RingSystem : MonoBehaviour
             return;
         }
         Ships.Remove(ship);
-        CalculateSyncSpeed();
+        StartCoroutine(CalculateSyncSpeed());
     }
 
     public IEnumerator CheckForNullShips()
     {
         if (Ships.RemoveAll(x => x == null) > 0)
         {
-            CalculateSyncSpeed();
+            StartCoroutine(CalculateSyncSpeed());
         }
         yield return new WaitForSeconds(30);
     }
@@ -256,32 +256,39 @@ public class RingSystem : MonoBehaviour
          return ShipsToUpdate.Find(x => x == ship) != null;
     }
 
-    public void CalculateSyncSpeed()
+    public IEnumerator CalculateSyncSpeed()
     {
-        float segment = Ring.Count - 1 / Ships.Count;
+        if (Ships.Count == 0)
+        {
+            yield return new WaitForEndOfFrame();
+        }
 
+        float segment = (Ring.Count - 1) / Ships.Count;
         Ships.Sort(CompareShipLocation);
 
-        foreach (ShipNavigationAI item in Ships)
-        {
-            Debug.Log("Point: " + item.CurrentPosition);
-        }
-        float AverageDistance = 0f;
-
+        float longestDistance = 0f;
         for (int i = 0; i < Ships.Count; i++)
         {
             Ships[i].SetDestination(GetNextPosition(i * (int)segment));
             Ships[i].CurrentPosition =  i * (int)segment;
 
-            AverageDistance += Ships[i].agent.remainingDistance;
-        }
+            while(Ships[i].agent.pathPending)
+            {
+                yield return new WaitForEndOfFrame();
+            }
 
-        AverageDistance /= Ships.Count;
+            if (Ships[i].agent.remainingDistance > longestDistance)
+            {
+                longestDistance = Ships[i].agent.remainingDistance;
+            }
+        }
 
         foreach (var item in Ships)
         {
-            item.SetAgentSpeed(MapValue(item.agent.remainingDistance, 0f, AverageDistance, item.baseSpeed * 0.5f, item.baseSpeed * 3));
+            float speed = Mathf.Clamp(MapValue(item.agent.remainingDistance, 0f, longestDistance, 0, item.baseSpeed * 2), 0, item.baseSpeed * 2);
+            item.SetAgentSpeed(speed);
         }
+
         isSyncing = true;
     }
 
