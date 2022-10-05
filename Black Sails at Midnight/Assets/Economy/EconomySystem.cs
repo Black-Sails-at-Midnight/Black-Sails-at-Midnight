@@ -49,7 +49,7 @@ public class EconomySystem : MonoBehaviour
     }
 }
 
-class Vault : MonoBehaviour
+class Vault
 {
     public bool Deposit(int value)
     {
