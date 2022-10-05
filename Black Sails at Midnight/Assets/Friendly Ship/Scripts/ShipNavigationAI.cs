@@ -37,6 +37,11 @@ public class ShipNavigationAI : MonoBehaviour
             StartCoroutine(GetRing());
             return;
         }
+        if (Ring == null)
+        {
+            return;
+        }
+
         switch (direction)
         {
             case Direction.ClockWise:
