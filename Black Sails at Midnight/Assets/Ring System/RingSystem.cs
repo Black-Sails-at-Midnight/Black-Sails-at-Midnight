@@ -219,7 +219,7 @@ public class RingSystem : MonoBehaviour
 
     public void CounterClockWise(ShipNavigationAI ship)
     {
-        if (Ring.Count <= 0)
+        if (ship.CurrentPosition <= 0)
         {
             ship.CurrentPosition = Ring.Count;
         }
