@@ -217,7 +217,7 @@ public class RingSystem : MonoBehaviour
 
     public void ClockWise(ShipNavigationAI ship)
     {
-        if (Ring.Count <= ship.CurrentPosition)
+        if (Ring.Count - 1 <= ship.CurrentPosition)
         {
             ship.CurrentPosition = 0;
         }
@@ -235,7 +235,7 @@ public class RingSystem : MonoBehaviour
     {
         if (ship.CurrentPosition <= 0)
         {
-            ship.CurrentPosition = Ring.Count;
+            ship.CurrentPosition = Ring.Count - 1;
         }
         else
         {
