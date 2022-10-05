@@ -59,5 +59,9 @@ PrefabInstance:
       propertyPath: CannonBallType
       value: 
       objectReference: {fileID: 8582425194649585216, guid: 5ab0fd4613b66964fb33208a1ad3594f, type: 3}
+    - target: {fileID: 1791800719562387388, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
+      propertyPath: CannonBallType
+      value: 
+      objectReference: {fileID: 8582425194649585216, guid: 5ab0fd4613b66964fb33208a1ad3594f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
