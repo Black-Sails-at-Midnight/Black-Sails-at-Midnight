@@ -258,7 +258,7 @@ public class RingSystem : MonoBehaviour
 
     public void CalculateSyncSpeed()
     {
-        float segment = Ring.Count / Ships.Count;
+        float segment = Ring.Count - 1 / Ships.Count;
 
         Ships.Sort(CompareShipLocation);
 
