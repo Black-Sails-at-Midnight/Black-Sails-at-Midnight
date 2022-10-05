@@ -7,30 +7,36 @@ using UnityEngine.AI;
 public class ShipNavigationAI : MonoBehaviour
 {
     [Serializable]
-    enum Direction
+    public enum Direction
     {
         ClockWise = 0,
         Counter_Clockwise = 1
     }
     [Header("Ring Data")]
     [SerializeField]
-    int RingNumber = 0;
+    public int RingNumber = 0;
     [SerializeField]
     RingSystem Ring;
     [SerializeField]
-    int CurrentPosition = 0;
-    int NumberOfCoordinates = 0;
+    public int CurrentPosition = 0;
 
     [Header("Navigation Data")]
     [SerializeField]
-    Vector3 destination;
+    public Vector3 destination;
     [SerializeField]
-    float distanceToDestination = 15f;
+    public float distanceToDestination = 15f;
     [SerializeField]
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     [SerializeField]
-    Direction direction;
+    public Direction direction;
     private bool isCheckingForRing = false;
+
+    float baseSpeed;
+
+    private void Start()
+    {
+        baseSpeed = agent.speed;
+    }
 
     void Update()
     {
@@ -44,17 +50,9 @@ public class ShipNavigationAI : MonoBehaviour
             return;
         }
 
-        switch (direction)
+        if (Vector3.Distance(agent.transform.position, agent.destination) < distanceToDestination)
         {
-            case Direction.ClockWise:
-                ClockWise();
-                break;
-            case Direction.Counter_Clockwise:
-                CounterClockWise();
-                break;
-            default:
-                Debug.Log("Invalid value in direction!");
-                break;
+            ShipReachedDestination();
         }
     }
 
@@ -62,7 +60,6 @@ public class ShipNavigationAI : MonoBehaviour
     {
         isCheckingForRing = true;
         Ring = GameObject.Find("Rings").GetComponent<RingsManager>().GetRing(RingNumber);
-        NumberOfCoordinates = Ring.GetNumberOfCoordinates() - 1;
         if (Ring != null)
         {
             agent.destination = Ring.GetNextPosition(CurrentPosition);
@@ -79,39 +76,26 @@ public class ShipNavigationAI : MonoBehaviour
         isCheckingForRing = false;
     }
 
-    private void ClockWise()
+    public void SetDestination(Vector3 destination)
     {
-        if (Vector3.Distance(agent.transform.position, agent.destination) < distanceToDestination)
-        {
-            if (NumberOfCoordinates <= CurrentPosition)
-            {
-                CurrentPosition = 0;
-            }
-            else
-            {
-                CurrentPosition++;
-            }
-
-            destination = Ring.GetNextPosition(CurrentPosition);
-            agent.SetDestination(destination);
-        }
+        agent.destination = destination;
     }
 
-    private void CounterClockWise()
+    public void IncreaseAgentSpeed()
     {
-        if (Vector3.Distance(agent.transform.position, agent.destination) < distanceToDestination)
-        {
-            if (NumberOfCoordinates <= 0)
-            {
-                CurrentPosition = NumberOfCoordinates;
-            }
-            else
-            {
-                CurrentPosition--;
-            }
+        agent.speed *= 1.5f;
+    }    
 
-            destination = Ring.GetNextPosition(CurrentPosition);
-            agent.SetDestination(destination);
+    public void ResetAgentSpeed()
+    {
+        agent.speed = baseSpeed;
+    }
+
+    void ShipReachedDestination()
+    {
+        if(!Ring.CheckIfWaitingForUpdate(this))
+        {
+            Ring.TriggerDestinationUpdate(this);
         }
     }
 }

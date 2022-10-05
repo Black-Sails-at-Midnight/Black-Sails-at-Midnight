@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.AI;
 
 [Serializable]
 public struct Coordinates
@@ -53,6 +54,38 @@ public class RingSystem : MonoBehaviour
 
     [SerializeField]
     GameObject Point;
+
+    [Header("Ship Settings")]
+    [SerializeField]
+    int ShipCapacity;
+    [SerializeField]
+    List<ShipNavigationAI> ships;
+    [SerializeField]
+    List<ShipNavigationAI> shipsToUpdate;
+    bool isCheckingForNullShips = false;
+
+    private void Start()
+    {
+        ships = new List<ShipNavigationAI>(ShipCapacity);
+        shipsToUpdate = new List<ShipNavigationAI>();
+    }
+
+    private void Update()
+    {
+        if (shipsToUpdate.Count != 0)
+        {
+            foreach (var item in shipsToUpdate)
+            {
+                UpdateShipNavigation(item);
+            }
+            shipsToUpdate.Clear();
+        }
+
+        if (!isCheckingForNullShips)
+        {
+            StartCoroutine(CheckForNullShips());
+        }
+    }
 
     public void GenerateRing()
     {
@@ -123,6 +156,90 @@ public class RingSystem : MonoBehaviour
     public Vector3 GetNextPosition(int index)
     {
         return new Vector3(Ring[index].x, 0, Ring[index].y);
+    }
+
+    public void AddShip(ShipNavigationAI ship)
+    {
+        foreach (var item in ships)
+        {
+            if (item == ship)
+            {
+                return;
+            }
+        }
+        ships.Add(ship);
+    }
+
+    public void RemoveFromList(ShipNavigationAI ship)
+    {
+        if (ship != null)
+        {
+            return;
+        }
+        ships.Remove(ship);
+    }
+
+    public IEnumerator CheckForNullShips()
+    {
+        ships.RemoveAll(x => x == null);
+        yield return new WaitForSeconds(30);
+    }
+
+    void UpdateShipNavigation(ShipNavigationAI ship)
+    {
+        switch (ship.direction)
+        {
+            case ShipNavigationAI.Direction.ClockWise:
+                ClockWise(ship);
+                break;
+            case ShipNavigationAI.Direction.Counter_Clockwise:
+                CounterClockWise(ship);
+                break;
+            default:
+                Debug.Log("Invalid value in direction!");
+                break;
+        }
+    }
+
+    public void ClockWise(ShipNavigationAI ship)
+    {
+        if (Ring.Count <= ship.CurrentPosition)
+        {
+            ship.CurrentPosition = 0;
+        }
+        else
+        {
+            ship.CurrentPosition++;
+        }
+
+        ship.destination = GetNextPosition(ship.CurrentPosition);
+        ship.agent.SetDestination(ship.destination);
+
+    }
+
+    public void CounterClockWise(ShipNavigationAI ship)
+    {
+        if (Ring.Count <= 0)
+        {
+            ship.CurrentPosition = Ring.Count;
+        }
+        else
+        {
+            ship.CurrentPosition--;
+        }
+
+        ship.destination = GetNextPosition(ship.CurrentPosition);
+        ship.agent.SetDestination(ship.destination);
+    }
+
+    public void TriggerDestinationUpdate(ShipNavigationAI ship)
+    {
+        shipsToUpdate.Add(ship);
+    }
+
+    public bool CheckIfWaitingForUpdate(ShipNavigationAI ship)
+    {
+         return shipsToUpdate.Find(x => x == ship) != null;
     }
 }
 
