@@ -770,6 +770,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: dae21c251c2700542b90df9db8807d26, type: 2}
+    - target: {fileID: 6939744403506344221, guid: e3ee4d5751e59d4489540376fdba7990, type: 3}
+      propertyPath: muzzleFlash
+      value: 
+      objectReference: {fileID: 19834114, guid: bc45bb6342bf8eb45b5de1fc0c980f0a, type: 3}
     - target: {fileID: 8936708457033386782, guid: e3ee4d5751e59d4489540376fdba7990, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1
