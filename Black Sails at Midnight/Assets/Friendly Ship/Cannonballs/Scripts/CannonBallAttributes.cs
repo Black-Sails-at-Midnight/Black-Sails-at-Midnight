@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class AttackAttributes : MonoBehaviour
+public class CannonBallProperties : MonoBehaviour
 {
     [Header("Attributes")]
     [SerializeField]
-    float Damage;
+    protected float Damage;
 
     bool isDone = true;
     public virtual void Effect(ShipHealth health)
@@ -19,5 +19,13 @@ public class AttackAttributes : MonoBehaviour
     public virtual bool IsEffectDone()
     {
         return isDone;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            other.GetComponent<ShipHealth>().Hit(Damage);
+        }
     }
 }
