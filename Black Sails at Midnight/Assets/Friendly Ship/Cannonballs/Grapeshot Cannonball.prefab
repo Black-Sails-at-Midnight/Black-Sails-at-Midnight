@@ -90,7 +90,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 127120, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
   m_PrefabInstance: {fileID: 4111843339437203574}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4661209909368919433
+--- !u!114 &-7273364181078444358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,4 +102,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12caf4c66fe31844bb353e0e4c25a206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 3
+  Damage: 15

@@ -131,7 +131,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 127120, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
   m_PrefabInstance: {fileID: 8924977336512837116}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-2449507700269522567
+--- !u!114 &7092578589486853369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8924977336512906604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1d109a0f906cb04187807b9cd02536a, type: 3}
+  m_Script: {fileID: 11500000, guid: 75e089270719e354a931f1db3c32ef2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 3

@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 6253459489801789696}
   m_Layer: 0
   m_Name: Enemy Ship Base
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,8 @@ MonoBehaviour:
   TimeBetweenShots: 5
   CannonBallSpeed: 100
   FiringAngle: 30
+  NumberOfCannonBalls: 1
+  Spread: 0
   RightCannons: []
   LeftCannons: []
 --- !u!114 &6253459489801789696

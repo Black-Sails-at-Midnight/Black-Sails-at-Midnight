@@ -108,7 +108,6 @@ public class ShipNavigationAI : MonoBehaviour
     {
         agent.speed = speed;
     }    
-
     public void ResetAgentSpeed()
     {
         agent.speed = baseSpeed;
