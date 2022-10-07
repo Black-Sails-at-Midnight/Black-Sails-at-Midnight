@@ -76,8 +76,6 @@ public class Gun : Attack
         audioSource = GetComponent<AudioSource>();
 
         StartCoroutine(ShootHandler());
-
-        Debug.Log("Enabled: " + gameObject.name);
     }
 
     public void OnDisable() {
@@ -130,6 +128,7 @@ public class Gun : Attack
     private IEnumerator Reload()
     {
         animator.SetBool("Reload",true);
+        animator.SetBool("IsScopedIn", false);
         audioSource.PlayOneShot(reloadAudio);
 
         yield return new WaitForSeconds(gunSettings.reloadTime);

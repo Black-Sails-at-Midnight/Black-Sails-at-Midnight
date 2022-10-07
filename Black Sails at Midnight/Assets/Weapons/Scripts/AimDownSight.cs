@@ -37,7 +37,7 @@ public class AimDownSight : MonoBehaviour
         if (Input.GetButtonDown("Fire2"))
         {
             animator.StopPlayback();
-            animator.SetTrigger("ScopeIn");
+            animator.SetBool("IsScopedIn",true);
 
             if (aimReticle != null)
                 aimReticle.enabled = false;
@@ -48,7 +48,7 @@ public class AimDownSight : MonoBehaviour
         if (Input.GetButtonUp("Fire2"))
         {
             animator.StopPlayback();
-            animator.SetTrigger("ScopeOut");
+            animator.SetBool("IsScopedIn",false);
 
             if (aimReticle != null)
                 aimReticle.enabled = true;
