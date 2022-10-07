@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CannonBallAspects : MonoBehaviour
+public class AttackAttributes : MonoBehaviour
 {
-    [Header("Cannon Ball Properties")]
+    [Header("Attributes")]
     [SerializeField]
     float Damage;
 

@@ -8,7 +8,7 @@ public class ShipHealth : MonoBehaviour
     [SerializeField]
     public float maxHealth = 100;
     [SerializeField]
-    List<CannonBallAspects> StatusEffects;
+    List<AttackAttributes> StatusEffects;
 
     bool isCheckingStatusEffects = false;
 
@@ -38,8 +38,7 @@ public class ShipHealth : MonoBehaviour
         }
     }
 
-    // Interface Implementations
-    public void Hit(GameObject source, Attack attack)
+    public void Hit(Attack attack)
     {
         Health = -attack.attackSettings.damage * attack.attackSettings.damageMultiplier;
     }
@@ -49,8 +48,7 @@ public class ShipHealth : MonoBehaviour
         Health = -damage;
     }
 
-    // Public Methods
-    public void Heal(GameObject source, float amount)
+    public void Heal(float amount)
     {
         if ((Health + amount) > maxHealth)
             Health = maxHealth;
@@ -88,9 +86,9 @@ public class ShipHealth : MonoBehaviour
     }
 
 
-    public void AddStatusEffect(CannonBallAspects effect)
+    public void AddStatusEffect(AttackAttributes effect)
     {
-        if (effect is CannonBallAspects)
+        if (effect is AttackAttributes)
         {
             return;
         }

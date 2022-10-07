@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IncendiaryCannonBall : CannonBallAspects
+public class IncendiaryCannonBall : AttackAttributes
 {
         [Header("Incendiary Properties")]
         [SerializeField]
