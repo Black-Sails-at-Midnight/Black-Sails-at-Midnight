@@ -4,23 +4,20 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CannonBallProperties : MonoBehaviour
+public class CannonBallAspects : MonoBehaviour
 {
     [Header("Cannon Ball Properties")]
     [SerializeField]
     float Damage;
-    bool isDone = true;
 
+    bool isDone = true;
     public virtual void Effect(ShipHealth health)
     {
-        
+        return;
     }
 
-    public bool IsEffectDone()
+    public virtual bool IsEffectDone()
     {
         return isDone;
     }
 }
-
-
-

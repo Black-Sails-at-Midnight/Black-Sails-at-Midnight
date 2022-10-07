@@ -8,7 +8,7 @@ public class ShipHealth : MonoBehaviour
     [SerializeField]
     public float maxHealth = 100;
     [SerializeField]
-    List<CannonBallProperties> StatusEffects;
+    List<CannonBallAspects> StatusEffects;
 
     bool isCheckingStatusEffects = false;
 
@@ -87,4 +87,16 @@ public class ShipHealth : MonoBehaviour
         isCheckingStatusEffects = false;
     }
 
+
+    public void AddStatusEffect(CannonBallAspects effect)
+    {
+        if (effect is CannonBallAspects)
+        {
+            return;
+        }
+        else
+        {
+            StatusEffects.Add(effect); // Might not work as desired, due to obj destruction
+        }
+    }
 }
