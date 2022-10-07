@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e44f50168be594c9eda0d6a1eb7951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFlightTime: 30
+  maxFlightTime: 5
   hitEffect: {fileID: 0}
 --- !u!1001 &1984926113256745424
 PrefabInstance:

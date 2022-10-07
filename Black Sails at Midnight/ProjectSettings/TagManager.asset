@@ -5,17 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Projectile
-  - FriendlyShip
-  - Cannon Ball
-  - Weapon
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Phantom
+  - 
   - Water
   - UI
-  - Map UI
+  - 
   - 
   - 
   - 

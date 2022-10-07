@@ -16,13 +16,10 @@ public class AimDownSight : MonoBehaviour
     [SerializeField] 
     public float FOV = 60;
 
-    public bool scopedIn {get; private set;} = false;
-
     private Dictionary<string, float> defaultValues;
     private FirstPersonController FPController;
     private Camera FPCamera;
     private Animator animator;
-    private Gun gun;
 
     // Monobehaviour Methods
     public void Start() {
@@ -30,7 +27,6 @@ public class AimDownSight : MonoBehaviour
         animator = GetComponent<Animator>();
         FPCamera = Camera.main;
         FOV = FPCamera.fieldOfView;
-        gun = GetComponent<Gun>();
 
         defaultValues = new();
         defaultValues.Add("Sensitivity", FPController.m_MouseLook.XSensitivity);
@@ -38,14 +34,26 @@ public class AimDownSight : MonoBehaviour
 
     public void Update() 
     {
-        if (Input.GetButtonDown("Fire2") && gun.attackSettings.canAttack)
+        if (Input.GetButtonDown("Fire2"))
         {
-            ScopeIn();
+            animator.StopPlayback();
+            animator.SetTrigger("ScopeIn");
+
+            if (aimReticle != null)
+                aimReticle.enabled = false;
+
+            FPController.m_MouseLook.XSensitivity = FPController.m_MouseLook.YSensitivity = defaultValues["Sensitivity"] * sensitivityModifier;
         }
 
-        if (Input.GetButtonUp("Fire2") || (gun.attackSettings.canAttack == false && scopedIn))
+        if (Input.GetButtonUp("Fire2"))
         {
-            ScopeOut();
+            animator.StopPlayback();
+            animator.SetTrigger("ScopeOut");
+
+            if (aimReticle != null)
+                aimReticle.enabled = true;
+
+            FPController.m_MouseLook.XSensitivity = FPController.m_MouseLook.YSensitivity = defaultValues["Sensitivity"];
         }
 
         FPCamera.fieldOfView = FOV;
@@ -53,34 +61,5 @@ public class AimDownSight : MonoBehaviour
 
     // Public Methods
 
-    // Private Methods
-    private void ScopeIn()
-    {
-        if (scopedIn)
-            return;
-
-        animator.StopPlayback();
-        animator.SetTrigger("ScopeIn");
-
-        if (aimReticle != null)
-            aimReticle.enabled = false;
-
-        FPController.m_MouseLook.XSensitivity = FPController.m_MouseLook.YSensitivity = defaultValues["Sensitivity"] * sensitivityModifier;
-        scopedIn = true;
-    }
-
-    private void ScopeOut()
-    {
-        if (!scopedIn)
-            return;
-
-        animator.StopPlayback();
-        animator.SetTrigger("ScopeOut");
-
-        if (aimReticle != null)
-            aimReticle.enabled = true;
-
-        FPController.m_MouseLook.XSensitivity = FPController.m_MouseLook.YSensitivity = defaultValues["Sensitivity"];
-        scopedIn = false;
-    }
+    // Private Methods  
 }

@@ -18,8 +18,6 @@ public class WeaponManager : MonoBehaviour
     public Attack ActiveWeapon {get; private set;}
     public List<Attack> AllWeapons {get; private set;}
     
-    private bool weaponsActive = true;
-    
 
     // Monobehaviour Methods
     public void Start() 
@@ -57,9 +55,6 @@ public class WeaponManager : MonoBehaviour
     // Public Methods
     public void NextWeapon()
     {
-        if (IsWeaponScoped(ActiveWeapon))
-            return; 
-
         int activeIndex = GetWeaponIndex(ActiveWeapon);
 
         if (activeIndex + 1 > AllWeapons.Count - 1)
@@ -69,14 +64,11 @@ public class WeaponManager : MonoBehaviour
             ActiveWeapon = AllWeapons[activeIndex + 1];
         }
 
-        SetWeaponsActive();
+        EnableWeapons();
     }
 
     public void PreviousWeapon()
     {
-        if (IsWeaponScoped(ActiveWeapon))
-            return; 
-
         int activeIndex = GetWeaponIndex(ActiveWeapon);
 
         if (activeIndex - 1 < 0)
@@ -86,27 +78,7 @@ public class WeaponManager : MonoBehaviour
             ActiveWeapon = AllWeapons[activeIndex - 1];
         }
 
-        SetWeaponsActive();
-    }
-
-    public void ToggleWeaponRenderers(bool active)
-    {
-        foreach(Attack weapon in AllWeapons)
-        {
-            foreach (Renderer renderer in weapon.GetComponentsInChildren<Renderer>())
-            {
-                renderer.enabled = active;
-                ToggleWeaponFire(active);
-            }
-        }
-    }
-
-    public void ToggleWeaponFire(bool active)
-    {
-        foreach(Attack weapon in AllWeapons)
-        {
-            weapon.attackSettings.canAttack = active;
-        }
+        EnableWeapons();
     }
 
     // Private Methods
@@ -115,7 +87,7 @@ public class WeaponManager : MonoBehaviour
         return AllWeapons.IndexOf(weapon);
     }
 
-    private void SetWeaponsActive()
+    private void EnableWeapons()
     {
         foreach (Attack weapon in AllWeapons)
         {
@@ -124,15 +96,5 @@ public class WeaponManager : MonoBehaviour
             else
                 weapon.gameObject.SetActive(false);
         }
-    }
-    
-    private bool IsWeaponScoped(Attack attack)
-    {
-        AimDownSight ADS = attack.GetComponent<AimDownSight>();
-
-        if (ADS == null)
-            return false;
-
-        return ADS.scopedIn;
     }
 }

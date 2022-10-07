@@ -21,7 +21,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] public MouseLook m_MouseLook;
         [SerializeField] private bool m_UseFovKick;
         [SerializeField] private FOVKick m_FovKick = new FOVKick();
-        [SerializeField] public bool m_UseHeadBob;
+        [SerializeField] private bool m_UseHeadBob;
         [SerializeField] private CurveControlledBob m_HeadBob = new CurveControlledBob();
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
         [SerializeField] private float m_StepInterval;
@@ -34,16 +34,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_YRotation;
         private Vector2 m_Input;
         private Vector3 m_MoveDir = Vector3.zero;
-        public CharacterController m_CharacterController;
+        private CharacterController m_CharacterController;
         private CollisionFlags m_CollisionFlags;
         private bool m_PreviouslyGrounded;
-        public Vector3 m_OriginalCameraPosition;
+        private Vector3 m_OriginalCameraPosition;
         private float m_StepCycle;
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
-
-        public bool enableJumpSound = true;
 
         // Use this for initialization
         private void Start()
@@ -89,13 +87,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayLandingSound()
         {
-            if (enableJumpSound)
-            {
-                m_AudioSource.clip = m_LandSound;
-                m_AudioSource.Play(); 
-                m_NextStep = m_StepCycle + .5f;               
-            }
-            
+            m_AudioSource.clip = m_LandSound;
+            m_AudioSource.Play();
+            m_NextStep = m_StepCycle + .5f;
         }
 
 
@@ -143,11 +137,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayJumpSound()
         {
-            if (enableJumpSound)
-            {
-                m_AudioSource.clip = m_JumpSound;
-                m_AudioSource.Play();
-            }
+            m_AudioSource.clip = m_JumpSound;
+            m_AudioSource.Play();
         }
 
 
