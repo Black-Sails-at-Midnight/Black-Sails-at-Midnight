@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ChainShot : AttackAttributes
+public class ChainShot : CannonBallProperties
 {
         [Header("Chainshot Properties")]
         [SerializeField]
