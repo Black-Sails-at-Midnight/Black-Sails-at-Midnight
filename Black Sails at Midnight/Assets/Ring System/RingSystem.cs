@@ -264,7 +264,27 @@ public class RingSystem : MonoBehaviour
         }
 
         float segment = (Ring.Count - 1) / Ships.Count;
+
+        int closestPoint = 0;
+        float shortestDistance = Vector3.Distance(gameObject.transform.position, GetNextPosition(0));
+        for (int i = 0; i < Ring.Count - 1; i++)
+        {
+            float distance = Vector3.Distance(gameObject.transform.position, GetNextPosition(i));
+
+            if (distance < shortestDistance)
+            {
+                shortestDistance = distance;
+                closestPoint = i;
+            }
+        }
+        Ships[Ships.Count - 1].CurrentPosition = closestPoint;
+
         Ships.Sort(CompareShipLocation);
+
+        foreach(ShipNavigationAI ship in Ships)
+        {
+            Debug.Log(ship.CurrentPosition);
+        }
 
         float longestDistance = 0f;
         for (int i = 0; i < Ships.Count; i++)
@@ -296,11 +316,11 @@ public class RingSystem : MonoBehaviour
     {
         if(a.CurrentPosition > b.CurrentPosition)
         {
-            return -1;
+            return 1;
         }
         else if(a.CurrentPosition < b.CurrentPosition)
         {
-            return 1;
+            return -1;
         }
         else
         {

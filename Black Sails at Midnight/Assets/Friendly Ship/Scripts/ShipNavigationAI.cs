@@ -31,7 +31,8 @@ public class ShipNavigationAI : MonoBehaviour
     [SerializeField]
     public Direction direction;
 
-    private bool start = false;
+    [SerializeField]
+    public bool start = false;
     private bool isCheckingForRing = false;
 
     public float baseSpeed;
