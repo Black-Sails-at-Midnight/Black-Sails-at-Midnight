@@ -125,11 +125,12 @@ public class Gun : Attack
 
     private IEnumerator Reload()
     {
-        animator.SetTrigger("Reload");
-        audioSource.PlayOneShot(reloadAudio);
+        animator.SetBool("Reload",true);
+        animator.SetBool("IsScopedIn", false);
 
         yield return new WaitForSeconds(gunSettings.reloadTime);
-
+        animator.SetBool("Reload", false);
+        
         clip = gunSettings.clipSize;
         isReloading = false;
     }
