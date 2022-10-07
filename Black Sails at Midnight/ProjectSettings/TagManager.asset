@@ -8,6 +8,7 @@ TagManager:
   - FriendlyShip
   - Cannon Ball
   - Weapon
+  - Enemy
   layers:
   - Default
   - TransparentFX
