@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityStandardAssets._2D;
 
 public class SpecialEnemyNavigation : MonoBehaviour
 {
@@ -29,7 +28,6 @@ public class SpecialEnemyNavigation : MonoBehaviour
     NavMeshAgent agent;
     [SerializeField]
     Direction direction;
-    bool isCheckingForRing = false;
 
     void Start()
     {
@@ -42,7 +40,7 @@ public class SpecialEnemyNavigation : MonoBehaviour
         for (int i = 0; i < NumberOfCoordinates; i++)
         {
             float distance = Vector3.Distance(gameObject.transform.position, Ring.GetNextPosition(i));
-            if (target == null || distance < closestDistance)
+            if (target == Vector3.zero || distance < closestDistance)
             {
                 closestDistance = distance;
                 target = Ring.GetNextPosition(i);

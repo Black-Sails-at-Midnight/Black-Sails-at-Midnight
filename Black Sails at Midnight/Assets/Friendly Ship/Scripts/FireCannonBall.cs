@@ -17,6 +17,10 @@ public class FireCannonBall : MonoBehaviour
     [SerializeField]
     float FiringAngle = 30;
     [SerializeField]
+    int NumberOfCannonBalls = 1;
+    [SerializeField]
+    float Spread = 0f;
+    [SerializeField]
     List<GameObject> RightCannons;
     [SerializeField]
     List<GameObject> LeftCannons;
@@ -68,12 +72,20 @@ public class FireCannonBall : MonoBehaviour
         float timeSpent = 0;
         foreach (GameObject item in cannons)
         {
-            float timeDelay = Random.Range(0, 0.1f * TimeBetweenShots);
-            timeSpent += timeDelay;
-            GameObject instance = Instantiate(CannonBallType, item.transform.position, item.transform.rotation);
-            instance.GetComponent<Rigidbody>().AddForce((target.position - item.transform.position).normalized * CannonBallSpeed, ForceMode.Impulse);
-            Destroy(instance, 8f);
-            yield return new WaitForSeconds(timeDelay);
+            for (int i = 0; i < NumberOfCannonBalls; i++)
+            {
+                float timeDelay = Random.Range(0, 0.1f * TimeBetweenShots);
+                timeSpent += timeDelay;
+
+                Vector3 randomVector =
+                                Quaternion.AngleAxis(Random.Range(-Spread, Spread), Vector3.Cross((target.position - item.transform.position).normalized, Vector3.up)) * (target.position - item.transform.position).normalized +
+                                Quaternion.AngleAxis(Random.Range(-Spread, Spread), Vector3.Cross((target.position - item.transform.position).normalized, Vector3.right)) * (target.position - item.transform.position).normalized;
+
+                GameObject instance = Instantiate(CannonBallType, item.transform.position, item.transform.rotation);
+                instance.GetComponent<Rigidbody>().AddForce(randomVector.normalized * CannonBallSpeed, ForceMode.Impulse);
+                Destroy(instance, 8f);
+                yield return new WaitForSeconds(timeDelay);
+            }
         }
         yield return new WaitForSeconds(TimeBetweenShots - timeSpent);
         cannonsReady = true;

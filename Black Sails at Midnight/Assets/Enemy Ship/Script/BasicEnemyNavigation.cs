@@ -18,7 +18,6 @@ public class BasicEnemyNavigation : MonoBehaviour
     Vector3 destination;
     [SerializeField]
     NavMeshAgent agent;
-    bool isCheckingForRing = false;
 
     void Start()
     {
@@ -31,7 +30,7 @@ public class BasicEnemyNavigation : MonoBehaviour
         for (int i = 0; i < NumberOfCoordinates; i++)
         {
             float distance = Vector3.Distance(gameObject.transform.position, Ring.GetNextPosition(i));
-            if (target == null || distance < closestDistance)
+            if (target == Vector3.zero || distance < closestDistance)
             {
                 closestDistance = distance;
                 target = Ring.GetNextPosition(i);

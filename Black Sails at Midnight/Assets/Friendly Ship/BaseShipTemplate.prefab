@@ -747,8 +747,7 @@ GameObject:
   - component: {fileID: 64254688754150758}
   - component: {fileID: 5419154879821268968}
   - component: {fileID: 7416863273023718032}
-  - component: {fileID: 1636500477}
-  - component: {fileID: 1636500478}
+  - component: {fileID: -2808468967158043492}
   m_Layer: 0
   m_Name: BaseShipTemplate
   m_TagString: Untagged
@@ -859,13 +858,13 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 15
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 30
+  m_Acceleration: 16
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 5
   m_BaseOffset: 0
@@ -884,20 +883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lostContactTimer: 1
---- !u!135 &1636500477
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153108}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 50
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1636500478
+--- !u!114 &-2808468967158043492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -906,25 +892,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 153108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1d4da968704cd5488264cdb6bb22402, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bb99e107b92b5f4f825b85ff58df163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CannonBallType: {fileID: 5815674545810335273, guid: 038209526f04dd7419733a8c120c89eb, type: 3}
-  TimeBetweenShots: 1
-  CannonBallSpeed: 100
-  FiringAngle: 30
-  RightCannons:
-  - {fileID: 109095085}
-  - {fileID: 942817542}
-  - {fileID: 671439989}
-  - {fileID: 609428257}
-  - {fileID: 1792707295}
-  LeftCannons:
-  - {fileID: 196118210}
-  - {fileID: 572674614}
-  - {fileID: 341613410}
-  - {fileID: 1424591036}
-  - {fileID: 894449678}
+  RingNumber: 0
+  Ring: {fileID: 0}
+  CurrentPosition: 0
+  destination: {x: 0, y: 0, z: 0}
+  distanceToDestination: 50
+  agent: {fileID: 5419154879821268968}
+  direction: 0
+  start: 0
+  baseSpeed: 0
+  baseDistanceToDestination: 0
 --- !u!1 &154540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,9 +1582,11 @@ GameObject:
   m_Component:
   - component: {fileID: 535031591}
   - component: {fileID: 5021670036568663116}
+  - component: {fileID: 1791800719562387388}
+  - component: {fileID: 6855219122393304112}
   m_Layer: 0
   m_Name: Cannons
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1640,6 +1622,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RightCannons: {fileID: 1537780121}
   LeftCannons: {fileID: 1505079156}
+--- !u!114 &1791800719562387388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535031590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d4da968704cd5488264cdb6bb22402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CannonBallType: {fileID: 5815674545810335273, guid: 038209526f04dd7419733a8c120c89eb, type: 3}
+  TimeBetweenShots: 3
+  CannonBallSpeed: 100
+  FiringAngle: 30
+  NumberOfCannonBalls: 1
+  Spread: 0
+  RightCannons:
+  - {fileID: 109095085}
+  - {fileID: 942817542}
+  - {fileID: 671439989}
+  - {fileID: 609428257}
+  - {fileID: 1792707295}
+  LeftCannons:
+  - {fileID: 196118210}
+  - {fileID: 572674614}
+  - {fileID: 341613410}
+  - {fileID: 1424591036}
+  - {fileID: 894449678}
+--- !u!135 &6855219122393304112
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535031590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 50
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &572674614
 GameObject:
   m_ObjectHideFlags: 0

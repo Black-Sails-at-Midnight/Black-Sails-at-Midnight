@@ -7,6 +7,9 @@ TagManager:
   - Projectile
   - FriendlyShip
   - EnemyCrew
+  - Cannon Ball
+  - Weapon
+  - Enemy
   layers:
   - Default
   - TransparentFX
