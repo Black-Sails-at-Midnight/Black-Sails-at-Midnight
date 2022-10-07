@@ -200,6 +200,7 @@ public class RingSystem : MonoBehaviour
         if (isSyncing)
         {
             ship.ResetAgentSpeed();
+            ship.AccurateNavigation(false);
         }
         switch (ship.direction)
         {
@@ -291,6 +292,7 @@ public class RingSystem : MonoBehaviour
         {
             Ships[i].SetDestination(GetNextPosition(i * (int)segment));
             Ships[i].CurrentPosition =  i * (int)segment;
+            Ships[i].AccurateNavigation(true);
 
             while(Ships[i].agent.pathPending)
             {

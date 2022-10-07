@@ -15,7 +15,7 @@ public class PurchaseShip : PurchaseOption
 
         ShipNavigationAI shipNav = ship.GetComponent<ShipNavigationAI>();
 
-        shipNav.RingNumber = 1;
+        shipNav.RingNumber = 3;
         shipNav.StartNavigation();
 
         Debug.Log("Ship Spawned");
