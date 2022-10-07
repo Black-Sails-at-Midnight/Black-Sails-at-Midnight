@@ -10,7 +10,7 @@ public class IncendiaryCannonBall : CannonBallProperties
         [SerializeField]
         float ChanceToExtinguish;
 
-    public override void Effect()
+    public override void Effect(ShipHealth healths)
     {
         
     }

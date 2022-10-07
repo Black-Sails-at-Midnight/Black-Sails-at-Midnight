@@ -9,9 +9,9 @@ public class CannonBallProperties : MonoBehaviour
     [Header("Cannon Ball Properties")]
     [SerializeField]
     float Damage;
-    bool isDone;
+    bool isDone = true;
 
-    public virtual void Effect()
+    public virtual void Effect(ShipHealth health)
     {
         
     }
