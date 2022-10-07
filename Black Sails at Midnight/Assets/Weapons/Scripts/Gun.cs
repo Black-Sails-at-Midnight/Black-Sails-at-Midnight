@@ -104,8 +104,6 @@ public class Gun : Attack
 
                 ParticleSystem _muzzleFlash = Instantiate(muzzleFlash, transform.position + ((transform.forward.normalized) * muzzleLength), transform.rotation);
                 Destroy(_muzzleFlash.gameObject, 2.5f);
-                
-                animator.SetTrigger("Fired");
 
                 audioSource.pitch = Random.Range(lowerShotPitchRange, upperShotPitchRange);
                 audioSource.PlayOneShot(shootAudio, 1);
@@ -127,11 +125,11 @@ public class Gun : Attack
 
     private IEnumerator Reload()
     {
-        animator.SetBool("Reload",true);
+        animator.SetTrigger("Reload");
         audioSource.PlayOneShot(reloadAudio);
 
         yield return new WaitForSeconds(gunSettings.reloadTime);
-        animator.SetBool("Reload", false);
+
         clip = gunSettings.clipSize;
         isReloading = false;
     }
