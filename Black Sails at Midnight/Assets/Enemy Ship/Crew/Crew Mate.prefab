@@ -1331,6 +1331,8 @@ GameObject:
   - component: {fileID: 95613759163693166}
   - component: {fileID: 1717154718}
   - component: {fileID: 1717154719}
+  - component: {fileID: 7993593741381185535}
+  - component: {fileID: 6004879456886499875}
   m_Layer: 7
   m_Name: Crew Mate
   m_TagString: EnemyCrew
@@ -1412,6 +1414,34 @@ MonoBehaviour:
   agent: {fileID: 0}
   target: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
+--- !u!136 &7993593741381185535
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704086938168578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6004879456886499875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704086938168578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93301045802cd194d8e2624bd0d5c5af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  Interval: 1
 --- !u!1 &1721893322228998
 GameObject:
   m_ObjectHideFlags: 0
