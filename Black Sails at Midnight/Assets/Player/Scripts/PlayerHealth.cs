@@ -52,7 +52,7 @@ public class PlayerHealth : MonoBehaviour, IAttackable
     // Private Methods
     private void HealthUpdate()
     {
-        if (Health < 0)
+        if (Health <= 0)
         {
             deathHandler.Die(this.gameObject);
         }
