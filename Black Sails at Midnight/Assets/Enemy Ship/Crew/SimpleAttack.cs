@@ -5,7 +5,7 @@ using UnityEngine;
 public class SimpleAttack : MonoBehaviour
 {
     [SerializeField]
-    float damage;
+    float damage = 10;
 
     [SerializeField]
     float Interval = 1f;
@@ -16,7 +16,6 @@ public class SimpleAttack : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Hello!");
             if (!isAttacking)
             {
                 StartCoroutine(AttackPlayer(other.gameObject));
@@ -27,7 +26,7 @@ public class SimpleAttack : MonoBehaviour
     private IEnumerator AttackPlayer(GameObject other)
     {
         isAttacking = true;
-        other.GetComponent<PlayerHealth>().Hit(damage);
+        other.GetComponentInParent<PlayerHealth>().Hit(damage);
         yield return new WaitForSeconds(Interval);
         isAttacking = false;
     }
