@@ -16,8 +16,8 @@ public class PlayerHealth : MonoBehaviour, IAttackable
         }
     }
 
-
-    private float currentHealth;
+    [SerializeField]
+    float currentHealth;
     private PlayerDeathHandler deathHandler;
 
 
@@ -31,12 +31,12 @@ public class PlayerHealth : MonoBehaviour, IAttackable
     // Interface Implementations
     public void Hit(GameObject source, Attack attack)
     {
-        Health =- attack.attackSettings.damage * attack.attackSettings.damageMultiplier;
+        Health -= attack.attackSettings.damage * attack.attackSettings.damageMultiplier;
     }
 
     public void Hit(float damage)
     {
-        Health =- damage;
+        Health -= damage;
     }
 
     // Public Methods
