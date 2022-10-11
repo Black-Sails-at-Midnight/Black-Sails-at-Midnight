@@ -27,7 +27,7 @@ public class PlayerRespawnHandler : MonoBehaviour
 
     // Monobehaviour Methods
     private void Start() {
-        weaponManager = ObjectToLauch.GetComponentInChildren<WeaponManager>(); 
+        weaponManager = ObjectToLauch.GetComponentInChildren<WeaponManager>();
     }
 
     private void Update()
