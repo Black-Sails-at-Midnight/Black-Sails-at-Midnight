@@ -138,11 +138,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToLauch: {fileID: 8078942694423808659}
   RespawnPoint: {fileID: 0}
-  DistaceToLandingPoint: 1
+  DistaceToLandingPoint: 5
   Angle: 45
   inFlightLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!114 &6172338625136564154
 MonoBehaviour:
   m_ObjectHideFlags: 0
