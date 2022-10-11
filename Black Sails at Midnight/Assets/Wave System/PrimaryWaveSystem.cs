@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveSystem : MonoBehaviour
+public class PrimaryWaveSystem : MonoBehaviour
 {
     [Serializable]
     public struct EnemySpawn
