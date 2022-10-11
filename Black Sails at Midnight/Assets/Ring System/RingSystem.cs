@@ -282,11 +282,6 @@ public class RingSystem : MonoBehaviour
 
         Ships.Sort(CompareShipLocation);
 
-        foreach(ShipNavigationAI ship in Ships)
-        {
-            Debug.Log(ship.CurrentPosition);
-        }
-
         float longestDistance = 0f;
         for (int i = 0; i < Ships.Count; i++)
         {

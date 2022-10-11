@@ -30,8 +30,6 @@ public class PlayerLookBehaviour : MonoBehaviour
     {
         Vector3 targetDirection = (position - FPCamera.transform.position).normalized;
 
-        Debug.Log("Looing at: " + position);
-
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection, FPCamera.transform.up);
         FPController.m_MouseLook.m_CharacterTargetRot = new Quaternion(0, targetRotation.y, 0, targetRotation.w);
         FPController.m_MouseLook.m_CameraTargetRot = new Quaternion(targetRotation.x, 0, 0, targetRotation.w);

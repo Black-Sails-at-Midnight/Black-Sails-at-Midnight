@@ -17,8 +17,7 @@ public class PurchaseShip : PurchaseOption
 
         shipNav.RingNumber = 3;
         shipNav.StartNavigation();
-
-        Debug.Log("Ship Spawned");
+        
         return true;
     }
 }
