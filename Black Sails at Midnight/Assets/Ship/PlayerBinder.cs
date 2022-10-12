@@ -8,7 +8,9 @@ public class PlayerBinder : MonoBehaviour
 {
     [SerializeField]
     public float lostContactTimer = 1f;
-    public GameObject parentedPlayer {get; private set;}
+
+    [SerializeField]
+    public GameObject parentedPlayer;
 
     private float timeOfLastContact;
 

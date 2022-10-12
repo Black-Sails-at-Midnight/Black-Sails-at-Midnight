@@ -58,7 +58,7 @@ public class Gun : Attack
     [SerializeField]
     public AudioClip reloadAudio;
 
-    private int clip;
+    public int clip {get; private set;}
     private bool isReloading = false;
     
     private Animator animator;
@@ -130,7 +130,7 @@ public class Gun : Attack
 
         yield return new WaitForSeconds(gunSettings.reloadTime);
         animator.SetBool("Reload", false);
-        
+
         clip = gunSettings.clipSize;
         isReloading = false;
     }
