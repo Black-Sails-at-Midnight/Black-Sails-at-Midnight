@@ -18,6 +18,9 @@ public class RingsManager : MonoBehaviour
     int NumberOfRings = 6;
 
     [SerializeField]
+    public bool isDoneGenerating;
+
+    [SerializeField]
     List<GameObject> Rings;
 
     [SerializeField]
@@ -38,6 +41,9 @@ public class RingsManager : MonoBehaviour
             temp.GetComponentInChildren<RingMarkerHandler>().Radius = temp.Radius;
             Rings.Add(ring);
         }
+
+        GameObject.Find("WaveManager").GetComponent<PrimaryWaveSystem>().enabled = true;
+        GameObject.Find("WaveManager").GetComponent<FreeFormWaveSystem>().enabled = true;
     }
 
     public RingSystem GetRing(int number)
@@ -50,5 +56,10 @@ public class RingsManager : MonoBehaviour
         {
             return Rings[number].GetComponent<RingSystem>();
         }
+    }
+
+    public int GetNumberOfRings()
+    {
+        return Rings.Count;
     }
 }
