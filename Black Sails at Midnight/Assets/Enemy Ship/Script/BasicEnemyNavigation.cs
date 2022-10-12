@@ -19,10 +19,30 @@ public class BasicEnemyNavigation : MonoBehaviour
     [SerializeField]
     NavMeshAgent agent;
 
-    void Start()
+    [SerializeField]
+    bool start = false;
+
+    private void Start() {
+        agent = GetComponent<NavMeshAgent>();
+    }
+
+    void Update()
+    {
+        if (Ring == null && start)
+        {
+            StartCoroutine(FindTarget());
+        }
+    }
+
+    public void StartNavigation()
+    {
+        start = true;
+    }
+
+    public IEnumerator FindTarget()
     {
         Ring = GameObject.Find("Rings").GetComponent<RingsManager>().GetRing(RingNumber);
-        NumberOfCoordinates = Ring.GetNumberOfCoordinates() - 1;
+        /*NumberOfCoordinates = Ring.GetNumberOfCoordinates() - 1;
 
         Vector3 target = Vector3.zero;
         float closestDistance = Mathf.Infinity;
@@ -37,7 +57,7 @@ public class BasicEnemyNavigation : MonoBehaviour
             }
         }
 
-        agent.destination = target;
-
+        agent.destination = target;*/
+        yield return new WaitForEndOfFrame();
     }
 }

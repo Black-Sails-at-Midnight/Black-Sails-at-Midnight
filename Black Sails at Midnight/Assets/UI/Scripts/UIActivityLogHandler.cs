@@ -16,7 +16,8 @@ public class UIActivityLogHandler : MonoBehaviour
     [SerializeField]
     public int maxRetainedMessages = 50;
     
-    private List<Message> messageHistory;
+    [SerializeField]
+    public List<Message> messageHistory;
 
     public struct Message
     {

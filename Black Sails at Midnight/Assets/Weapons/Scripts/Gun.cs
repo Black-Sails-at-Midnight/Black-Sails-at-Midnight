@@ -127,7 +127,7 @@ public class Gun : Attack
 
     private IEnumerator Reload()
     {
-        animator.SetBool("Reload",true);
+        animator.SetBool("Reload", true);
         animator.SetBool("IsScopedIn", false);
 
         yield return new WaitForSeconds(gunSettings.reloadTime);

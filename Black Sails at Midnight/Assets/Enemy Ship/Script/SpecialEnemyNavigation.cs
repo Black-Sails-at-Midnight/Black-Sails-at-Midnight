@@ -25,38 +25,30 @@ public class SpecialEnemyNavigation : MonoBehaviour
     [SerializeField]
     Vector3 destination;
     [SerializeField]
+    float distanceToTarget = 10f;
+    [SerializeField]
     NavMeshAgent agent;
     [SerializeField]
     Direction direction;
+    
+    [SerializeField]
+    bool start = false;
 
-    void Start()
-    {
-        Ring = GameObject.Find("Rings").GetComponent<RingsManager>().GetRing(RingNumber);
-        NumberOfCoordinates = Ring.GetNumberOfCoordinates() - 1;
-
-        Vector3 target = Vector3.zero;
-        float closestDistance = Mathf.Infinity;
-
-        for (int i = 0; i < NumberOfCoordinates; i++)
-        {
-            float distance = Vector3.Distance(gameObject.transform.position, Ring.GetNextPosition(i));
-            if (target == Vector3.zero || distance < closestDistance)
-            {
-                closestDistance = distance;
-                target = Ring.GetNextPosition(i);
-            }
-        }
-
-        agent.destination = target;
-
+    private void Start() {
+        agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
         if (Ring == null)
         {
+            if (start)
+            {
+                FindTarget();
+            }
             return;
         }
+
         switch (direction)
         {
             case Direction.ClockWise:
@@ -71,9 +63,14 @@ public class SpecialEnemyNavigation : MonoBehaviour
         }
     }
 
+    public void StartNavigation()
+    {
+        start = true;
+    }
+
     private void ClockWise()
     {
-        if (Vector3.Distance(agent.transform.position, destination) < 1f)
+        if (Vector3.Distance(agent.transform.position, destination) < distanceToTarget)
         {
             if (NumberOfCoordinates <= CurrentPosition)
             {
@@ -91,7 +88,7 @@ public class SpecialEnemyNavigation : MonoBehaviour
 
     private void CounterClockWise()
     {
-        if (Vector3.Distance(agent.transform.position, destination) < 1f)
+        if (Vector3.Distance(agent.transform.position, destination) < distanceToTarget)
         {
             if (NumberOfCoordinates >= 0)
             {
@@ -103,12 +100,16 @@ public class SpecialEnemyNavigation : MonoBehaviour
             }
 
             destination = Ring.GetNextPosition(CurrentPosition);
+            
             agent.SetDestination(destination);
         }
     }
 
-    public void ForceWaypointUpdate()
+    public void FindTarget()
     {
-        ClockWise();
+        Ring = GameObject.Find("Rings").GetComponent<RingsManager>().GetRing(RingNumber);
+        
+        destination = Ring.GetNextPosition(CurrentPosition);
+        agent.destination = destination;
     }
 }

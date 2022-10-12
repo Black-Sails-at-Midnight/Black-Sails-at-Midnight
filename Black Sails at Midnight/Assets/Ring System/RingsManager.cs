@@ -46,15 +46,16 @@ public class RingsManager : MonoBehaviour
         GameObject.Find("WaveManager").GetComponent<FreeFormWaveSystem>().enabled = true;
     }
 
-    public RingSystem GetRing(int number)
+    public RingSystem GetRing(int index)
     {
-        if (number > Rings.Count || number < 0)
+        Debug.Log(index);
+        if (index > Rings.Count || index < 0)
         {
             return null;
         }
         else
         {
-            return Rings[number].GetComponent<RingSystem>();
+            return Rings[index].GetComponent<RingSystem>();
         }
     }
 

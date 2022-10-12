@@ -59,10 +59,10 @@ public class PrimaryWaveSystem : MonoBehaviour
     int EnemySpawnID;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        GameObject temp = GameObject.Find("Rings");
-        RingSystem = temp.GetComponent<RingsManager>().GetRing(temp.GetComponent<RingsManager>().GetNumberOfRings() - 1);
+        RingsManager temp = FindObjectOfType<RingsManager>();
+        RingSystem = temp.GetComponent<RingsManager>().GetRing(temp.GetNumberOfRings() - 1);
     }
 
     // Update is called once per frame
@@ -109,7 +109,9 @@ public class PrimaryWaveSystem : MonoBehaviour
             if (enemyShip.name != "Basic Enemy")
             {
                 enemyShip.GetComponent<SpecialEnemyNavigation>().CurrentPosition = randomCoordinate;
-                enemyShip.GetComponent<SpecialEnemyNavigation>().ForceWaypointUpdate();
+                enemyShip.GetComponent<SpecialEnemyNavigation>().StartNavigation();
+            } else {
+                enemyShip.GetComponent<BasicEnemyNavigation>().StartNavigation();
             }
         }
 
