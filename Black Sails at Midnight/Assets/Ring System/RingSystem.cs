@@ -329,6 +329,27 @@ public class RingSystem : MonoBehaviour
     {
         return (value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow;
     }
+
+    public int GetClosestPoint(Vector3 other)
+    {
+        int closestPoint = 0;
+        float currentClosestDistance = Mathf.Infinity;
+
+        for (int i = 0; i < Ring.Count; i++)
+        {
+            if(Vector3.Distance(this.GetNextPosition(i),other) < currentClosestDistance)
+            {
+                closestPoint = i;
+            }
+        }
+
+        if (closestPoint == 0)
+        {
+            closestPoint = Ring.Count - 1;
+        }
+
+        return closestPoint--;
+    }
 }
 
 
