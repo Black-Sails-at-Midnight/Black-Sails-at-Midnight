@@ -40,6 +40,9 @@ public class PrimaryWaveSystem : MonoBehaviour
     int OuterMostRingNumber;
 
     [SerializeField]
+    int numberOfPositions;
+
+    [SerializeField]
     List<Wave> Waves;
 
     [SerializeField]
@@ -59,7 +62,7 @@ public class PrimaryWaveSystem : MonoBehaviour
     void Start()
     {
         GameObject temp = GameObject.Find("Rings");
-        temp.GetComponent<RingsManager>().GetRing(temp.GetComponent<RingsManager>().GetNumberOfRings() - 1);
+        RingSystem = temp.GetComponent<RingsManager>().GetRing(temp.GetComponent<RingsManager>().GetNumberOfRings() - 1);
     }
 
     // Update is called once per frame
