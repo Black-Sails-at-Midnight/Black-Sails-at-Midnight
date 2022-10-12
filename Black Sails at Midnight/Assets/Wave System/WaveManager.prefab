@@ -50,32 +50,39 @@ MonoBehaviour:
   Waves:
   - enemiesInWave:
     - prefab: {fileID: 3578835763885621159, guid: 25ee7596139f15e4ab54e28b76457dcc, type: 3}
-      numberOfEnemies: 1
+      Count: 2
     timeInSecondsBetweenSpawns: 5
+    TimeUntilNextWave: 10
   - enemiesInWave:
     - prefab: {fileID: 3578835763885621159, guid: 25ee7596139f15e4ab54e28b76457dcc, type: 3}
-      numberOfEnemies: 2
+      Count: 0
     timeInSecondsBetweenSpawns: 2
+    TimeUntilNextWave: 10
   - enemiesInWave:
     - prefab: {fileID: 3578835763885621159, guid: 25ee7596139f15e4ab54e28b76457dcc, type: 3}
-      numberOfEnemies: 4
+      Count: 4
     timeInSecondsBetweenSpawns: 2
+    TimeUntilNextWave: 10
   - enemiesInWave:
     - prefab: {fileID: 1423143178654081075, guid: eefa2928d42345f45b9a0c26ec07acd0, type: 3}
-      numberOfEnemies: 2
+      Count: 2
     timeInSecondsBetweenSpawns: 2
+    TimeUntilNextWave: 10
   - enemiesInWave:
     - prefab: {fileID: 1423143178654081075, guid: eefa2928d42345f45b9a0c26ec07acd0, type: 3}
-      numberOfEnemies: 2
+      Count: 2
     - prefab: {fileID: 3578835763885621159, guid: 25ee7596139f15e4ab54e28b76457dcc, type: 3}
-      numberOfEnemies: 2
+      Count: 2
     timeInSecondsBetweenSpawns: 2
+    TimeUntilNextWave: 10
   - enemiesInWave:
     - prefab: {fileID: 1423143178654081075, guid: eefa2928d42345f45b9a0c26ec07acd0, type: 3}
-      numberOfEnemies: 4
+      Count: 4
     - prefab: {fileID: 3578835763885621159, guid: 25ee7596139f15e4ab54e28b76457dcc, type: 3}
-      numberOfEnemies: 4
+      Count: 4
     timeInSecondsBetweenSpawns: 2
+    TimeUntilNextWave: 10
+  currentWave: 0
   isDone: 0
   waveInProgress: 0
 --- !u!114 &6530989966829854247
