@@ -913,6 +913,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6042696794335547728, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: BSE
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7415827045766221562, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -934,7 +938,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 716754706882819738, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
   m_PrefabInstance: {fileID: 1887687424006723241}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1630829505
+--- !u!114 &2572341374818892144
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -943,12 +947,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1423143178654081075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf95afcd03ca5244898a904cad972be, type: 3}
+  m_Script: {fileID: 11500000, guid: 16954dd826bd5e344bee82da28b1e38a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  target: {fileID: 0}
+  RingNumber: 0
+  Ring: {fileID: 0}
+  CurrentPosition: 0
   destination: {x: 0, y: 0, z: 0}
+  agent: {fileID: 0}
+  direction: 0
 --- !u!4 &2577083043146746543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4175341437490387974, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
