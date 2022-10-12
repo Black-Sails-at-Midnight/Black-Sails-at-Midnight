@@ -40,12 +40,12 @@ public class ShipHealth : MonoBehaviour
 
     public void Hit(Attack attack)
     {
-        Health = -attack.attackSettings.damage * attack.attackSettings.damageMultiplier;
+        Health -= attack.attackSettings.damage * attack.attackSettings.damageMultiplier;
     }
 
     public void Hit(float damage)
     {
-        Health = -damage;
+        Health -= damage;
     }
 
     public void Heal(float amount)
