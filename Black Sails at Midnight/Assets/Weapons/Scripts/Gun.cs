@@ -91,6 +91,8 @@ public class Gun : Attack
         {
             if (Input.GetButton("Fire1") && clip > 0 && !isReloading && attackSettings.canAttack)
             {
+                animator.SetTrigger("Fired");
+
                 for (int i = 0; i < gunSettings.palletsPerShot; i++)
                 {
                     Vector3 randomVector = 
