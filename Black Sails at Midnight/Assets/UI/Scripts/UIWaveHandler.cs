@@ -8,12 +8,16 @@ public class UIWaveHandler : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI waveCountLabel;
 
-    [SerializeField]
-    int waveCount = 0;
 
-    // Update is called once per frame
+    private PrimaryWaveSystem waveSystem;
+
+    void Start() 
+    {
+        waveSystem = FindObjectOfType<PrimaryWaveSystem>();
+    }
+
     void Update()
     {
-        waveCountLabel.text = waveCount.ToString();
+        waveCountLabel.text = waveSystem.currentWave.ToString();
     }
 }

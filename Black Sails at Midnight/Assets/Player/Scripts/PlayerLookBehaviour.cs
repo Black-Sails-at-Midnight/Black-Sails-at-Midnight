@@ -11,7 +11,7 @@ public class PlayerLookBehaviour : MonoBehaviour
     // Monobahaviour Methods
     public void Start() {
         FPController = GetComponentInChildren<FirstPersonController>();
-        FPCamera = FPController.GetComponentInChildren<Camera>();
+        FPCamera = Camera.main;
     }
 
     // Public Methods
@@ -30,7 +30,7 @@ public class PlayerLookBehaviour : MonoBehaviour
     {
         Vector3 targetDirection = (position - FPCamera.transform.position).normalized;
 
-        Quaternion targetRotation = Quaternion.LookRotation(targetDirection, FPCamera.transform.up);
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection, FPController.transform.up);
         FPController.m_MouseLook.m_CharacterTargetRot = new Quaternion(0, targetRotation.y, 0, targetRotation.w);
         FPController.m_MouseLook.m_CameraTargetRot = new Quaternion(targetRotation.x, 0, 0, targetRotation.w);
     }
