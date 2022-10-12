@@ -40,6 +40,9 @@ public class PrimaryWaveSystem : MonoBehaviour
     int OuterMostRingNumber;
 
     [SerializeField]
+    int numberOfPositions;
+
+    [SerializeField]
     List<Wave> Waves;
 
     [SerializeField]
@@ -59,7 +62,7 @@ public class PrimaryWaveSystem : MonoBehaviour
     void Start()
     {
         GameObject temp = GameObject.Find("Rings");
-        temp.GetComponent<RingsManager>().GetRing(temp.GetComponent<RingsManager>().GetNumberOfRings() - 1);
+        RingSystem = temp.GetComponent<RingsManager>().GetRing(temp.GetComponent<RingsManager>().GetNumberOfRings() - 1);
     }
 
     // Update is called once per frame
@@ -97,12 +100,15 @@ public class PrimaryWaveSystem : MonoBehaviour
         EnemySpawn spawn = Waves[currentWave].GetEnemyData()[EnemySpawnID];
         for (int i = 0; i < spawn.GetNumberOfEnemies(); i++)
         {
-            int nearestCoordiante = RingSystem.GetClosestPoint(this.transform.position);
-            GameObject enemyShip = Instantiate(spawn.GetShipType(), RingSystem.GetNextPosition(nearestCoordiante), Quaternion.identity);
+            int randomCoordinate = UnityEngine.Random.Range(0, RingSystem.GetNumberOfCoordinates() - 1);
+
+            Vector3 Pos =  RingSystem.GetNextPosition(randomCoordinate);
+
+            GameObject enemyShip = Instantiate(spawn.GetShipType(), RingSystem.GetNextPosition(randomCoordinate), Quaternion.identity);
 
             if (enemyShip.name != "Basic Enemy")
             {
-                enemyShip.GetComponent<SpecialEnemyNavigation>().CurrentPosition = nearestCoordiante;
+                enemyShip.GetComponent<SpecialEnemyNavigation>().CurrentPosition = randomCoordinate;
                 enemyShip.GetComponent<SpecialEnemyNavigation>().ForceWaypointUpdate();
             }
         }
