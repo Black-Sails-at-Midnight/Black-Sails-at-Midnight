@@ -18,7 +18,7 @@ public class SpecialEnemyNavigation : MonoBehaviour
     [SerializeField]
     RingSystem Ring;
     [SerializeField]
-    int CurrentPosition = 0;
+    public int CurrentPosition = 0;
     int NumberOfCoordinates = 0;
 
     [Header("Navigation Data")]
@@ -105,5 +105,10 @@ public class SpecialEnemyNavigation : MonoBehaviour
             destination = Ring.GetNextPosition(CurrentPosition);
             agent.SetDestination(destination);
         }
+    }
+
+    public void ForceWaypointUpdate()
+    {
+        ClockWise();
     }
 }
