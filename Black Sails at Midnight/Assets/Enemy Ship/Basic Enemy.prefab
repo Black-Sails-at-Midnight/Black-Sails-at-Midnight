@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1087043274296047499, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_AgentTypeID
+      value: -334000983
+      objectReference: {fileID: 0}
     - target: {fileID: 5142953837712348911, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_RootOrder
       value: 0
