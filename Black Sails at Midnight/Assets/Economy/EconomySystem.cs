@@ -8,7 +8,7 @@ public class EconomySystem : MonoBehaviour
     [SerializeField]
     public int StartingGold = 10;
     [SerializeField]
-    private int Gold {get; set;}
+    public int Gold {get; private set;}
 
 
     private void Start()
