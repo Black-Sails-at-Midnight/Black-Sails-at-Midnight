@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1824231225561266715}
   - component: {fileID: 5108454926778829640}
   - component: {fileID: 6253459489801789696}
+  - component: {fileID: 6042696794335547728}
   m_Layer: 0
   m_Name: Enemy Ship Base
   m_TagString: Enemy
@@ -151,6 +152,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RightCannons: {fileID: 7415827045766221562}
   LeftCannons: {fileID: 3773326919270511556}
+--- !u!114 &6042696794335547728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716754706882819738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fed25c46904eb43871f156fd4cf487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BSE: 1
 --- !u!1 &3773326919270511556
 GameObject:
   m_ObjectHideFlags: 0
