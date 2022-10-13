@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4923419617075830637}
   - component: {fileID: 1824231225561266715}
   - component: {fileID: 6042696794335547728}
+  - component: {fileID: 6488669877917629186}
   m_Layer: 0
   m_Name: Enemy Ship Base
   m_TagString: Enemy
@@ -130,6 +131,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BSE: 1
+--- !u!114 &6488669877917629186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716754706882819738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36bbccaae41fa4c449fe3d389e1250af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  StatusEffects: []
 --- !u!1 &3773326919270511556
 GameObject:
   m_ObjectHideFlags: 0

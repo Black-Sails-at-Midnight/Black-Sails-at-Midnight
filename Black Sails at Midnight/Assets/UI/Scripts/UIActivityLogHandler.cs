@@ -28,7 +28,7 @@ public class UIActivityLogHandler : MonoBehaviour
 
     void Start()
     {
-        messageHistory = new();
+       
 
         timestampField.text = "";
         messageField.text = "";
@@ -48,6 +48,11 @@ public class UIActivityLogHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (messageHistory == null)
+        {
+            messageHistory = new List<Message>();
+        }
+
         if (messageHistory.Count == 0)
             return;
 

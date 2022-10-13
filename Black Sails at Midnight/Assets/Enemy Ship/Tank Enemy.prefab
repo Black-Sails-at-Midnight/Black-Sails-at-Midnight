@@ -883,6 +883,10 @@ PrefabInstance:
       propertyPath: BSE
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6488669877917629186, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 7415827045766221562, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_Layer
       value: 8
