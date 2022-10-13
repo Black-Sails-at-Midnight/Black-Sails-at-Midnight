@@ -385,6 +385,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 134070, guid: 0d71d30c9fed80c44b9d25ec8f50c8f8, type: 3}
+      propertyPath: m_TagString
+      value: Ship
+      objectReference: {fileID: 0}
     - target: {fileID: 136198, guid: 0d71d30c9fed80c44b9d25ec8f50c8f8, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -531,7 +535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 64563109104328330, guid: 0d71d30c9fed80c44b9d25ec8f50c8f8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8596378618742256717, guid: 0d71d30c9fed80c44b9d25ec8f50c8f8, type: 3}
       propertyPath: m_Layer
@@ -628,6 +632,19 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 548fb8bef08ce4e4588c64c4262a289a, type: 2}
   m_BuildHeightMesh: 0
+--- !u!135 &774261846482408131
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572825581532156018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10.734196
+  m_Center: {x: 0, y: 6, z: 0}
 --- !u!1 &572825581532162758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 143618, guid: 0d71d30c9fed80c44b9d25ec8f50c8f8, type: 3}
@@ -942,27 +959,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 716754706882819738, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
   m_PrefabInstance: {fileID: 1887687424006723241}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2572341374818892144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423143178654081075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16954dd826bd5e344bee82da28b1e38a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RingNumber: 0
-  Ring: {fileID: 0}
-  CurrentPosition: 0
-  destination: {x: 0, y: 0, z: 0}
-  agent: {fileID: 0}
-  direction: 0
-  agent: {fileID: 1524360364320366882}
-  target: {fileID: 0}
-  destination: {x: 0, y: 0, z: 0}
 --- !u!64 &1346129302
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -991,11 +987,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lostContactTimer: 1
   parentedPlayer: {fileID: 0}
---- !u!195 &1524360364320366882 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 1087043274296047499, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
-  m_PrefabInstance: {fileID: 1887687424006723241}
+--- !u!114 &2572341374818892144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423143178654081075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16954dd826bd5e344bee82da28b1e38a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RingNumber: 0
+  Ring: {fileID: 0}
+  CurrentPosition: 0
+  destination: {x: 0, y: 0, z: 0}
+  distanceToTarget: 10
+  agent: {fileID: 0}
+  direction: 0
+  start: 0
 --- !u!4 &2577083043146746543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4175341437490387974, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}

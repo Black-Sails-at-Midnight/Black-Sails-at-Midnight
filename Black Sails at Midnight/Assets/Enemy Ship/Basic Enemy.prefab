@@ -194,6 +194,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Boat_Medium_01_Hull_Attachments
       objectReference: {fileID: 0}
+    - target: {fileID: 183578, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+      propertyPath: m_TagString
+      value: Ship
+      objectReference: {fileID: 0}
     - target: {fileID: 404466, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -260,6 +264,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+--- !u!1 &6831252872575279147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 183578, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+  m_PrefabInstance: {fileID: 6831252872575167793}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &4733718174501672480
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831252872575279147}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 7.1443853
+  m_Center: {x: 0, y: 6, z: 0}
+--- !u!114 &6449336340200655862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831252872575279147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36bbccaae41fa4c449fe3d389e1250af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  StatusEffects: []
 --- !u!1001 &7207681843181528866
 PrefabInstance:
   m_ObjectHideFlags: 0
