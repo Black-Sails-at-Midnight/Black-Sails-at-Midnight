@@ -94,7 +94,7 @@ public class PrimaryWaveSystem : MonoBehaviour
     {
         if (isDone)
             return;
-            
+
         waveInProgress = true;
         EnemySpawnID = 0;
         currentWave++;
@@ -102,7 +102,6 @@ public class PrimaryWaveSystem : MonoBehaviour
 
     IEnumerator DelayUntilNextWave(int wave)
     {
-        Debug.Log("Delay");
         waveInProgress = false;
 
         yield return new WaitForSeconds(Waves[wave].GetTimeUntilNextWave());

@@ -53,7 +53,6 @@ public class RingsManager : MonoBehaviour
 
     public RingSystem GetRing(int index)
     {
-        Debug.Log(index);
         if (index > Rings.Count || index < 0)
         {
             return null;
