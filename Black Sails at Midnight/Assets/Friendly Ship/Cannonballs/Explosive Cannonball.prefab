@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 2
   Radius: 10
-  SplashDamage: 0
+  SplashDamage: 10
   explosionFX: {fileID: 0}
 --- !u!54 &3045858714740323014
 Rigidbody:
