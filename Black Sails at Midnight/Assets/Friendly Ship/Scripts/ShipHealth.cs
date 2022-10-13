@@ -62,8 +62,8 @@ public class ShipHealth : MonoBehaviour
     {
         if (Health < 0)
         {
-            //TODO: Remove Enemy from play.
-            Destroy(gameObject);
+            GameObject.Find("Player").GetComponent<EconomySystem>().Deposit(gameObject.GetComponent<BasicShipEquivelant>().GetBasicEquivelant());
+            Destroy(gameObject);            //TODO: have an animation or something, but it's FINE for now.
         }
     }
 
