@@ -142,6 +142,24 @@ MonoBehaviour:
   FiringAngle: 30
   Cannon: {fileID: 3486000362587998258}
   cannonFX: {fileID: 4531854625901928574}
+--- !u!114 &6680727529413562378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3578835763885621159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4b977e66fd99b40aa82b54316493f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RingNumber: 0
+  Ring: {fileID: 0}
+  targetCoordinate: 0
+  destination: {x: 0, y: 0, z: 0}
+  agent: {fileID: 0}
+  start: 0
 --- !u!4 &5808016381005947986 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7548807656686300527, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
