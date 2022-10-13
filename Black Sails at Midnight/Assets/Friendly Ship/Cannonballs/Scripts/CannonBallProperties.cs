@@ -23,7 +23,7 @@ public class CannonBallProperties : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Ship")
+        if (other.GetComponent<ShipHealth>() != null)
         {
             other.GetComponent<ShipHealth>().Hit(Damage);
         }

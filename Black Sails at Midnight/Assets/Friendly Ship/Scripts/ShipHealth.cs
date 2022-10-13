@@ -22,7 +22,8 @@ public class ShipHealth : MonoBehaviour
         }
     }
 
-    private float currentHealth;
+    [SerializeField]
+    float currentHealth;
 
     // Monobehaviour Methods
     public void Start()
@@ -60,9 +61,11 @@ public class ShipHealth : MonoBehaviour
     // Private Methods
     private void HealthUpdate()
     {
-        if (Health < 0)
+        Debug.Log(currentHealth);
+        if (currentHealth <= 0)
         {
-            GameObject.Find("Player").GetComponent<EconomySystem>().Deposit(gameObject.GetComponent<BasicShipEquivelant>().GetBasicEquivelant());
+            Debug.Log("BELOW 0 MOTHERFUCKER | " + gameObject.name);
+            FindObjectOfType<EconomySystem>().Deposit(gameObject.GetComponent<BasicShipEquivelant>().GetBasicEquivelant());
             Destroy(gameObject);            //TODO: have an animation or something, but it's FINE for now.
         }
     }
