@@ -29,6 +29,7 @@ public class FireCannonBall : MonoBehaviour
 
     FireCannonFX cannonFX;
 
+    [SerializeField]
     Transform target;
    
 
@@ -92,9 +93,6 @@ public class FireCannonBall : MonoBehaviour
         yield return new WaitForSeconds(TimeBetweenShots - timeSpent);
         cannonsReady = true;
     }
-
-    // NEEDS WORK
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == TagToFireUpon)
@@ -105,7 +103,7 @@ public class FireCannonBall : MonoBehaviour
 
     private void OnTriggerExit(Collider other) 
     {
-        if (other.gameObject.transform == target.transform)
+        if (target != null && other.gameObject.transform == target.transform)
         {
             target = null; // Clear Target;
         }

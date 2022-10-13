@@ -932,26 +932,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lostContactTimer: 1
   parentedPlayer: {fileID: 0}
---- !u!114 &2572341374818892144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423143178654081075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16954dd826bd5e344bee82da28b1e38a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RingNumber: 0
-  Ring: {fileID: 0}
-  CurrentPosition: 0
-  destination: {x: 0, y: 0, z: 0}
-  distanceToTarget: 10
-  agent: {fileID: 0}
-  direction: 0
-  start: 0
 --- !u!114 &930659643546382945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,6 +963,43 @@ MonoBehaviour:
   - {fileID: 3342791364996747879}
   - {fileID: 5381120938354096931}
   TagToFireUpon: Enemy
+  target: {fileID: 0}
+--- !u!114 &2572341374818892144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423143178654081075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16954dd826bd5e344bee82da28b1e38a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RingNumber: 0
+  Ring: {fileID: 0}
+  CurrentPosition: 0
+  destination: {x: 0, y: 0, z: 0}
+  distanceToTarget: 10
+  agent: {fileID: 0}
+  direction: 0
+  start: 0
+--- !u!54 &6138680236112143764
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423143178654081075}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &2577083043146746543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4175341437490387974, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
