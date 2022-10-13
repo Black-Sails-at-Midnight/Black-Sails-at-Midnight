@@ -8,10 +8,10 @@ public abstract class PurchaseOption : MonoBehaviour, IPurchase
     int cost;
 
     public int Cost { get { return cost; } }
-    public abstract bool Purchase();
+    public abstract void Purchase();
 }
 
 public interface IPurchase
 {
-    public bool Purchase();
+    public void Purchase();
 }
