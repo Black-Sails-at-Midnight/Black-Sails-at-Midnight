@@ -13,7 +13,7 @@ public class RingSelector : MonoBehaviour, InteractableCanvasObject
 
     private void Start()
     {
-        Debug.Log(Int32.TryParse(name.Split(' ')[1], out RingNumber));
+        Int32.TryParse(name.Split(' ')[1], out RingNumber);
     }
 
     public void CanvasAction()
