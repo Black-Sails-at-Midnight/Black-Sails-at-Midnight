@@ -952,6 +952,37 @@ MonoBehaviour:
   agent: {fileID: 0}
   direction: 0
   start: 0
+--- !u!114 &930659643546382945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423143178654081075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d4da968704cd5488264cdb6bb22402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CannonBallType: {fileID: 8582425194649585216, guid: 5ab0fd4613b66964fb33208a1ad3594f, type: 3}
+  TimeBetweenShots: 3
+  CannonBallSpeed: 100
+  FiringAngle: 30
+  NumberOfCannonBalls: 1
+  Spread: 0
+  RightCannons:
+  - {fileID: 7495275393443679861}
+  - {fileID: 2865559046642202335}
+  - {fileID: 7446919883565064471}
+  - {fileID: 5108390089174928554}
+  - {fileID: 289445090971475056}
+  LeftCannons:
+  - {fileID: 1299943629915101094}
+  - {fileID: 3308336312942388405}
+  - {fileID: 7658004072931963536}
+  - {fileID: 3342791364996747879}
+  - {fileID: 5381120938354096931}
+  TagToFireUpon: Enemy
 --- !u!4 &2577083043146746543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4175341437490387974, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
