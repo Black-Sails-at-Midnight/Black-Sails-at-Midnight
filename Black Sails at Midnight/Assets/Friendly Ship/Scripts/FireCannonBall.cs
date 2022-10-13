@@ -24,6 +24,8 @@ public class FireCannonBall : MonoBehaviour
     List<GameObject> RightCannons;
     [SerializeField]
     List<GameObject> LeftCannons;
+    [SerializeField]
+    string TagToFireUpon = "Enemy";
 
     FireCannonFX cannonFX;
 
@@ -95,7 +97,7 @@ public class FireCannonBall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == TagToFireUpon)
         {
             target = other.transform;
         }
@@ -103,9 +105,9 @@ public class FireCannonBall : MonoBehaviour
 
     private void OnTriggerExit(Collider other) 
     {
-        if (other.tag == "Player")
+        if (other.gameObject.transform == target.transform)
         {
-            target = null;
+            target = null; // Clear Target;
         }
     }
 }
