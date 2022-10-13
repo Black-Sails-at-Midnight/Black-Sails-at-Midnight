@@ -918,7 +918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654993305821458759, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_text
-      value: Grape Shot
+      value: Grape Shot - 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
@@ -1379,7 +1379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654993305821458759, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_text
-      value: Chain Shot
+      value: Chain Shot - 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
@@ -1631,7 +1631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654993305821458759, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_text
-      value: Basic Cannon
+      value: Basic Cannon - 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
@@ -1757,7 +1757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654993305821458759, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_text
-      value: Incendiary
+      value: Incendiary - 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
@@ -2019,7 +2019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654993305821458759, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_text
-      value: Explosive Cannonball
+      value: Explosive Cannonball - 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
