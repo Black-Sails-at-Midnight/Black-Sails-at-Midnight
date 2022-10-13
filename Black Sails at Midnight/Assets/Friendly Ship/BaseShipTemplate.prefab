@@ -1669,6 +1669,8 @@ MonoBehaviour:
   - {fileID: 341613410}
   - {fileID: 1424591036}
   - {fileID: 894449678}
+  TagToFireUpon: Enemy
+  target: {fileID: 0}
 --- !u!135 &6855219122393304112
 SphereCollider:
   m_ObjectHideFlags: 0

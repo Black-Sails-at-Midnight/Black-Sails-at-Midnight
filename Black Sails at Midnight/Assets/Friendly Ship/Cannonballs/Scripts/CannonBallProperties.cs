@@ -23,9 +23,10 @@ public class CannonBallProperties : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<ShipHealth>() != null)
+        if (other.GetComponent<ShipHealth>() != null && other.GetType() == typeof(MeshCollider))
         {
             other.GetComponent<ShipHealth>().Hit(Damage);
+            Destroy(this.gameObject);
         }
     }
 }

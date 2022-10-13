@@ -61,10 +61,8 @@ public class ShipHealth : MonoBehaviour
     // Private Methods
     private void HealthUpdate()
     {
-        Debug.Log(currentHealth);
         if (currentHealth <= 0)
         {
-            Debug.Log("BELOW 0 MOTHERFUCKER | " + gameObject.name);
             FindObjectOfType<EconomySystem>().Deposit(gameObject.GetComponent<BasicShipEquivelant>().GetBasicEquivelant());
             Destroy(gameObject);            //TODO: have an animation or something, but it's FINE for now.
         }
