@@ -64,6 +64,18 @@ public class RingSystem : MonoBehaviour
     List<ShipNavigationAI> Ships;
     [SerializeField]
     List<ShipNavigationAI> ShipsToUpdate;
+
+    [SerializeField]
+    public bool disableMarker = false;
+    
+    public bool DisableMarker 
+    {
+        set {
+            disableMarker = value;
+            GetComponentInChildren<RingMarkerHandler>().gameObject.SetActive(!disableMarker);
+        }
+    }
+
     bool isCheckingForNullShips = false;
 
     bool isSyncing = false;

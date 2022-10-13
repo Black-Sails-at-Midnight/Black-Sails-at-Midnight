@@ -43,8 +43,6 @@ GameObject:
   - component: {fileID: 1087043274296047499}
   - component: {fileID: 4923419617075830637}
   - component: {fileID: 1824231225561266715}
-  - component: {fileID: 5108454926778829640}
-  - component: {fileID: 6253459489801789696}
   - component: {fileID: 6042696794335547728}
   m_Layer: 0
   m_Name: Enemy Ship Base
@@ -119,41 +117,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 50
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5108454926778829640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716754706882819738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1d4da968704cd5488264cdb6bb22402, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CannonBallType: {fileID: 5815674545810335273, guid: 038209526f04dd7419733a8c120c89eb, type: 3}
-  TimeBetweenShots: 5
-  CannonBallSpeed: 100
-  FiringAngle: 30
-  NumberOfCannonBalls: 1
-  Spread: 0
-  RightCannons: []
-  LeftCannons: []
-  TagToFireUpon: FriendlyShip
---- !u!114 &6253459489801789696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716754706882819738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60237b75d2fe2ad46bc241f814596051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RightCannons: {fileID: 7415827045766221562}
-  LeftCannons: {fileID: 3773326919270511556}
 --- !u!114 &6042696794335547728
 MonoBehaviour:
   m_ObjectHideFlags: 0

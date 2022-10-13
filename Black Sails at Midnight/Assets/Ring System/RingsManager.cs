@@ -39,6 +39,11 @@ public class RingsManager : MonoBehaviour
             temp.Radius = Radius + SpaceBetweenRings * i;
             temp.GenerateRing();
             temp.GetComponentInChildren<RingMarkerHandler>().Radius = temp.Radius;
+            if (i == 0 || i == NumberOfRings - 1)
+            {
+                temp.DisableMarker = true;
+            }
+
             Rings.Add(ring);
         }
 

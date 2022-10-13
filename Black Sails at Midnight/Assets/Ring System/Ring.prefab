@@ -52,6 +52,10 @@ MonoBehaviour:
   NumberOfPathingPoints: 6
   Ring: []
   Point: {fileID: 6806640497831801601, guid: 4bf60eb63be74df4c8c1c33b645166cf, type: 3}
+  ShipCapacity: 0
+  Ships: []
+  ShipsToUpdate: []
+  disableMarker: 0
 --- !u!1001 &2129334022019150610
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -46,10 +46,11 @@ public class PrimaryWaveSystem : MonoBehaviour
     public bool isDone;
 
     [SerializeField]
-    public bool waveInProgress = false;
+    public bool waveInProgress = true;
 
-    bool isSpawning;
     bool isWaitingForSpawnDelay = false;
+    bool isSpawning;
+    
     int EnemySpawnID;
 
     // Start is called before the first frame update
@@ -57,42 +58,60 @@ public class PrimaryWaveSystem : MonoBehaviour
     {
         RingsManager temp = FindObjectOfType<RingsManager>();
         RingSystem = temp.GetComponent<RingsManager>().GetRing(temp.GetNumberOfRings() - 1);
+
+        StartWave();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isWaitingForSpawnDelay && !waveInProgress)
+        if (currentWave >= Waves.Count && !waveInProgress)
+        {
+            isDone = true;
+            enabled = false;
+        }
+
+        if (EnemySpawnID >= Waves[currentWave - 1].GetEnemyData().Length && waveInProgress)
+        {
+            StartCoroutine(DelayUntilNextWave(currentWave - 1));
+            return;
+        } 
+
+        if (!isWaitingForSpawnDelay && waveInProgress)
         {
             if (!isSpawning)
             {
                 SpawnWave();
             }
-        }
-        else if (Waves[currentWave].GetEnemyData().Length <= EnemySpawnID )
-        {
-            StartCoroutine(DelayUntilNextWave(currentWave));
-        }    
-        
+        }     
     }
     void SpawnWave()
     {
         StartCoroutine(SpawnShip());
     }
 
-    IEnumerator DelayUntilNextWave(int wave)
+    public void StartWave()
     {
-        waveInProgress = false;
+        if (isDone)
+            return;
+            
+        waveInProgress = true;
         EnemySpawnID = 0;
         currentWave++;
+    }
+
+    IEnumerator DelayUntilNextWave(int wave)
+    {
+        Debug.Log("Delay");
+        waveInProgress = false;
 
         yield return new WaitForSeconds(Waves[wave].GetTimeUntilNextWave());
-        waveInProgress = true;
+        StartWave();
     }
     IEnumerator SpawnShip()
     {
         isSpawning = true;
-        EnemySpawn spawn = Waves[currentWave].GetEnemyData()[EnemySpawnID];
+        EnemySpawn spawn = Waves[currentWave - 1].GetEnemyData()[EnemySpawnID];
         for (int i = 0; i < spawn.GetNumberOfEnemies(); i++)
         {
             int randomCoordinate = UnityEngine.Random.Range(0, RingSystem.GetNumberOfCoordinates() - 1);
@@ -101,16 +120,22 @@ public class PrimaryWaveSystem : MonoBehaviour
 
             GameObject enemyShip = Instantiate(spawn.GetShipType(), RingSystem.GetNextPosition(randomCoordinate), Quaternion.identity);
 
-            if (enemyShip.name != "Basic Enemy")
+            if (enemyShip.GetComponent<SpecialEnemyNavigation>() != null)
             {
                 enemyShip.GetComponent<SpecialEnemyNavigation>().CurrentPosition = randomCoordinate;
                 enemyShip.GetComponent<SpecialEnemyNavigation>().StartNavigation();
-            } else {
+            }
+            
+            if (enemyShip.GetComponent<BasicEnemyNavigation>() != null)
+            {
+                enemyShip.GetComponent<BasicEnemyNavigation>().targetCoordinate = randomCoordinate;
                 enemyShip.GetComponent<BasicEnemyNavigation>().StartNavigation();
             }
         }
 
-        yield return new WaitForSeconds(Waves[currentWave].GetTimeBetweenSpawns());
+        if (EnemySpawnID < Waves[currentWave - 1].GetEnemyData().Length - 1)
+            yield return new WaitForSeconds(Waves[currentWave - 1].GetTimeBetweenSpawns());
+
         EnemySpawnID++;
         isSpawning = false;
     }
