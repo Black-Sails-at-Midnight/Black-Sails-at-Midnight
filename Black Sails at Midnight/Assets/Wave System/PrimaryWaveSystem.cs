@@ -37,12 +37,6 @@ public class PrimaryWaveSystem : MonoBehaviour
     RingSystem RingSystem;
 
     [SerializeField]
-    int OuterMostRingNumber;
-
-    [SerializeField]
-    int numberOfPositions;
-
-    [SerializeField]
     List<Wave> Waves;
 
     [SerializeField]
@@ -52,7 +46,7 @@ public class PrimaryWaveSystem : MonoBehaviour
     public bool isDone;
 
     [SerializeField]
-    public bool waveInProgress;
+    public bool waveInProgress = false;
 
     bool isSpawning;
     bool isWaitingForSpawnDelay = false;
@@ -68,7 +62,7 @@ public class PrimaryWaveSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isWaitingForSpawnDelay && waveInProgress)
+        if (!isWaitingForSpawnDelay && !waveInProgress)
         {
             if (!isSpawning)
             {
@@ -91,6 +85,7 @@ public class PrimaryWaveSystem : MonoBehaviour
         waveInProgress = false;
         EnemySpawnID = 0;
         currentWave++;
+
         yield return new WaitForSeconds(Waves[wave].GetTimeUntilNextWave());
         waveInProgress = true;
     }
