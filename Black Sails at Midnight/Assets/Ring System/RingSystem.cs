@@ -222,8 +222,7 @@ public class RingSystem : MonoBehaviour
             case ShipNavigationAI.Direction.Counter_Clockwise:
                 CounterClockWise(ship);
                 break;
-            default:
-                Debug.Log("Invalid value in direction!");
+            default:                
                 break;
         }
     }

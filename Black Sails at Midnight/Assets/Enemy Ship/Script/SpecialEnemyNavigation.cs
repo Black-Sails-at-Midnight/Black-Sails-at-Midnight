@@ -58,7 +58,6 @@ public class SpecialEnemyNavigation : MonoBehaviour
                 CounterClockWise();
                 break;
             default:
-                Debug.Log("Invalid value in direction!");
                 break;
         }
     }
