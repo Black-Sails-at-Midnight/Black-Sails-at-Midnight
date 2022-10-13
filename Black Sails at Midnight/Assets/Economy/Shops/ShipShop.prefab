@@ -2730,7 +2730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654993305821458759, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_text
-      value: Ring 7
+      value: Ring 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
