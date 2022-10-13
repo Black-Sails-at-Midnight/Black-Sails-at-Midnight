@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lostContactTimer: 1
+  parentedPlayer: {fileID: 0}
 --- !u!135 &1824231225561266715
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -138,6 +139,7 @@ MonoBehaviour:
   Spread: 0
   RightCannons: []
   LeftCannons: []
+  TagToFireUpon: FriendlyShip
 --- !u!114 &6253459489801789696
 MonoBehaviour:
   m_ObjectHideFlags: 0
