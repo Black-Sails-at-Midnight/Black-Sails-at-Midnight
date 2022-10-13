@@ -10,6 +10,7 @@ TagManager:
   - Cannon Ball
   - Weapon
   - Enemy
+  - Ship
   layers:
   - Default
   - TransparentFX
