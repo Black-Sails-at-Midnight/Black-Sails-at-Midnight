@@ -194,8 +194,8 @@ AnimatorState:
   m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 8473297487429275232}
   - {fileID: -2953170523270333997}
+  - {fileID: 8473297487429275232}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -270,12 +270,6 @@ AnimatorController:
   m_Name: FlintlockAnimationController
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Fired
-    m_Type: 9
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: Reload
     m_Type: 4
     m_DefaultFloat: 0
@@ -284,6 +278,12 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: IsScopedIn
     m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Fired
+    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
