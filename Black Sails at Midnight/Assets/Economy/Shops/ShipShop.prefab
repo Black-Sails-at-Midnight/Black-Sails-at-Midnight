@@ -945,7 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 4
-  prefab: {fileID: 0}
+  prefab: {fileID: 6451124708988608839, guid: 263fa0721ee60a347a743f7f529cb027, type: 3}
   RingSelectionCanvas: {fileID: 5654557226398688715}
 --- !u!1001 &2333360561400577923
 PrefabInstance:
@@ -1400,7 +1400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2863335ff56099148bd4467dcdeaaa63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 5
   prefab: {fileID: 7196910513276326030, guid: ab46532793e77184792fed49ce7c548e, type: 3}
   RingSelectionCanvas: {fileID: 5654557226398688715}
 --- !u!224 &1663351728665494119 stripped
@@ -1783,7 +1783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2863335ff56099148bd4467dcdeaaa63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 10
   prefab: {fileID: 5971685554405938735, guid: 4f5fe7cf847bfb74095434e392a3d13d, type: 3}
   RingSelectionCanvas: {fileID: 5654557226398688715}
 --- !u!1001 &4351370947252869360
@@ -1999,7 +1999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654993304765076569, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3654993304765076569, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2863335ff56099148bd4467dcdeaaa63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 10
   prefab: {fileID: 4726260451226758895, guid: 0c055197515ea8447ab2814310037992, type: 3}
   RingSelectionCanvas: {fileID: 5654557226398688715}
 --- !u!1001 &6798930797975016056
@@ -2580,7 +2580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654993304765076569, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.5
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 3654993304765076569, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
