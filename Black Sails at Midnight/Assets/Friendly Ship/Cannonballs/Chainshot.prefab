@@ -206,6 +206,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1719713409384043034, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
 --- !u!1 &7167553070481231762 stripped
@@ -225,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79427e3f0d6f01c40b821101c1770c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 2
+  Damage: 5
   SlowDownPercentage: 30
 --- !u!4 &7167553070481313252 stripped
 Transform:

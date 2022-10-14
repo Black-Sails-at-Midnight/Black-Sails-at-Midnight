@@ -112,6 +112,10 @@ PrefabInstance:
       value: Basic Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1087043274296047499, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_BaseOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087043274296047499, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_AgentTypeID
       value: -334000983
       objectReference: {fileID: 0}
@@ -167,6 +171,10 @@ PrefabInstance:
       propertyPath: RightCannons
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6488669877917629186, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: maxHealth
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6253459489801789696, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
     - {fileID: 5108454926778829640, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
@@ -197,6 +205,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &6965391097849749744
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3578835763885621159}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 60178b8b289271c44bc9dab35c7a851a, type: 3}
 --- !u!114 &561867381361511712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,11 +402,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 64501809227916162, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64501809227916162, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
 --- !u!1 &6831252872575279147 stripped
 GameObject:
