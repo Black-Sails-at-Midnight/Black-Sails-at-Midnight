@@ -48,7 +48,6 @@ public class SpyglassBehaviour : MonoBehaviour
     }
 
     private void Update() {
-        // Testing
         if (Input.GetKeyDown("g"))
         {
             ActivateSpyglass();
@@ -58,7 +57,6 @@ public class SpyglassBehaviour : MonoBehaviour
         {
             DeactivateSpyglass();
         }
-        // Testing
 
         if (isZoomedIn)
         {
