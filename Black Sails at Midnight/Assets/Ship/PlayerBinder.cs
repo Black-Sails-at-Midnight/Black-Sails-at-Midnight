@@ -53,4 +53,10 @@ public class PlayerBinder : MonoBehaviour
     {
         parentedPlayer = null;
     }
+
+    public void Bind(GameObject player)
+    {
+        parentedPlayer = player;
+        timeOfLastContact = Time.realtimeSinceStartup;
+    }
 }
