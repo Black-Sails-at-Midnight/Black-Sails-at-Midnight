@@ -58,7 +58,7 @@ public class Gun : Attack
 
     [SerializeField]
     public AudioClip reloadAudio;
-
+    
     Vector3 DefaultPosition;
     Quaternion DefaultRotation;
 
@@ -72,7 +72,7 @@ public class Gun : Attack
     public void Start()
     {
         clip = gunSettings.clipSize;
-        DefaultPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        DefaultPosition = new Vector3(1, -0.25f, -0.5f);
         DefaultRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
     }
 
@@ -80,8 +80,11 @@ public class Gun : Attack
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        transform.position = DefaultPosition;
-        transform.rotation = DefaultRotation;
+        if (DefaultPosition != Vector3.zero && DefaultRotation != Quaternion.identity)
+        {
+            transform.localPosition = DefaultPosition;
+            transform.localRotation = DefaultRotation;
+        }
         StartCoroutine(ShootHandler());
     }
 
