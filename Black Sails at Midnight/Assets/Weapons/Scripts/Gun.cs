@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Gun : Attack
 {
@@ -58,6 +59,9 @@ public class Gun : Attack
     [SerializeField]
     public AudioClip reloadAudio;
 
+    Vector3 DefaultPosition;
+    Quaternion DefaultRotation;
+
     public int clip {get; private set;}
     private bool isReloading = false;
     
@@ -68,13 +72,16 @@ public class Gun : Attack
     public void Start()
     {
         clip = gunSettings.clipSize;
+        DefaultPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        DefaultRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
     }
 
     public void OnEnable() 
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-
+        transform.position = DefaultPosition;
+        transform.rotation = DefaultRotation;
         StartCoroutine(ShootHandler());
     }
 
@@ -101,6 +108,7 @@ public class Gun : Attack
 
                     GameObject _bullet = Instantiate(bulletPrefab, transform.position + ((transform.forward.normalized) * muzzleLength), transform.rotation);
                     _bullet.GetComponent<Rigidbody>().AddForce(randomVector.normalized * gunSettings.bulletVelocity, ForceMode.Impulse);
+                    _bullet.GetComponent<Rigidbody>().AddForce(FindObjectOfType<FirstPersonController>().GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
                     _bullet.GetComponent<Bullet>().ShotBy = this;
                 }
 
