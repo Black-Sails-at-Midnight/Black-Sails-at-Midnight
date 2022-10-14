@@ -3,18 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Projectile
+  - FriendlyShip
+  - EnemyCrew
+  - Cannon Ball
+  - Weapon
+  - Enemy
+  - Ship
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Phantom
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Map UI
+  - Crew
+  - Ship
+  - Water Collider
   - 
   - 
   - 
