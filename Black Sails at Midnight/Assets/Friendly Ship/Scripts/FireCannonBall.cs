@@ -80,7 +80,7 @@ public class FireCannonBall : MonoBehaviour
                 float timeDelay = Random.Range(0, 0.1f * TimeBetweenShots);
                 timeSpent += timeDelay;
 
-                if (target.IsDestroyed())
+                if (target.IsDestroyed() || target == null)
                 {
                     continue;
                 }
