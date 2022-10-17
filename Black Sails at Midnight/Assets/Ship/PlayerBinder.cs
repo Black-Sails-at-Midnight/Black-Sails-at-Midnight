@@ -53,4 +53,9 @@ public class PlayerBinder : MonoBehaviour
     {
         parentedPlayer = null;
     }
+
+    public void Bind(GameObject player)
+    {
+        parentedPlayer = player;
+    }
 }

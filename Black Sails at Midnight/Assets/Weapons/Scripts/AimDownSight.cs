@@ -18,7 +18,7 @@ public class AimDownSight : MonoBehaviour
 
     public bool scopedIn {get; private set;} = false;
 
-    private Dictionary<string, float> defaultValues;
+    private float defaultSensitivity;
     private FirstPersonController FPController;
     private Camera FPCamera;
     private Animator animator;
@@ -32,8 +32,7 @@ public class AimDownSight : MonoBehaviour
         FOV = FPCamera.fieldOfView;
         gun = GetComponent<Gun>();
 
-        defaultValues = new();
-        defaultValues.Add("Sensitivity", FPController.m_MouseLook.XSensitivity);
+        defaultSensitivity = FPController.m_MouseLook.XSensitivity;
     }
 
     public void Update() 
@@ -65,8 +64,8 @@ public class AimDownSight : MonoBehaviour
         if (aimReticle != null)
             aimReticle.enabled = false;
 
-        FPController.m_MouseLook.XSensitivity = FPController.m_MouseLook.YSensitivity = defaultValues["Sensitivity"] * sensitivityModifier;
         scopedIn = true;
+        FPController.m_MouseLook.XSensitivity = FPController.m_MouseLook.YSensitivity = defaultSensitivity * sensitivityModifier;
     }
 
     private void ScopeOut()
@@ -80,7 +79,7 @@ public class AimDownSight : MonoBehaviour
         if (aimReticle != null)
             aimReticle.enabled = true;
 
-        FPController.m_MouseLook.XSensitivity = FPController.m_MouseLook.YSensitivity = defaultValues["Sensitivity"];
         scopedIn = false;
+        FPController.m_MouseLook.XSensitivity = FPController.m_MouseLook.YSensitivity = defaultSensitivity;
     }
 }
