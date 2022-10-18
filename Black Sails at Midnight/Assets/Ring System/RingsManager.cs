@@ -44,12 +44,14 @@ public class RingsManager : MonoBehaviour
             temp.Radius = Radius + SpaceBetweenRings * i;
             temp.GenerateRing();
             temp.GetComponentInChildren<RingMarkerHandler>().Radius = temp.Radius;
+
+            temp.SetupShipList(CurrentShipCapacity);
             if (i == 0 || i == NumberOfRings - 1)
             {
                 temp.DisableMarker = true;
+            } else {
+                CurrentShipCapacity += IncreaseInShipCapacity;
             }
-            temp.SetupShipList(CurrentShipCapacity);
-            CurrentShipCapacity += IncreaseInShipCapacity;
 
             Rings.Add(ring);
         }
