@@ -41,10 +41,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5142953837712348911}
   - component: {fileID: 1087043274296047499}
-  - component: {fileID: 4923419617075830637}
   - component: {fileID: 1824231225561266715}
   - component: {fileID: 6042696794335547728}
   - component: {fileID: 6488669877917629186}
+  - component: {fileID: 397864700372755701}
   m_Layer: 0
   m_Name: Enemy Ship Base
   m_TagString: Enemy
@@ -91,20 +91,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 8
   m_ObstacleAvoidanceType: 0
---- !u!114 &4923419617075830637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716754706882819738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 242b441bf7fd275498e09614e421ae94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lostContactTimer: 1
-  parentedPlayer: {fileID: 0}
 --- !u!135 &1824231225561266715
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -145,6 +131,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   StatusEffects: []
+  currentHealth: 0
+--- !u!114 &397864700372755701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716754706882819738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab599e236b795244ea4c8f672248a977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lostContactTimer: 1
+  boundPlayer: {fileID: 0}
 --- !u!1 &3773326919270511556
 GameObject:
   m_ObjectHideFlags: 0
