@@ -44,7 +44,7 @@ public class FireCannonBall : MonoBehaviour
 
     void Update()
     {
-        if(target != null && cannonsReady && IsWithinFiringArc())
+        if(target != null && cannonsReady && true)
         {
             Vector3 Direction = transform.InverseTransformPoint(target.position);
             if (Direction.x < 0) // Target is Left
@@ -63,13 +63,8 @@ public class FireCannonBall : MonoBehaviour
 
     private bool IsWithinFiringArc()
     {
-        float z = transform.InverseTransformDirection(target.position).z;
-
-        if (z <= FiringAngle && z >= -FiringAngle)
-        {
-            return true;
-        }
-            return false;
+        float angle = Vector3.Angle(gameObject.transform.position, target.position);
+        return ((angle >= 90 - (FiringAngle / 2)) && (angle <= 90 + (FiringAngle / 2))) || ((angle >= 270 - (FiringAngle / 2)) && (angle <= 270 + (FiringAngle / 2)));
     }
 
     IEnumerator FireCannons(List<GameObject> cannons)
