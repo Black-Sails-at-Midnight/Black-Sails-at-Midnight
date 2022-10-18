@@ -92,8 +92,8 @@ public class FireCannonBall : MonoBehaviour
                 GameObject instance = Instantiate(CannonBallType, item.transform.position, item.transform.rotation);
                 instance.GetComponent<Rigidbody>().AddForce(randomVector.normalized * CannonBallSpeed, ForceMode.Impulse);
                 Destroy(instance, 8f);
-                yield return new WaitForSeconds(timeDelay);
             }
+            yield return new WaitForSeconds(timeDelay);
         }
         yield return new WaitForSeconds(TimeBetweenShots - timeSpent);
         cannonsReady = true;
