@@ -92,9 +92,12 @@ public class SpyglassBehaviour : MonoBehaviour
                         PlayerRelocator relocator = FindObjectOfType<PlayerRelocator>();
                         relocator.MovePlayer(targetLocation);
                         teleportHandler.GetComponent<PlayerBinder>().Bind(FindObjectOfType<FirstPersonController>().gameObject);
-
-                        DeactivateSpyglass();
                     }
+                }
+
+                if (Input.GetKeyUp(zoomKey) && teleportOnRelease)
+                {
+                    DeactivateSpyglass();
                 }
             }
         }
