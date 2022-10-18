@@ -77,9 +77,6 @@ public class FireCannonBall : MonoBehaviour
         {
             for (int i = 0; i < NumberOfCannonBalls; i++)
             {
-                float timeDelay = Random.Range(0, 0.1f * TimeBetweenShots);
-                timeSpent += timeDelay;
-
                 if (target.IsDestroyed())
                 {
                     continue;
@@ -93,6 +90,10 @@ public class FireCannonBall : MonoBehaviour
                 instance.GetComponent<Rigidbody>().AddForce(randomVector.normalized * CannonBallSpeed, ForceMode.Impulse);
                 Destroy(instance, 8f);
             }
+    
+            float timeDelay = Random.Range(0, 0.1f * TimeBetweenShots);
+            timeSpent += timeDelay;
+
             yield return new WaitForSeconds(timeDelay);
         }
         yield return new WaitForSeconds(TimeBetweenShots - timeSpent);
