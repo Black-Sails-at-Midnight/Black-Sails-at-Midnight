@@ -31,12 +31,15 @@ public class FireCannonBall : MonoBehaviour
 
     [SerializeField]
     Transform target;
-   
 
+    
+   
+    private List<Transform> shipsInRange;
     bool cannonsReady = true;
     void Start()
     {
         cannonFX = gameObject.GetComponentInChildren<FireCannonFX>();
+        shipsInRange = new List<Transform>();
     }
 
     void Update()
@@ -103,15 +106,49 @@ public class FireCannonBall : MonoBehaviour
     {
         if (other.tag == TagToFireUpon)
         {
-            target = other.transform;
+            shipsInRange.Add(other.transform);
         }
     }
 
     private void OnTriggerExit(Collider other) 
     {
-        if (target != null && other.gameObject.transform == target.transform)
+        shipsInRange.RemoveAll(x => x == null || x.IsDestroyed());
+
+        if (other.tag == TagToFireUpon && shipsInRange.Contains(other.transform))
         {
-            target = null; // Clear Target;
+            shipsInRange.Remove(other.transform);
         }
+
+        if (target == other.transform)
+        {
+            target = null;
+        }
+    }
+
+    private void OnTriggerStay(Collider other) 
+    {
+        shipsInRange.RemoveAll(x => x == null || x.IsDestroyed());
+        shipsInRange.Sort(SortOnDistanceToIsland);
+        
+        if (shipsInRange.Count > 0)
+        {
+            target = shipsInRange[0];
+        }
+    }
+
+    private int SortOnDistanceToIsland(Transform a, Transform b)
+    {
+        Vector3 islandPosition = Vector3.zero;
+
+        float distanceA = Vector3.Distance(a.position, islandPosition);
+        float distanceB = Vector3.Distance(b.position, islandPosition);
+
+        if (distanceA > distanceB)
+            return 1;
+
+        if (distanceB > distanceA)
+            return -1;
+        
+        return 0;
     }
 }
