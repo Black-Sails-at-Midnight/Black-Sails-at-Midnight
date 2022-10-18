@@ -57,7 +57,7 @@ MonoBehaviour:
     RPM: 60
     palletsPerShot: 1
     pelletSpread: 0
-    clipSize: 5
+    clipSize: 1
     reloadTime: 3
     bulletVelocity: 150
   bulletPrefab: {fileID: 2153877398472805027, guid: 884a44b06bdd03a4cbfa8be6e4ad2c8c, type: 3}
