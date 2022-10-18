@@ -9,7 +9,7 @@ public class PlayerRelocator : MonoBehaviour
     LayerMask noClipLayer;
 
     private int defaultLayer;
-    public void Move(Transform targetPosition)
+    public void MovePlayer(Transform targetPosition)
     {
         FirstPersonController FPController = FindObjectOfType<FirstPersonController>();
         defaultLayer = FPController.gameObject.layer;
