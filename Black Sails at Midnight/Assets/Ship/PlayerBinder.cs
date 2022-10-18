@@ -36,7 +36,7 @@ public class PlayerBinder : MonoBehaviour
         if (parentedPlayer != null)
         {
             FirstPersonController FPController = parentedPlayer.GetComponent<FirstPersonController>();
-            FPController.m_CharacterController.SimpleMove(gameObject.GetComponent<NavMeshAgent>().velocity);
+            FPController.m_CharacterController.SimpleMove(GetComponent<NavMeshAgent>().velocity);
 
             if (Time.realtimeSinceStartup - timeOfLastContact > lostContactTimer)
             {
@@ -57,5 +57,6 @@ public class PlayerBinder : MonoBehaviour
     public void Bind(GameObject player)
     {
         parentedPlayer = player;
+        timeOfLastContact = Time.realtimeSinceStartup;
     }
 }
