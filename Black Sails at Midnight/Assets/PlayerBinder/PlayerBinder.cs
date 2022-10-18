@@ -32,7 +32,6 @@ public class PlayerBinder : MonoBehaviour, IBindingSurface
 
     public void Bind(GameObject source)
     {
-        Debug.Log("Bound!");
         if (source.GetComponentInChildren<FirstPersonController>() == null)
             return;
 
@@ -49,7 +48,6 @@ public class PlayerBinder : MonoBehaviour, IBindingSurface
 
     public void Unbind()
     {
-        Debug.Log("Unbind");
         boundPlayer = null;
     }
 

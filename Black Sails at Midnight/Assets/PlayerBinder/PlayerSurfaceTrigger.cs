@@ -23,7 +23,5 @@ public class PlayerSurfaceTrigger : MonoBehaviour
             
             bindingSurface.Bind(gameObject);
         }
-
-        Debug.DrawRay(transform.position, Vector3.down, Color.red, castDistance);
     }
 }

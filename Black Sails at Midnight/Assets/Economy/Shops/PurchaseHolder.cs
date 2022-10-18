@@ -25,7 +25,6 @@ public class PurchaseHolder : MonoBehaviour
 
     public void SpawnShip()
     {
-        Debug.Log(ringsManager.GetRing(RingNumber).isFull());
         if (!ringsManager.GetRing(RingNumber).isFull())
         {
             GameObject ship = Instantiate(shipToSpawn, spawnPoint);
