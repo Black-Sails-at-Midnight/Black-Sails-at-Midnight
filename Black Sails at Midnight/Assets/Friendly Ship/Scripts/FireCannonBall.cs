@@ -41,7 +41,7 @@ public class FireCannonBall : MonoBehaviour
 
     void Update()
     {
-        if(target != null && cannonsReady && IsWithinFiringArc())
+        if(target != null && cannonsReady && true)
         {
             Vector3 Direction = transform.InverseTransformPoint(target.position);
             if (Direction.x < 0) // Target is Left

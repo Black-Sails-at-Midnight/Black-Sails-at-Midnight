@@ -16,16 +16,12 @@ public class CannonBallProperties : MonoBehaviour
         return;
     }
 
-    public virtual bool IsEffectDone()
-    {
-        return isDone;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<ShipHealth>() != null && other.GetType() == typeof(MeshCollider))
         {
             other.GetComponent<ShipHealth>().Hit(Damage);
+            Effect(other.GetComponent<ShipHealth>());
             Destroy(this.gameObject);
         }
     }

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_CannonBalls_01
       objectReference: {fileID: 0}
+    - target: {fileID: 127120, guid: feef7742679be4e4f9751dea1518867d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 406246, guid: feef7742679be4e4f9751dea1518867d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -67,6 +71,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64684746260566682, guid: feef7742679be4e4f9751dea1518867d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feef7742679be4e4f9751dea1518867d, type: 3}
 --- !u!1001 &4600603654358866887
@@ -79,6 +87,10 @@ PrefabInstance:
     - target: {fileID: 127120, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
       propertyPath: m_Name
       value: Chainshot
+      objectReference: {fileID: 0}
+    - target: {fileID: 127120, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 406246, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
       propertyPath: m_RootOrder
@@ -138,6 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1283453239144582675, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
+    - {fileID: 5012727967139890676, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
 --- !u!1001 &7167553070481194754
 PrefabInstance:
@@ -206,6 +219,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1719713409384043034, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
 --- !u!1 &7167553070481231762 stripped
@@ -226,7 +243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 2
-  SlowDownPercentage: 30
 --- !u!4 &7167553070481313252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 406246, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
