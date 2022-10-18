@@ -104,7 +104,7 @@ public class FireCannonBall : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == TagToFireUpon)
+        if (other.tag == TagToFireUpon && other is MeshCollider)
         {
             shipsInRange.Add(other.transform);
         }
