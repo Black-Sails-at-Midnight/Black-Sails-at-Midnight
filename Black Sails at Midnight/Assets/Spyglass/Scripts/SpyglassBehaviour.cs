@@ -106,7 +106,8 @@ public class SpyglassBehaviour : MonoBehaviour
     private void ActivateSpyglass()
     {
         FPController.m_OriginalCameraPosition = FPController.m_OriginalCameraPosition + new Vector3(0, 100, 0);
-        Debug.Log(FPController.m_OriginalCameraPosition);
+        FPController.m_isCameraLocked = true;
+        FPController.ForceUpdateCameraPosition();
         FPCamera.fieldOfView = zoomFOV;
 
         ToggleMovement(false);
@@ -118,7 +119,8 @@ public class SpyglassBehaviour : MonoBehaviour
     private void DeactivateSpyglass()
     {
         FPController.m_OriginalCameraPosition = defaultCameraPosition;
-        Debug.Log(FPController.m_OriginalCameraPosition);
+        FPController.m_isCameraLocked = false;
+        FPController.ForceUpdateCameraPosition();
         FPCamera.fieldOfView = defaultFov;
         
         ToggleMovement(true);

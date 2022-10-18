@@ -144,6 +144,7 @@ MonoBehaviour:
   inFlightLayer:
     serializedVersion: 2
     m_Bits: 8
+  RespawnKey: 0
 --- !u!114 &6172338625136564154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,7 +463,7 @@ MonoBehaviour:
   hitLayers:
     serializedVersion: 2
     m_Bits: 256
-  castDistance: 5
+  castDistance: 10
 --- !u!20 &8078942694418852819 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}

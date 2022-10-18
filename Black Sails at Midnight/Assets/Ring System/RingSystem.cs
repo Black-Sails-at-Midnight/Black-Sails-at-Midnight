@@ -288,51 +288,51 @@ public class RingSystem : MonoBehaviour
         if (Ships.Count == 0)
         {
             yield return new WaitForEndOfFrame();
-        }
+        } else {
+            float segment = (Ring.Count - 1) / Ships.Count;
 
-        float segment = (Ring.Count - 1) / Ships.Count;
-
-        int closestPoint = 0;
-        float shortestDistance = Vector3.Distance(gameObject.transform.position, GetNextPosition(0));
-        for (int i = 0; i < Ring.Count - 1; i++)
-        {
-            float distance = Vector3.Distance(gameObject.transform.position, GetNextPosition(i));
-
-            if (distance < shortestDistance)
+            int closestPoint = 0;
+            float shortestDistance = Vector3.Distance(gameObject.transform.position, GetNextPosition(0));
+            for (int i = 0; i < Ring.Count - 1; i++)
             {
-                shortestDistance = distance;
-                closestPoint = i;
+                float distance = Vector3.Distance(gameObject.transform.position, GetNextPosition(i));
+
+                if (distance < shortestDistance)
+                {
+                    shortestDistance = distance;
+                    closestPoint = i;
+                }
             }
-        }
-        Ships[Ships.Count - 1].CurrentPosition = closestPoint;
+            Ships[Ships.Count - 1].CurrentPosition = closestPoint;
 
-        Ships.Sort(CompareShipLocation);
+            Ships.Sort(CompareShipLocation);
 
-        float longestDistance = 0f;
-        for (int i = 0; i < Ships.Count; i++)
-        {
-            Ships[i].SetDestination(GetNextPosition(i * (int)segment));
-            Ships[i].CurrentPosition =  i * (int)segment;
-            Ships[i].AccurateNavigation(true);
-
-            while(Ships[i].agent.pathPending)
+            float longestDistance = 0f;
+            for (int i = 0; i < Ships.Count; i++)
             {
-                yield return new WaitForEndOfFrame();
+                Ships[i].SetDestination(GetNextPosition(i * (int)segment));
+                Ships[i].CurrentPosition =  i * (int)segment;
+                Ships[i].AccurateNavigation(true);
+
+                while(Ships[i].agent.pathPending)
+                {
+                    yield return new WaitForEndOfFrame();
+                }
+
+                if (Ships[i].agent.remainingDistance > longestDistance)
+                {
+                    longestDistance = Ships[i].agent.remainingDistance;
+                }
             }
 
-            if (Ships[i].agent.remainingDistance > longestDistance)
+            foreach (var item in Ships)
             {
-                longestDistance = Ships[i].agent.remainingDistance;
+                float speed = Mathf.Clamp(MapValue(item.agent.remainingDistance, 0f, longestDistance, 0, item.baseSpeed * 2), 0, item.baseSpeed * 2);
+                item.SetAgentSpeed(speed);
             }
-        }
 
-        foreach (var item in Ships)
-        {
-            float speed = Mathf.Clamp(MapValue(item.agent.remainingDistance, 0f, longestDistance, 0, item.baseSpeed * 2), 0, item.baseSpeed * 2);
-            item.SetAgentSpeed(speed);
+            isSyncing = true;
         }
-
-        isSyncing = true;
     }
 
     public int CompareShipLocation(ShipNavigationAI a, ShipNavigationAI b)
