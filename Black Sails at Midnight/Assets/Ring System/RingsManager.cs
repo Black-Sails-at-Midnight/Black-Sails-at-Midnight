@@ -18,9 +18,9 @@ public class RingsManager : MonoBehaviour
     int NumberOfRings = 6;
 
     [SerializeField]
-    int BaseShipCapacity;
+    int BaseShipCapacity = 4;
     [SerializeField]
-    int IncreaseInShipCapacity;
+    int IncreaseInShipCapacity = 4;
 
     [SerializeField]
     public bool isDoneGenerating;
