@@ -31,8 +31,6 @@ public class FireCannonBall : MonoBehaviour
 
     [SerializeField]
     Transform target;
-
-    
    
     private List<Transform> shipsInRange;
     bool cannonsReady = true;
@@ -145,5 +143,16 @@ public class FireCannonBall : MonoBehaviour
             return -1;
         
         return 0;
+    }
+    
+
+    public List<ShipHealth> GetAllShipsInRange()
+    {
+        List<ShipHealth> enemyShips = new List<ShipHealth>();
+        foreach (var item in shipsInRange)
+        {
+            enemyShips.Add(item.gameObject.GetComponentInChildren<ShipHealth>());
+        }
+        return enemyShips;
     }
 }
