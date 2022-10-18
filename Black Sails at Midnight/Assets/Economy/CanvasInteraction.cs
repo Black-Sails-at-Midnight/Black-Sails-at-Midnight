@@ -31,22 +31,10 @@ public class CanvasInteraction : MonoBehaviour
         if(Input.GetKeyDown(keyCode))
         {
             RaycastHit hit;
-            if(Physics.Raycast(new Ray(transform.position, FPCamera.transform.forward), out hit, 20f, layerMask))
+            if (Physics.Raycast(new Ray(transform.position, FPCamera.transform.forward), out hit, 20f, layerMask))
             {
-                PurchaseOption option = hit.collider.GetComponent<PurchaseOption>();
-                if (option == null)
-                {
-                    hit.collider.GetComponent<InteractableCanvasObject>().CanvasAction();
-                }
-                else
-                {
-                    if(vault.Withdraw(option.Cost))
-                    {
-                        hit.collider.GetComponent<InteractableCanvasObject>().CanvasAction();
-                    }
-                }
+                hit.collider.GetComponent<InteractableCanvasObject>().CanvasAction();
             }
-
         }
     }
 }

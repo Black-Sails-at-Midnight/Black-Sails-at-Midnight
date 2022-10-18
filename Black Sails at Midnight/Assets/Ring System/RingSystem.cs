@@ -80,6 +80,12 @@ public class RingSystem : MonoBehaviour
 
     private void Start()
     {
+
+    }
+
+    public void SetupShipList(int capacity)
+    {
+        ShipCapacity = capacity;
         Ships = new List<ShipNavigationAI>(ShipCapacity);
         ShipsToUpdate = new List<ShipNavigationAI>();
     }
@@ -172,17 +178,28 @@ public class RingSystem : MonoBehaviour
         return new Vector3(Ring[index].x, 0, Ring[index].y);
     }
 
-    public void AddShip(ShipNavigationAI ship)
+    public bool AddShip(ShipNavigationAI ship)
     {
+        if (Ships.Capacity == Ships.Count)
+        {
+            return false;
+        }
+
         foreach (var item in Ships)
         {
             if (item == ship)
             {
-                return;
+                return false;
             }
         }
         Ships.Add(ship);
         StartCoroutine(CalculateSyncSpeed());
+        return true;
+    }
+
+    public bool isFull()
+    {
+        return Ships.Capacity == Ships.Count;
     }
 
     public void RemoveFromList(ShipNavigationAI ship)
@@ -360,5 +377,3 @@ public class RingSystem : MonoBehaviour
         return closestPoint--;
     }
 }
-
-

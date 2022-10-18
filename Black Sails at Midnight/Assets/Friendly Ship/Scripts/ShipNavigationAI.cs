@@ -37,6 +37,7 @@ public class ShipNavigationAI : MonoBehaviour
     public bool start = false;
     private bool isCheckingForRing = false;
 
+
     public float baseSpeed;
     public float baseDistanceToDestination;
 
@@ -85,6 +86,7 @@ public class ShipNavigationAI : MonoBehaviour
             {
                 direction = Direction.Counter_Clockwise;
             }
+
             Ring.AddShip(this);
         }
         yield return new WaitForSeconds(1);

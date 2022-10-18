@@ -18,6 +18,11 @@ public class RingsManager : MonoBehaviour
     int NumberOfRings = 6;
 
     [SerializeField]
+    int BaseShipCapacity;
+    [SerializeField]
+    int IncreaseInShipCapacity;
+
+    [SerializeField]
     public bool isDoneGenerating;
 
     [SerializeField]
@@ -29,7 +34,7 @@ public class RingsManager : MonoBehaviour
     private void Start()
     {
         Rings = new List<GameObject>();
-
+        int CurrentShipCapacity = BaseShipCapacity;
         for (int i = 0; i < NumberOfRings; i++)
         {
             GameObject ring = Instantiate(Ring,transform);
@@ -43,6 +48,8 @@ public class RingsManager : MonoBehaviour
             {
                 temp.DisableMarker = true;
             }
+            temp.SetupShipList(CurrentShipCapacity);
+            CurrentShipCapacity += IncreaseInShipCapacity;
 
             Rings.Add(ring);
         }
