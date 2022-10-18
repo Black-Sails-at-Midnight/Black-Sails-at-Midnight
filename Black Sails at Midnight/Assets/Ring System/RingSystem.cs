@@ -221,6 +221,11 @@ public class RingSystem : MonoBehaviour
         yield return new WaitForSeconds(30);
     }
 
+    public void ForceSync()
+    {
+        StartCoroutine(CalculateSyncSpeed());
+    }
+
     void UpdateShipNavigation(ShipNavigationAI ship)
     {
 
