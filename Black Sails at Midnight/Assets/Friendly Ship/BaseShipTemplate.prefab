@@ -666,6 +666,7 @@ GameObject:
   - component: {fileID: -2808468967158043492}
   - component: {fileID: 7359688905460502329}
   - component: {fileID: 228746770159081368}
+  - component: {fileID: 6962457370642798916}
   m_Layer: 8
   m_Name: BaseShipTemplate
   m_TagString: FriendlyShip
@@ -839,6 +840,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lostContactTimer: 1
   boundPlayer: {fileID: 0}
+--- !u!114 &6962457370642798916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36bbccaae41fa4c449fe3d389e1250af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  StatusEffects: []
+  currentHealth: 0
 --- !u!1 &156418
 GameObject:
   m_ObjectHideFlags: 0
@@ -3260,3 +3276,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 100
   parent: {fileID: 153108}
+  Delay: 3
