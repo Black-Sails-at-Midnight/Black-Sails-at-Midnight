@@ -771,6 +771,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4175341437490387974, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5108454926778829640, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: LeftCannons.Array.size
       value: 5
@@ -891,6 +895,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7548807656686300527, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8230039112112625884, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -968,6 +976,7 @@ MonoBehaviour:
   - {fileID: 3342791364996747879}
   - {fileID: 5381120938354096931}
   TagToFireUpon: FriendlyShip
+  range: 100
   target: {fileID: 0}
 --- !u!114 &2183876600111949308
 MonoBehaviour:

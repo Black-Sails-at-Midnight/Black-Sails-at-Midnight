@@ -15,7 +15,7 @@ public class FireCannonBall : MonoBehaviour
     [SerializeField]
     float CannonBallSpeed = 100;
     [SerializeField]
-    float FiringAngle = 30;
+    float FiringAngle = 90f;
     [SerializeField]
     int NumberOfCannonBalls = 1;
     [SerializeField]
@@ -26,6 +26,8 @@ public class FireCannonBall : MonoBehaviour
     List<GameObject> LeftCannons;
     [SerializeField]
     string TagToFireUpon = "Enemy";
+    [SerializeField]
+    float range = 100f;
 
     FireCannonFX cannonFX;
 
@@ -38,11 +40,21 @@ public class FireCannonBall : MonoBehaviour
     {
         cannonFX = gameObject.GetComponentInChildren<FireCannonFX>();
         shipsInRange = new List<Transform>();
+
+        if (GetComponent<SphereCollider>() != null)
+        {
+            GetComponent<SphereCollider>().radius = range;            
+        }
+
+        if (GetComponentInChildren<RingMarkerHandler>() != null)
+        {
+            GetComponentInChildren<RingMarkerHandler>().Radius = range;
+        }
     }
 
     void Update()
     {
-        if(target != null && cannonsReady && true)
+        if(target != null && cannonsReady && IsWithinFiringArc())
         {
             Vector3 Direction = transform.InverseTransformPoint(target.position);
             if (Direction.x < 0) // Target is Left
@@ -61,8 +73,10 @@ public class FireCannonBall : MonoBehaviour
 
     private bool IsWithinFiringArc()
     {
-        float angle = Vector3.Angle(gameObject.transform.position, target.position);
-        return ((angle >= 90 - (FiringAngle / 2)) && (angle <= 90 + (FiringAngle / 2))) || ((angle >= 270 - (FiringAngle / 2)) && (angle <= 270 + (FiringAngle / 2)));
+        Vector3 vectorToTarget = (target.transform.position - transform.position).normalized;
+        float angleToTarget = Vector3.Angle(transform.forward, vectorToTarget);
+
+        return ((angleToTarget >= 90 - (FiringAngle / 2)) && (angleToTarget <= 90 + (FiringAngle / 2))) || ((angleToTarget >= 270 - (FiringAngle / 2)) && (angleToTarget <= 270 + (FiringAngle / 2)));
     }
 
     IEnumerator FireCannons(List<GameObject> cannons)
