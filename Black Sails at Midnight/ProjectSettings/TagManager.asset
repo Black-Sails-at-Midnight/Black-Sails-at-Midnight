@@ -11,6 +11,7 @@ TagManager:
   - Weapon
   - Enemy
   - Ship
+  - Island
   layers:
   - Default
   - TransparentFX
