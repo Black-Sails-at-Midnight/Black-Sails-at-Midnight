@@ -967,7 +967,7 @@ MonoBehaviour:
   - {fileID: 7658004072931963536}
   - {fileID: 3342791364996747879}
   - {fileID: 5381120938354096931}
-  TagToFireUpon: Enemy
+  TagToFireUpon: FriendlyShip
   target: {fileID: 0}
 --- !u!114 &2183876600111949308
 MonoBehaviour:
@@ -981,8 +981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60237b75d2fe2ad46bc241f814596051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RightCannons: {fileID: 3346145260021294445}
   LeftCannons: {fileID: 8995982989393778771}
+  RightCannons: {fileID: 3346145260021294445}
 --- !u!114 &2572341374818892144
 MonoBehaviour:
   m_ObjectHideFlags: 0

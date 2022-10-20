@@ -73,14 +73,7 @@ public class FireCannonBall : MonoBehaviour
         {
             for (int i = 0; i < NumberOfCannonBalls; i++)
             {
-<<<<<<< HEAD
-                if (target.IsDestroyed())
-=======
-                float timeDelay = Random.Range(0, 0.1f * TimeBetweenShots);
-                timeSpent += timeDelay;
-
                 if (target.IsDestroyed() || target == null)
->>>>>>> 523cf2881770b1f0e74714ec3bf593746778b85e
                 {
                     continue;
                 }
