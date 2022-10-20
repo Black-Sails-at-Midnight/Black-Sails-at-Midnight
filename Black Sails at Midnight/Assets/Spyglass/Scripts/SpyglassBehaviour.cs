@@ -58,11 +58,7 @@ public class SpyglassBehaviour : MonoBehaviour
     }
 
     private void Update() {
-<<<<<<< HEAD
         if (Input.GetKeyDown(zoomKey) && !isZoomedIn)
-=======
-        if (Input.GetKeyDown("g"))
->>>>>>> 523cf2881770b1f0e74714ec3bf593746778b85e
         {
             ActivateSpyglass();
         }
