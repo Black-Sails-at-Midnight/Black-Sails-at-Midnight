@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 6042696794335547728}
   - component: {fileID: 6488669877917629186}
   - component: {fileID: 397864700372755701}
+  - component: {fileID: 3087009290602398760}
   m_Layer: 0
   m_Name: Enemy Ship Base
   m_TagString: Enemy
@@ -146,6 +147,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lostContactTimer: 1
   boundPlayer: {fileID: 0}
+--- !u!114 &3087009290602398760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716754706882819738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f4515c1d81bad7479344afb2342fdba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  approuachSpeedMultiplier: 3
 --- !u!1 &3773326919270511556
 GameObject:
   m_ObjectHideFlags: 0

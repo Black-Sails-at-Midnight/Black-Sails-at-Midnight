@@ -57,9 +57,9 @@ public class RingSystem : MonoBehaviour
 
     [Header("Ship Settings")]
     [SerializeField]
-    int ShipCapacity;
+    public int ShipCapacity;
     [SerializeField]
-    List<ShipNavigationAI> Ships;
+    public List<ShipNavigationAI> Ships;
     [SerializeField]
     List<ShipNavigationAI> ShipsToUpdate;
 
@@ -71,6 +71,9 @@ public class RingSystem : MonoBehaviour
         set {
             disableMarker = value;
             GetComponentInChildren<RingMarkerHandler>().gameObject.SetActive(!disableMarker);
+        }
+        get {
+            return disableMarker;
         }
     }
 
