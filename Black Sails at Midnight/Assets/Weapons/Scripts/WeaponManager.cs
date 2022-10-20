@@ -10,8 +10,6 @@ public class WeaponManager : MonoBehaviour
     public Attack ActiveWeapon {get; private set;}
     public List<Attack> AllWeapons {get; private set;}
     
-    private bool weaponsActive = true;
-    
 
     // Monobehaviour Methods
     public void Start() 
