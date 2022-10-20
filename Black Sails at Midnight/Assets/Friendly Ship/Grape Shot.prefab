@@ -140,6 +140,10 @@ PrefabInstance:
       propertyPath: NumberOfCannonBalls
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6855219122393304112, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
+      propertyPath: m_Radius
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
 --- !u!4 &6451124708988830401 stripped
