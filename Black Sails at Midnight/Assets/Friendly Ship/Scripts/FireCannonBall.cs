@@ -26,6 +26,8 @@ public class FireCannonBall : MonoBehaviour
     List<GameObject> LeftCannons;
     [SerializeField]
     string TagToFireUpon = "Enemy";
+    [SerializeField]
+    string FinalTarget = "Island";
 
     FireCannonFX cannonFX;
 
@@ -97,11 +99,7 @@ public class FireCannonBall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Island")
-        {
-            target = other.transform;
-        }
-        else if (other.tag == TagToFireUpon && other is MeshCollider)
+        if (other.tag == TagToFireUpon || other.tag == FinalTarget && other is MeshCollider)
         {
             shipsInRange.Add(other.transform);
         }
