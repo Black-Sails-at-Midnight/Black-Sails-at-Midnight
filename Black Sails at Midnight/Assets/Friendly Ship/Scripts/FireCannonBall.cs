@@ -55,7 +55,6 @@ public class FireCannonBall : MonoBehaviour
                 cannonFX.FireLeftCannons();
                 StartCoroutine(FireCannons(LeftCannons));
             }
-            IsWithinFiringArc();
         }
     }
 
@@ -95,9 +94,14 @@ public class FireCannonBall : MonoBehaviour
         yield return new WaitForSeconds(TimeBetweenShots - timeSpent);
         cannonsReady = true;
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == TagToFireUpon && other is MeshCollider)
+        if (other.name == "Island")
+        {
+            target = other.transform;
+        }
+        else if (other.tag == TagToFireUpon && other is MeshCollider)
         {
             shipsInRange.Add(other.transform);
         }
