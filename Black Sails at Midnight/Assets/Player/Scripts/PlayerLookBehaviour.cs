@@ -11,13 +11,13 @@ public class PlayerLookBehaviour : MonoBehaviour
     // Monobahaviour Methods
     public void Start() {
         FPController = GetComponentInChildren<FirstPersonController>();
-        FPCamera = FPController.GetComponentInChildren<Camera>();
+        FPCamera = Camera.main;
     }
 
     // Public Methods
     public void LookAtTarget(GameObject targetOpbject)
     {
-        RotatePlayerTowards(gameObject.transform.position);
+        RotatePlayerTowards(targetOpbject.transform.position);
     }
 
     public void LookAtPosition(Vector3 targetPosition)

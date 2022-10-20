@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3958876370598762665, guid: 2f6e3c0136c341e40af5edf19b362bc8, type: 3}
       propertyPath: m_Name
-      value: 'Standard Marker '
+      value: Explosive Shot Marker
       objectReference: {fileID: 0}
     - target: {fileID: 4640328927792344600, guid: 2f6e3c0136c341e40af5edf19b362bc8, type: 3}
       propertyPath: m_RootOrder
@@ -55,5 +55,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6864145758125809263, guid: 2f6e3c0136c341e40af5edf19b362bc8, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 53502507405b86f44a5ff8436c23e5ee, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f6e3c0136c341e40af5edf19b362bc8, type: 3}

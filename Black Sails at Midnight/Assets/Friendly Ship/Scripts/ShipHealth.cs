@@ -22,7 +22,8 @@ public class ShipHealth : MonoBehaviour
         }
     }
 
-    private float currentHealth;
+    [SerializeField]
+    float currentHealth;
 
     // Monobehaviour Methods
     public void Start()
@@ -40,12 +41,12 @@ public class ShipHealth : MonoBehaviour
 
     public void Hit(Attack attack)
     {
-        Health = -attack.attackSettings.damage * attack.attackSettings.damageMultiplier;
+        Health -= attack.attackSettings.damage * attack.attackSettings.damageMultiplier;
     }
 
     public void Hit(float damage)
     {
-        Health = -damage;
+        Health -= damage;
     }
 
     public void Heal(float amount)
@@ -60,10 +61,10 @@ public class ShipHealth : MonoBehaviour
     // Private Methods
     private void HealthUpdate()
     {
-        if (Health < 0)
+        if (currentHealth <= 0)
         {
-            //TODO: Remove Enemy from play.
-            Destroy(gameObject);
+            FindObjectOfType<EconomySystem>().Deposit(gameObject.GetComponent<BasicShipEquivelant>().GetBasicEquivelant());
+            Destroy(gameObject);            //TODO: have an animation or something, but it's FINE for now.
         }
     }
 

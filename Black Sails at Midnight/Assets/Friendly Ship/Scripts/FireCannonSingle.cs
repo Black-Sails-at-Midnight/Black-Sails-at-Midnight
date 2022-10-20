@@ -52,7 +52,6 @@ public class FireCannonSingle : MonoBehaviour
     IEnumerator FireCannon()
     {
         cannonsReady = false;
-        Debug.Log("FIRING");
         GameObject instance = Instantiate(CannonBallType, Cannon.transform.position, Cannon.transform.rotation);
         instance.GetComponent<Rigidbody>().AddForce((target.position - Cannon.transform.position).normalized * CannonBallSpeed, ForceMode.Impulse);
         Destroy(instance, 8f);

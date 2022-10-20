@@ -16,6 +16,9 @@ public class PlayerRespawnHandler : MonoBehaviour
     [SerializeField]
     LayerMask inFlightLayer;
 
+    [SerializeField]
+    KeyCode RespawnKey;
+
 
     public bool isLaunched {get; private set;} = false;
 
@@ -27,11 +30,16 @@ public class PlayerRespawnHandler : MonoBehaviour
 
     // Monobehaviour Methods
     private void Start() {
-        weaponManager = ObjectToLauch.GetComponentInChildren<WeaponManager>(); 
+        weaponManager = ObjectToLauch.GetComponentInChildren<WeaponManager>();
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(RespawnKey))
+        {
+            FindObjectOfType<PlayerRelocator>().MovePlayer(RespawnPoint);
+        }
+
         if (isLaunched && Vector3.Distance(ObjectToLauch.transform.position, RespawnPoint.position) < DistaceToLandingPoint)
         {
             PrepareForLanding();

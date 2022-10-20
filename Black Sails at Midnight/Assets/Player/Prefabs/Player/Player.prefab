@@ -62,6 +62,8 @@ GameObject:
   - component: {fileID: 3663238493301140439}
   - component: {fileID: 8582603004340886954}
   - component: {fileID: 3519229424988206430}
+  - component: {fileID: 6172338625136564154}
+  - component: {fileID: 8384149625151141305}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -98,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  currentHealth: 0
 --- !u!114 &3663238493301140439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,11 +139,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToLauch: {fileID: 8078942694423808659}
   RespawnPoint: {fileID: 0}
-  DistaceToLandingPoint: 1
+  DistaceToLandingPoint: 5
   Angle: 45
   inFlightLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
+  RespawnKey: 0
+--- !u!114 &6172338625136564154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7619150740224659145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b4d1fa739b68944b2f3b30680d817b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noClipLayer:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &8384149625151141305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7619150740224659145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ca297a3e03c924d96160a601d8fd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartingGold: 10
 --- !u!1001 &7752562942282274186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -370,8 +402,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 63
+      value: 447
       objectReference: {fileID: 0}
     - target: {fileID: 5400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Constraints
@@ -412,6 +448,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8548423147787109626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078942694418524659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956bfbbd8714ce742886eb3ecc9a77d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  castDistance: 10
 --- !u!20 &8078942694418852819 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}

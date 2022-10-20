@@ -6,9 +6,11 @@ TagManager:
   tags:
   - Projectile
   - FriendlyShip
+  - EnemyCrew
   - Cannon Ball
   - Weapon
   - Enemy
+  - Ship
   layers:
   - Default
   - TransparentFX
@@ -17,9 +19,9 @@ TagManager:
   - Water
   - UI
   - Map UI
-  - 
-  - 
-  - 
+  - Crew
+  - Ship
+  - Water Collider
   - 
   - 
   - 
