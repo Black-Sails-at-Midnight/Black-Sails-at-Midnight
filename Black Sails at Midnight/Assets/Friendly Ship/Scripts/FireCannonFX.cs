@@ -6,10 +6,10 @@ public class FireCannonFX : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    GameObject RightCannons;
+    GameObject LeftCannons;
 
     [SerializeField]
-    GameObject LeftCannons;
+    GameObject RightCannons;
 
     public void FireRightCannons()
     {

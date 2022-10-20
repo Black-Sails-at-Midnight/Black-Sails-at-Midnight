@@ -13,7 +13,7 @@ public class WaterSurfaceCollisionHandler : MonoBehaviour
         {
             foreach(PlayerBinder playerBinder in FindObjectsOfType<PlayerBinder>())
             {
-                if (playerBinder.parentedPlayer != null)
+                if (playerBinder.IsBound())
                 {
                     playerBinder.Unbind();
                 }

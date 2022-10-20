@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Gun : Attack
 {
@@ -57,8 +58,11 @@ public class Gun : Attack
 
     [SerializeField]
     public AudioClip reloadAudio;
+    
+    Vector3 DefaultPosition;
+    Quaternion DefaultRotation;
 
-    private int clip;
+    public int clip {get; private set;}
     private bool isReloading = false;
     
     private Animator animator;
@@ -68,13 +72,19 @@ public class Gun : Attack
     public void Start()
     {
         clip = gunSettings.clipSize;
+        DefaultPosition = new Vector3(1, -0.25f, -0.5f);
+        DefaultRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
     }
 
     public void OnEnable() 
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-
+        if (DefaultPosition != Vector3.zero && DefaultRotation != Quaternion.identity)
+        {
+            transform.localPosition = DefaultPosition;
+            transform.localRotation = DefaultRotation;
+        }
         StartCoroutine(ShootHandler());
     }
 
@@ -91,6 +101,8 @@ public class Gun : Attack
         {
             if (Input.GetButton("Fire1") && clip > 0 && !isReloading && attackSettings.canAttack)
             {
+                animator.SetTrigger("Fired");
+
                 for (int i = 0; i < gunSettings.palletsPerShot; i++)
                 {
                     Vector3 randomVector = 
@@ -99,6 +111,7 @@ public class Gun : Attack
 
                     GameObject _bullet = Instantiate(bulletPrefab, transform.position + ((transform.forward.normalized) * muzzleLength), transform.rotation);
                     _bullet.GetComponent<Rigidbody>().AddForce(randomVector.normalized * gunSettings.bulletVelocity, ForceMode.Impulse);
+                    _bullet.GetComponent<Rigidbody>().AddForce(FindObjectOfType<FirstPersonController>().GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
                     _bullet.GetComponent<Bullet>().ShotBy = this;
                 }
 
@@ -125,12 +138,12 @@ public class Gun : Attack
 
     private IEnumerator Reload()
     {
-        animator.SetBool("Reload",true);
+        animator.SetBool("Reload", true);
         animator.SetBool("IsScopedIn", false);
 
         yield return new WaitForSeconds(gunSettings.reloadTime);
         animator.SetBool("Reload", false);
-        
+
         clip = gunSettings.clipSize;
         isReloading = false;
     }

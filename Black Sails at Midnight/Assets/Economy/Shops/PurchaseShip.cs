@@ -1,24 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PurchaseShip : PurchaseOption
+public class PurchaseShip : PurchaseOption, InteractableCanvasObject
 {
     [SerializeField]
     GameObject prefab;
+
     [SerializeField]
-    Transform spawnPoint;
+    GameObject RingSelectionCanvas;
 
-    public override bool Purchase()
+    public void CanvasAction()
     {
-        GameObject ship = Instantiate(prefab, spawnPoint);
+        Purchase();
+    }
 
-        ShipNavigationAI shipNav = ship.GetComponent<ShipNavigationAI>();
-
-        shipNav.RingNumber = 3;
-        shipNav.StartNavigation();
-
-        Debug.Log("Ship Spawned");
-        return true;
+    public override void Purchase()
+    {
+        GetComponentInParent<PurchaseHolder>().shipToSpawn = prefab;
+        GetComponentInParent<PurchaseHolder>().SetShipCost(Cost);
+        RingSelectionCanvas.SetActive(true);
+        GameObject.Find("Ship Shop Canvas").SetActive(false);
     }
 }
