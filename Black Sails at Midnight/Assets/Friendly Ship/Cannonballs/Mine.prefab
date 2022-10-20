@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TagToDetonateOn: Enemy
-  Radius: 10
-  Damage: 60
+  Radius: 20
+  Damage: 80
 --- !u!195 &7083383778902072941
 NavMeshAgent:
   m_ObjectHideFlags: 0
