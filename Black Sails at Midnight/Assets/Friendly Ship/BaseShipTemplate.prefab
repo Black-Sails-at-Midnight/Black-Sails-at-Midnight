@@ -3260,3 +3260,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 100
   parent: {fileID: 153108}
+  Delay: 3
