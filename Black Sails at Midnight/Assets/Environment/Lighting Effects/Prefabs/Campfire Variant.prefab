@@ -169,7 +169,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire Light
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8207001392120961314, guid: 21e1ab0ecba711e459a1905b7afbd395, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 21e1ab0ecba711e459a1905b7afbd395, type: 3}
 --- !u!1001 &6039046709204076496
 PrefabInstance:

@@ -559,6 +559,10 @@ PrefabInstance:
       value: Bottle Candle Light Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -1812,6 +1816,10 @@ PrefabInstance:
       value: Bottle Candle Light Variant (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -2133,6 +2141,10 @@ PrefabInstance:
       value: Haning Lantern Variant (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -2383,6 +2395,10 @@ PrefabInstance:
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_Name
       value: Bottle Candle Light Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3557,6 +3573,10 @@ PrefabInstance:
       value: Bottle Candle Light Variant (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3666,6 +3686,10 @@ PrefabInstance:
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_Name
       value: Bottle Candle Light Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4015,6 +4039,10 @@ PrefabInstance:
       value: Bottle Candle Light Variant (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -4168,6 +4196,10 @@ PrefabInstance:
     - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
       propertyPath: m_Name
       value: Haning Lantern Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4503,6 +4535,10 @@ PrefabInstance:
     - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
       propertyPath: m_Name
       value: Haning Lantern Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5389,6 +5425,10 @@ PrefabInstance:
       value: Bottle Candle Light Variant (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -5895,6 +5935,10 @@ PrefabInstance:
     - target: {fileID: 6039046707858124920, guid: aa8cb85fcf17a964c9be2db4fea48cd0, type: 3}
       propertyPath: m_Name
       value: Campfire Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039046707858124920, guid: aa8cb85fcf17a964c9be2db4fea48cd0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6039046707858124920, guid: aa8cb85fcf17a964c9be2db4fea48cd0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6436,6 +6480,10 @@ PrefabInstance:
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_Name
       value: Bottle Candle Light Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7010,6 +7058,10 @@ PrefabInstance:
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_Name
       value: Bottle Candle Light Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8402,6 +8454,10 @@ PrefabInstance:
       value: Bottle Candle Light Variant (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -9185,6 +9241,10 @@ PrefabInstance:
       value: Haning Lantern Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -9755,6 +9815,10 @@ PrefabInstance:
       value: Bottle Candle Light Variant (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -9907,6 +9971,10 @@ PrefabInstance:
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_Name
       value: Bottle Candle Light Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10539,6 +10607,10 @@ PrefabInstance:
       value: Bottle Candle Light Variant (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -10635,6 +10707,10 @@ PrefabInstance:
       value: Bottle Candle Light Variant (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -10710,6 +10786,10 @@ PrefabInstance:
     - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
       propertyPath: m_Name
       value: Haning Lantern Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11129,6 +11209,10 @@ PrefabInstance:
       value: Haning Lantern Variant (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -11281,6 +11365,10 @@ PrefabInstance:
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_Name
       value: Bottle Candle Light Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13420,6 +13508,10 @@ PrefabInstance:
       value: Haning Lantern Variant (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -13495,6 +13587,10 @@ PrefabInstance:
     - target: {fileID: 109254, guid: 14fccbae209fdf64bbe5c99774a871e7, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Campfire_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 109254, guid: 14fccbae209fdf64bbe5c99774a871e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 109254, guid: 14fccbae209fdf64bbe5c99774a871e7, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13659,6 +13755,10 @@ PrefabInstance:
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_Name
       value: Bottle Candle Light Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13984,6 +14084,10 @@ PrefabInstance:
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_Name
       value: Bottle Candle Light Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14479,6 +14583,10 @@ PrefabInstance:
     - target: {fileID: 137634, guid: e77bb0d531071bc4fbe1775ecc123bf9, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Campfire_Pot_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 137634, guid: e77bb0d531071bc4fbe1775ecc123bf9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 137634, guid: e77bb0d531071bc4fbe1775ecc123bf9, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -16371,6 +16479,10 @@ PrefabInstance:
       value: Campfire Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6039046707858124920, guid: aa8cb85fcf17a964c9be2db4fea48cd0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039046707858124920, guid: aa8cb85fcf17a964c9be2db4fea48cd0, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -16450,6 +16562,10 @@ PrefabInstance:
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_Name
       value: Bottle Candle Light Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -17142,6 +17258,10 @@ PrefabInstance:
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_Name
       value: Bottle Candle Light Variant (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -18063,6 +18183,10 @@ PrefabInstance:
     - target: {fileID: 2832418659857553989, guid: 57aca41fa55917647a23d4d7f9625312, type: 3}
       propertyPath: m_Name
       value: Wall Lantern Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832418659857553989, guid: 57aca41fa55917647a23d4d7f9625312, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2832418659857553989, guid: 57aca41fa55917647a23d4d7f9625312, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -20220,8 +20344,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 722566874124729528, guid: 63efb80c5587ad54cb1c7148a8d86aef, type: 3}
+      propertyPath: m_Color.b
+      value: 0.482
+      objectReference: {fileID: 0}
+    - target: {fileID: 722566874124729528, guid: 63efb80c5587ad54cb1c7148a8d86aef, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8610244
+      objectReference: {fileID: 0}
+    - target: {fileID: 722566874124729528, guid: 63efb80c5587ad54cb1c7148a8d86aef, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 722566874124729528, guid: 63efb80c5587ad54cb1c7148a8d86aef, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 722566874124729528, guid: 63efb80c5587ad54cb1c7148a8d86aef, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 722566874124729528, guid: 63efb80c5587ad54cb1c7148a8d86aef, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 959
       objectReference: {fileID: 0}
     - target: {fileID: 722566874124729528, guid: 63efb80c5587ad54cb1c7148a8d86aef, type: 3}
       propertyPath: m_Shadows.m_Strength
@@ -20237,11 +20381,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5006759263853472354, guid: 63efb80c5587ad54cb1c7148a8d86aef, type: 3}
       propertyPath: dayNightCycleTime.Minutes
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5006759263853472354, guid: 63efb80c5587ad54cb1c7148a8d86aef, type: 3}
       propertyPath: dayNightCycleTime.Seconds
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6759486315205224220, guid: 63efb80c5587ad54cb1c7148a8d86aef, type: 3}
       propertyPath: m_RootOrder
@@ -20299,6 +20443,10 @@ PrefabInstance:
     - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
       propertyPath: m_Name
       value: Haning Lantern
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4364031313371501164, guid: ddd8082ec94d5a048bfa55452993feac, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -20422,6 +20570,10 @@ PrefabInstance:
       value: Wall Lantern
       objectReference: {fileID: 0}
     - target: {fileID: 2832418659857553989, guid: 57aca41fa55917647a23d4d7f9625312, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832418659857553989, guid: 57aca41fa55917647a23d4d7f9625312, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -20445,6 +20597,10 @@ PrefabInstance:
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_Name
       value: Bottle Candle Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644306125212005765, guid: 8c1a6e41a7f41684992ead6322906cc2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -20534,6 +20690,10 @@ PrefabInstance:
     - target: {fileID: 6039046707858124920, guid: aa8cb85fcf17a964c9be2db4fea48cd0, type: 3}
       propertyPath: m_Name
       value: Campfire
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039046707858124920, guid: aa8cb85fcf17a964c9be2db4fea48cd0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6039046707858124920, guid: aa8cb85fcf17a964c9be2db4fea48cd0, type: 3}
       propertyPath: m_StaticEditorFlags
