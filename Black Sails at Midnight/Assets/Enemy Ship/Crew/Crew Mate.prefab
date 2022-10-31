@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4357556148076260}
   m_Layer: 7
   m_Name: Thumb_01 1
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4580989659663700}
   m_Layer: 7
   m_Name: IndexFinger_01 1
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4262437493936646}
   m_Layer: 7
   m_Name: Spine_02
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 4338368083312120}
   m_Layer: 7
   m_Name: Finger_01
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 4906926711436598}
   m_Layer: 7
   m_Name: Thumb_01
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 4815131934815012}
   m_Layer: 7
   m_Name: Elbow_R
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 4489651739112498}
   m_Layer: 7
   m_Name: Neck
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 4032950001811232}
   m_Layer: 7
   m_Name: Spine_01
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 4986196134667540}
   m_Layer: 7
   m_Name: Spine_03
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 4467302468065856}
   m_Layer: 7
   m_Name: UpperLeg_L
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 4471059944376276}
   m_Layer: 7
   m_Name: Hips
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 4204966433417868}
   m_Layer: 7
   m_Name: Finger_01 1
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 4567505709837680}
   m_Layer: 7
   m_Name: Clavicle_R
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -782,7 +782,7 @@ GameObject:
   - component: {fileID: 23103675903209218}
   m_Layer: 7
   m_Name: SM_Item_Compass_01
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -897,7 +897,7 @@ GameObject:
   - component: {fileID: 23321343769706258}
   m_Layer: 7
   m_Name: SM_Item_Bag_Attachment_03
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1009,7 +1009,7 @@ GameObject:
   - component: {fileID: 4628471334991986}
   m_Layer: 7
   m_Name: Hand_R
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1076,7 +1076,7 @@ GameObject:
   - component: {fileID: 4082293290958984}
   m_Layer: 7
   m_Name: Shoulder_R
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1234,7 +1234,7 @@ GameObject:
   - component: {fileID: 4825891137872250}
   m_Layer: 7
   m_Name: Root
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1298,7 +1298,7 @@ GameObject:
   - component: {fileID: 4154037763121934}
   m_Layer: 7
   m_Name: Shoulder_L
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1549,7 +1549,7 @@ GameObject:
   - component: {fileID: 23694023538883768}
   m_Layer: 7
   m_Name: SM_Item_Flask_01
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1662,7 +1662,7 @@ GameObject:
   - component: {fileID: 4683382947111282}
   m_Layer: 7
   m_Name: Elbow_L
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1726,7 +1726,7 @@ GameObject:
   - component: {fileID: 4433539394374694}
   m_Layer: 7
   m_Name: Clavicle_L
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1758,7 +1758,7 @@ GameObject:
   - component: {fileID: 4380971274789308}
   m_Layer: 7
   m_Name: IndexFinger_01
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1791,7 +1791,7 @@ GameObject:
   - component: {fileID: 137808342563865510}
   m_Layer: 7
   m_Name: Character_English_Govenor_02
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1956,7 +1956,7 @@ GameObject:
   - component: {fileID: 4349993471420164}
   m_Layer: 7
   m_Name: UpperLeg_R
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2083,7 +2083,7 @@ GameObject:
   - component: {fileID: 4549042244112102}
   m_Layer: 7
   m_Name: Hand_L
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2151,7 +2151,7 @@ GameObject:
   - component: {fileID: 277010479405369052}
   m_Layer: 7
   m_Name: ProjectileSpawn
-  m_TagString: Untagged
+  m_TagString: EnemyCrew
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2164,7 +2164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2771452790932005279}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0022, y: 0.0333, z: 0.5233}
+  m_LocalPosition: {x: 0.002, y: 0.033, z: 0.646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2185,6 +2185,10 @@ PrefabInstance:
     - target: {fileID: 182436, guid: b32c6b4eae614e846bbaea9b1cf32b79, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 182436, guid: b32c6b4eae614e846bbaea9b1cf32b79, type: 3}
+      propertyPath: m_TagString
+      value: EnemyCrew
       objectReference: {fileID: 0}
     - target: {fileID: 431482, guid: b32c6b4eae614e846bbaea9b1cf32b79, type: 3}
       propertyPath: m_RootOrder
@@ -2251,6 +2255,10 @@ PrefabInstance:
     - target: {fileID: 147302, guid: 29b9f54949a9953499c792913fbfa1e1, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 147302, guid: 29b9f54949a9953499c792913fbfa1e1, type: 3}
+      propertyPath: m_TagString
+      value: EnemyCrew
       objectReference: {fileID: 0}
     - target: {fileID: 440550, guid: 29b9f54949a9953499c792913fbfa1e1, type: 3}
       propertyPath: m_RootOrder
