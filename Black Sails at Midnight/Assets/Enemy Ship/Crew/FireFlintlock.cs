@@ -24,7 +24,7 @@ public class FireFlintlock : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.FindWithTag("FPSController").transform;
+        target = GameObject.Find("FirstPersonCharacter").transform;
     }
 
     private void Update()
@@ -38,8 +38,8 @@ public class FireFlintlock : MonoBehaviour
     private IEnumerator FireWeapon()
     {
         readyToShoot = false;
-        GameObject instance = Instantiate(bulletPrefab, transform.position, transform.rotation);
-        instance.GetComponent<Rigidbody>().AddForce((target.position - transform.position).normalized * bulletSpeed, ForceMode.Impulse);
+        GameObject instance = Instantiate(bulletPrefab, SpawnPosition.position, SpawnPosition.rotation);
+        instance.GetComponent<Rigidbody>().AddForce((target.position - SpawnPosition.position).normalized * bulletSpeed, ForceMode.Impulse);
         Destroy(instance, 8f);
         yield return new WaitForSeconds(fireDelay);
         readyToShoot = true;
