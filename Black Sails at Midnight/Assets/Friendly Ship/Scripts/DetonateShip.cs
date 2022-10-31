@@ -25,6 +25,7 @@ public class DetonateShip : MonoBehaviour, InteractableCanvasObject
         if (!hasIgnited)
         {
             hasIgnited = true;
+            RespawnPlayer();
             yield return new WaitForSeconds(Delay);
             List<ShipHealth> enemies = parent.GetComponentInChildren<FireCannonBall>().GetAllShipsInRange();
 
@@ -36,5 +37,13 @@ public class DetonateShip : MonoBehaviour, InteractableCanvasObject
             //Animation here :)
             Destroy(parent);
         }
+    }
+
+    private void RespawnPlayer()
+    {
+        PlayerBinder playerBinder = GetComponentsInParent<PlayerBinder>()[0];
+        playerBinder.Unbind();
+
+        FindObjectOfType<PlayerRespawnHandler>().RespawnPlayer();
     }
 }

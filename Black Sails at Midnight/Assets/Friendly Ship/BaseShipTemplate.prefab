@@ -839,6 +839,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lostContactTimer: 1
   boundPlayer: {fileID: 0}
+  boundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &156418
 GameObject:
   m_ObjectHideFlags: 0

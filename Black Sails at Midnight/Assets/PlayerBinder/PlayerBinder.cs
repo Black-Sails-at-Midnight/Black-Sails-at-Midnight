@@ -13,6 +13,11 @@ public class PlayerBinder : MonoBehaviour, IBindingSurface
     private GameObject boundPlayer;
     private float timeOfLastContact;
 
+    [SerializeField]
+    LayerMask boundLayer;
+
+    int defaultLayer;
+
     private void Update() 
     {
         if (boundPlayer != null)
@@ -27,24 +32,32 @@ public class PlayerBinder : MonoBehaviour, IBindingSurface
     public void Bind(GameObject source)
     {
         if (source.GetComponentInChildren<PlayerMovement>() == null || source.GetComponentInChildren<PlayerMovement>().disableMovement)
-            return;
+            return;        
 
         if (boundPlayer == null)
         {
             boundPlayer = source.GetComponentInChildren<PlayerMovement>().gameObject;
-            timeOfLastContact = Time.realtimeSinceStartup;
+            defaultLayer = boundPlayer.gameObject.layer;
 
-            PlayerMovement FPController = boundPlayer.GetComponent<PlayerMovement>();
+            PlayerMovement FPController = boundPlayer.GetComponent<PlayerMovement>();            
             FPController.transform.parent = this.gameObject.transform;
+
+            FPController.gameObject.layer = Mathf.RoundToInt(Mathf.Log(boundLayer.value, 2));
         }
+
+        timeOfLastContact = Time.realtimeSinceStartup;
     }
 
     public void Unbind()
     {
-        PlayerMovement FPController = boundPlayer.GetComponent<PlayerMovement>();
-        FPController.transform.parent = null;
+        if (boundPlayer != null)
+        {
+            PlayerMovement FPController = boundPlayer.GetComponent<PlayerMovement>();
+            FPController.gameObject.transform.parent = null;
+            FPController.gameObject.layer = defaultLayer;
 
-        boundPlayer = null;
+            boundPlayer = null;
+        }
     }
 
     public bool IsBound()

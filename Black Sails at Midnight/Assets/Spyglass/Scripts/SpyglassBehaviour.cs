@@ -43,6 +43,8 @@ public class SpyglassBehaviour : MonoBehaviour
 
     private Vector3 defaultCameraPosition;
     private float defaultFov;
+
+    
     
 
     private void Start() {
@@ -88,6 +90,9 @@ public class SpyglassBehaviour : MonoBehaviour
                     {
                         Transform targetLocation = teleportHandler.teleportPoint.transform;
                         PlayerRelocator relocator = FindObjectOfType<PlayerRelocator>();
+
+                        
+
                         relocator.MovePlayer(targetLocation);
                         teleportHandler.GetComponent<PlayerBinder>().Bind(FindObjectOfType<PlayerMovement>().gameObject);
                     }
