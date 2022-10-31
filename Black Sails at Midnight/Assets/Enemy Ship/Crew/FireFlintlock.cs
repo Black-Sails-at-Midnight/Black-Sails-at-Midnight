@@ -24,7 +24,7 @@ public class FireFlintlock : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.FindWithTag("Player").transform;
+        target = GameObject.FindWithTag("FPSController").transform;
     }
 
     private void Update()

@@ -1336,6 +1336,7 @@ GameObject:
   - component: {fileID: 6004879456886499875}
   - component: {fileID: 1270641853578343701}
   - component: {fileID: 7847794305259460473}
+  - component: {fileID: 8179253992725882927}
   m_Layer: 7
   m_Name: Crew Mate
   m_TagString: EnemyCrew
@@ -1487,6 +1488,22 @@ MonoBehaviour:
   aimTransform: {fileID: 2367690738758276907}
   bone: {fileID: 4567505709837680}
   refreshRate: 4
+--- !u!114 &8179253992725882927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704086938168578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 125f66c77ceffc047b457386560713e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireDelay: 2
+  bulletPrefab: {fileID: 2153877398472805027, guid: e7e4ed108f5c7ba4b84a4302a4a6b30f, type: 3}
+  bulletSpeed: 2
+  SpawnPosition: {fileID: 277010479405369052}
 --- !u!1 &1721893322228998
 GameObject:
   m_ObjectHideFlags: 0
