@@ -1332,7 +1332,9 @@ GameObject:
   - component: {fileID: 1717154718}
   - component: {fileID: 1717154719}
   - component: {fileID: 7993593741381185535}
+  - component: {fileID: 8463050322708722491}
   - component: {fileID: 6004879456886499875}
+  - component: {fileID: 1270641853578343701}
   m_Layer: 7
   m_Name: Crew Mate
   m_TagString: EnemyCrew
@@ -1422,12 +1424,25 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704086938168578}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1
-  m_Height: 2
+  m_Radius: 0.5
+  m_Height: 1.73
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.53, z: 0}
+--- !u!65 &8463050322708722491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704086938168578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 1.69, z: 0}
 --- !u!114 &6004879456886499875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1442,6 +1457,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   Interval: 1
+--- !u!114 &1270641853578343701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704086938168578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7ad674b5f7a6d4987daa1af3d130a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &1721893322228998
 GameObject:
   m_ObjectHideFlags: 0
