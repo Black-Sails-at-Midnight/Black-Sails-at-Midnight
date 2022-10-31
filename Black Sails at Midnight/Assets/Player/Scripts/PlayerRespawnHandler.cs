@@ -39,7 +39,6 @@ public class PlayerRespawnHandler : MonoBehaviour
 
         if (isLaunched && Vector3.Distance(ObjectToLauch.transform.position, RespawnPoint.position) < DistaceToLandingPoint)
         {
-            
             PrepareForLanding();
             ObjectToLauch.transform.position = RespawnPoint.transform.position;
             ObjectToLauch.velocity = Vector3.zero;

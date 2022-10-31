@@ -63,5 +63,5 @@ public class PlayerBinder : MonoBehaviour, IBindingSurface
     public bool IsBound()
     {
         return boundPlayer != null;
-    }
+    }   
 }
