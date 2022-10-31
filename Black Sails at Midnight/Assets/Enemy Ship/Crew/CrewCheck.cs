@@ -30,4 +30,36 @@ public class CrewCheck : MonoBehaviour
     {
         transform.parent.GetComponent<ShipHealth>().Hit(9999); //Well, that should kill it. I hope. 
     }
+
+    public void DisableCrew()
+    {
+        foreach (Transform child in Crew)
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
+
+    public void EnableCrew()
+    {
+        foreach (Transform child in Crew)
+        {
+            child.gameObject.SetActive(true);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            EnableCrew();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            DisableCrew();
+        }
+    }
 }
