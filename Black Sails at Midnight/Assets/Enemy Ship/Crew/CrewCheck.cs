@@ -39,11 +39,12 @@ public class CrewCheck : MonoBehaviour
         }
     }
 
-    public void EnableCrew()
+    public void EnableCrew(Collider other)
     {
         foreach (Transform child in Crew)
         {
             child.gameObject.SetActive(true);
+            child.gameObject.GetComponent<SimpleAI>().TargetEntity(other.transform);
         }
     }
 
@@ -51,7 +52,7 @@ public class CrewCheck : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            EnableCrew();
+            EnableCrew(other);
         }
     }
 
