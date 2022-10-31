@@ -17,14 +17,8 @@ public class PlayerBinder : MonoBehaviour, IBindingSurface
     {
         if (boundPlayer != null)
         {
-            FirstPersonController FPController = boundPlayer.GetComponent<FirstPersonController>();
-            FPController.m_CharacterController.SimpleMove(GetComponent<NavMeshAgent>().velocity);
-
             if (Time.realtimeSinceStartup - timeOfLastContact > lostContactTimer)
             {
-                FPController.enableJumpSound = true;
-                FPController.m_UseHeadBob = true;
-
                 Unbind();
             }
         }
@@ -32,22 +26,24 @@ public class PlayerBinder : MonoBehaviour, IBindingSurface
 
     public void Bind(GameObject source)
     {
-        if (source.GetComponentInChildren<FirstPersonController>() == null)
+        if (source.GetComponentInChildren<PlayerMovement>() == null)
             return;
 
         if (boundPlayer == null)
         {
-            boundPlayer = source.GetComponentInChildren<FirstPersonController>().gameObject;
+            boundPlayer = source.GetComponentInChildren<PlayerMovement>().gameObject;
             timeOfLastContact = Time.realtimeSinceStartup;
 
-            FirstPersonController FPController = boundPlayer.GetComponent<FirstPersonController>();
-            FPController.enableJumpSound = false;
-            FPController.m_UseHeadBob = false;
+            PlayerMovement FPController = boundPlayer.GetComponent<PlayerMovement>();
+            FPController.transform.parent = this.gameObject.transform;
         }
     }
 
     public void Unbind()
     {
+        PlayerMovement FPController = boundPlayer.GetComponent<PlayerMovement>();
+        FPController.transform.parent = null;
+
         boundPlayer = null;
     }
 

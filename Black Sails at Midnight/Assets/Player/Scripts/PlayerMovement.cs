@@ -14,8 +14,10 @@ public class PlayerMovement : MonoBehaviour
 
     //Rotation and look
     private float xRotation;
+
+    [SerializeField]
     private float sensitivity = 50f;
-    private float sensMultiplier = 1f;
+    public float sensMultiplier = 1f;
 
     //Movement
     public float moveSpeed = 4500;
@@ -26,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public float counterMovement = 0.175f;
     private float threshold = 0.01f;
     public float maxSlopeAngle = 35f;
+    public bool disableMovement = false;
 
     //Crouch & Slide
     private Vector3 crouchScale = new Vector3(1, 0.5f, 1);
@@ -94,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         CounterMovement(x, y, mag);
 
         //If holding jump && ready to jump, then jump
-        if (readyToJump && jumping) Jump();
+        if (readyToJump && jumping && !disableMovement) Jump();
 
         //Set max speed
         float maxSpeed = this.maxSpeed;
@@ -126,8 +129,11 @@ public class PlayerMovement : MonoBehaviour
         if (grounded && crouching) multiplierV = 0f;
 
         //Apply forces to move player
-        rb.AddForce(orientation.transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
-        rb.AddForce(orientation.transform.right * x * moveSpeed * Time.deltaTime * multiplier);
+        if (!disableMovement)
+        {
+            rb.AddForce(orientation.transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
+            rb.AddForce(orientation.transform.right * x * moveSpeed * Time.deltaTime * multiplier);
+        }
     }
 
     private void Jump()

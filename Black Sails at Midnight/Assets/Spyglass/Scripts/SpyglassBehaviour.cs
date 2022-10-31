@@ -36,24 +36,22 @@ public class SpyglassBehaviour : MonoBehaviour
     public LayerMask teleportLayerMask;
 
     private GameObject lastFocusedObject;
-    private FirstPersonController FPController;
+    private PlayerMovement FPController;
     private Camera FPCamera;
     private PlayerLookBehaviour playerLook;
     private WeaponManager weaponManager;
 
     private Vector3 defaultCameraPosition;
     private float defaultFov;
-    private float defaultWalkSpeed;
-    private float defaultRunSpeed;
     
 
     private void Start() {
-        FPController = FindObjectOfType<FirstPersonController>();
+        FPController = FindObjectOfType<PlayerMovement>();
         FPCamera = Camera.main;
         playerLook = FindObjectOfType<PlayerLookBehaviour>();
         weaponManager = FindObjectOfType<WeaponManager>();
 
-        defaultCameraPosition = FPController.m_OriginalCameraPosition;
+        defaultCameraPosition = FPCamera.transform.position;
         defaultFov = FPCamera.fieldOfView;
     }
 
@@ -91,7 +89,7 @@ public class SpyglassBehaviour : MonoBehaviour
                         Transform targetLocation = teleportHandler.teleportPoint.transform;
                         PlayerRelocator relocator = FindObjectOfType<PlayerRelocator>();
                         relocator.MovePlayer(targetLocation);
-                        teleportHandler.GetComponent<PlayerBinder>().Bind(FindObjectOfType<FirstPersonController>().gameObject);
+                        teleportHandler.GetComponent<PlayerBinder>().Bind(FindObjectOfType<PlayerMovement>().gameObject);
                     }
                 }
 
@@ -105,9 +103,7 @@ public class SpyglassBehaviour : MonoBehaviour
 
     private void ActivateSpyglass()
     {
-        FPController.m_OriginalCameraPosition = FPController.m_OriginalCameraPosition + new Vector3(0, 100, 0);
-        FPController.m_isCameraLocked = true;
-        FPController.ForceUpdateCameraPosition();
+        FPCamera.transform.position += new Vector3(0, 100, 0);
         FPCamera.fieldOfView = zoomFOV;
 
         ToggleMovement(false);
@@ -118,9 +114,7 @@ public class SpyglassBehaviour : MonoBehaviour
 
     private void DeactivateSpyglass()
     {
-        FPController.m_OriginalCameraPosition = defaultCameraPosition;
-        FPController.m_isCameraLocked = false;
-        FPController.ForceUpdateCameraPosition();
+        FPCamera.transform.position -= new Vector3(0, 100, 0);
         FPCamera.fieldOfView = defaultFov;
         
         ToggleMovement(true);
@@ -131,19 +125,7 @@ public class SpyglassBehaviour : MonoBehaviour
 
     private void ToggleMovement(bool active)
     {
-        if (active)
-        {
-            FPController.m_WalkSpeed = defaultWalkSpeed;
-            FPController.m_RunSpeed = defaultRunSpeed;
-            FPController.m_JumpEnabled = true;
-        } else {
-            defaultWalkSpeed = FPController.m_WalkSpeed;
-            defaultRunSpeed = FPController.m_RunSpeed;
-            FPController.m_JumpEnabled = false;
-
-            FPController.m_WalkSpeed = 0;
-            FPController.m_RunSpeed = 0;
-        }
+        FPController.disableMovement = !active;
     }
 
     private void FocusOnObject(Direction direction)
