@@ -34,6 +34,5 @@ public class IKFlintlock : MonoBehaviour
         Vector3 targetDirection = targetPosition - aimTransform.position;
         Quaternion aimTowards = Quaternion.FromToRotation(aimDirection, targetDirection);
         bone.rotation = aimTowards * bone.rotation;
-        Debug.Log(bone.rotation);
     }
 }
