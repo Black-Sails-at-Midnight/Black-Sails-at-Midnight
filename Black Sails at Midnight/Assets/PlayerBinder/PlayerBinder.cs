@@ -26,7 +26,7 @@ public class PlayerBinder : MonoBehaviour, IBindingSurface
 
     public void Bind(GameObject source)
     {
-        if (source.GetComponentInChildren<PlayerMovement>() == null)
+        if (source.GetComponentInChildren<PlayerMovement>() == null || source.GetComponentInChildren<PlayerMovement>().disableMovement)
             return;
 
         if (boundPlayer == null)
