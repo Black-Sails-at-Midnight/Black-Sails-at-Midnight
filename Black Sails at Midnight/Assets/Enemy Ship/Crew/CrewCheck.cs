@@ -18,7 +18,7 @@ public class CrewCheck : MonoBehaviour
     {
         foreach (Transform child in Crew)
         {
-            if (child.gameObject.activeInHierarchy)
+            if (child.gameObject.GetComponent<CrewHealth>().Health > 0)
             {
                 return false;
             }
