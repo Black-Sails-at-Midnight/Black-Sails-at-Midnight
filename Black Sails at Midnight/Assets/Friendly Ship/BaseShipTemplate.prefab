@@ -840,6 +840,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lostContactTimer: 1
   boundPlayer: {fileID: 0}
+  boundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &6962457370642798916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,9 +858,6 @@ MonoBehaviour:
   maxHealth: 100
   StatusEffects: []
   currentHealth: 0
-  boundLayer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!1 &156418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1358,8 @@ MonoBehaviour:
   - {fileID: 1424591036}
   - {fileID: 894449678}
   TagToFireUpon: Enemy
-  range: 100
+  FinalTarget: Island
+  isHostile: 0
   target: {fileID: 0}
 --- !u!135 &6855219122393304112
 SphereCollider:

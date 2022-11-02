@@ -95,9 +95,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 119682233884611899}
     m_Modifications:
+    - target: {fileID: 184512, guid: bc45bb6342bf8eb45b5de1fc0c980f0a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 199582, guid: bc45bb6342bf8eb45b5de1fc0c980f0a, type: 3}
       propertyPath: m_Name
       value: FX_Cannon_Smoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 199582, guid: bc45bb6342bf8eb45b5de1fc0c980f0a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 486942, guid: bc45bb6342bf8eb45b5de1fc0c980f0a, type: 3}
       propertyPath: m_RootOrder
@@ -164,9 +172,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 14.12
       objectReference: {fileID: 0}
+    - target: {fileID: 592287594649977103, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 716754706882819738, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_Name
       value: Basic Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 716754706882819738, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1087043274296047499, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_BaseOffset
@@ -175,6 +191,10 @@ PrefabInstance:
     - target: {fileID: 1087043274296047499, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_AgentTypeID
       value: -334000983
+      objectReference: {fileID: 0}
+    - target: {fileID: 3773326919270511556, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5142953837712348911, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_RootOrder
@@ -247,6 +267,14 @@ PrefabInstance:
     - target: {fileID: 6488669877917629186, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: maxHealth
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415827045766221562, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230039112112625884, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8727666731843822415, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_RootOrder
@@ -381,9 +409,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5808016381005947986}
     m_Modifications:
+    - target: {fileID: 184512, guid: bc45bb6342bf8eb45b5de1fc0c980f0a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 199582, guid: bc45bb6342bf8eb45b5de1fc0c980f0a, type: 3}
       propertyPath: m_Name
       value: FX_Cannon_Smoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 199582, guid: bc45bb6342bf8eb45b5de1fc0c980f0a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 486942, guid: bc45bb6342bf8eb45b5de1fc0c980f0a, type: 3}
       propertyPath: m_RootOrder
@@ -443,13 +479,57 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9153436455162929106}
     m_Modifications:
+    - target: {fileID: 106316, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 133536, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 136818, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 138998, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 144278, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 154526, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 171668, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 180196, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 182300, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 183578, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Boat_Medium_01_Hull_Attachments
       objectReference: {fileID: 0}
     - target: {fileID: 183578, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 183578, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
       propertyPath: m_TagString
       value: Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 194708, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 404466, guid: dbc3416fef5328d439703987c11a9cd0, type: 3}
       propertyPath: m_RootOrder
@@ -558,6 +638,10 @@ PrefabInstance:
     - target: {fileID: 146306, guid: 9976885bd41aa534192c9d2fe06beea9, type: 3}
       propertyPath: m_Name
       value: SM_Flag_British_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 146306, guid: 9976885bd41aa534192c9d2fe06beea9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 419222, guid: 9976885bd41aa534192c9d2fe06beea9, type: 3}
       propertyPath: m_RootOrder
