@@ -10,7 +10,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //other.GetComponent<PlayerHealth>().Hit(damage);
+            other.GetComponent<PlayerHealth>().Hit(damage);
             Destroy(gameObject);
         }
         else if (other.tag != "EnemyCrew" && other.tag != "Enemy" && other.tag != "Projectile")
