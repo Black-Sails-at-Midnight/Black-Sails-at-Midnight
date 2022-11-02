@@ -15,7 +15,7 @@ public class IKFlintlock : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.Find("FPSController").transform;
+        target = FindObjectOfType<PlayerMovement>().transform;
     }
 
     private void LateUpdate()
