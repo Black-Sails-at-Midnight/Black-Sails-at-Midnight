@@ -31,8 +31,9 @@ public class GrapplingHook : MonoBehaviour
     [SerializeField]
     Transform player;
 
+
+    private GameObject GrapplePoint;
     private LineRenderer lineRenderer;
-    private Vector3 grapplePoint;
     public LayerMask whatIsGrappleable;
     private float maxDistance = 100f;
     private SpringJoint joint;
@@ -68,12 +69,15 @@ public class GrapplingHook : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(camera.position, camera.forward, out hit, Range))
         {
-            grapplePoint = hit.point;
+            GrapplePoint = new GameObject("Grappling Point");
+            GrapplePoint.transform.position = hit.point;
+            GrapplePoint.transform.parent = hit.transform;
+
             joint = player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
-            joint.connectedAnchor = grapplePoint;
+            joint.connectedAnchor = GrapplePoint.transform.position;
 
-            float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
+            float distanceFromPoint = Vector3.Distance(player.position, GrapplePoint.transform.position);
 
             //The distance grapple will try to keep from grapple point. 
             joint.maxDistance = distanceFromPoint * 0.8f;
@@ -97,6 +101,7 @@ public class GrapplingHook : MonoBehaviour
     {
         lineRenderer.positionCount = 0;
         Destroy(joint);
+        Destroy(GrapplePoint);
     }
 
     private Vector3 currentGrapplePosition;
@@ -105,8 +110,8 @@ public class GrapplingHook : MonoBehaviour
     {
         //If not grappling, don't draw rope
         if (!joint) return;
-
-        currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
+        joint.connectedAnchor = GrapplePoint.transform.position;
+        currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, GrapplePoint.transform.position, Time.deltaTime * 8f); ;
 
         lineRenderer.SetPosition(0, GrappleHookStart.position);
         lineRenderer.SetPosition(1, currentGrapplePosition);
@@ -119,7 +124,7 @@ public class GrapplingHook : MonoBehaviour
 
     public Vector3 GetGrapplePoint()
     {
-        return grapplePoint;
+        return GrapplePoint.transform.position;
     }
 
 }
