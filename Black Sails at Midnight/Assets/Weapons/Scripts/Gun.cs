@@ -111,7 +111,7 @@ public class Gun : Attack
 
                     GameObject _bullet = Instantiate(bulletPrefab, transform.position + ((transform.forward.normalized) * muzzleLength), transform.rotation);
                     _bullet.GetComponent<Rigidbody>().AddForce(randomVector.normalized * gunSettings.bulletVelocity, ForceMode.Impulse);
-                    _bullet.GetComponent<Rigidbody>().AddForce(FindObjectOfType<FirstPersonController>().GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
+                    _bullet.GetComponent<Rigidbody>().AddForce(FindObjectOfType<PlayerMovement>().GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
                     _bullet.GetComponent<Bullet>().ShotBy = this;
                 }
 
