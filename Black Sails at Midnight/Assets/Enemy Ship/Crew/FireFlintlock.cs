@@ -24,7 +24,7 @@ public class FireFlintlock : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.Find("FirstPersonCharacter").transform;
+        target = FindObjectOfType<PlayerMovement>().transform;
     }
 
     private void Update()
