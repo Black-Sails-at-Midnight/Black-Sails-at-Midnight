@@ -181,6 +181,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5142953837712348911, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142953837712348911, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142953837712348911, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142953837712348911, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -244.33823
       objectReference: {fileID: 0}
@@ -219,6 +231,10 @@ PrefabInstance:
     - target: {fileID: 5142953837712348911, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142953837712348911, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6253459489801789696, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: LeftCannons
@@ -304,6 +320,20 @@ MonoBehaviour:
   FiringAngle: 30
   Cannon: {fileID: 3486000362587998258}
   cannonFX: {fileID: 4531854625901928574}
+--- !u!114 &1621599749282589051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3578835763885621159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60237b75d2fe2ad46bc241f814596051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftCannons: {fileID: 866226487014128377}
+  RightCannons: {fileID: 6823718530667120583}
 --- !u!114 &6680727529413562378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,20 +352,6 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   agent: {fileID: 0}
   start: 0
---- !u!114 &1621599749282589051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3578835763885621159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60237b75d2fe2ad46bc241f814596051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LeftCannons: {fileID: 866226487014128377}
-  RightCannons: {fileID: 6823718530667120583}
 --- !u!4 &5808016381005947986 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7548807656686300527, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
@@ -509,6 +525,36 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 7.1443853
   m_Center: {x: 0, y: 6, z: 0}
+--- !u!114 &2993529845120323027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831252872575279147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_UseGeometry: 0
+  m_DefaultArea: 4
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.13333334
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: f0d2090394b696046bb77381ebebfcac, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &7207681843181528866
 PrefabInstance:
   m_ObjectHideFlags: 0
