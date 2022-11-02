@@ -47,7 +47,7 @@ public class WeaponManager : MonoBehaviour
     // Public Methods
     public void NextWeapon()
     {
-        if (IsWeaponScoped(ActiveWeapon))
+        if (IsWeaponScoped(ActiveWeapon) || (ActiveWeapon as Gun).IsReloading)
             return; 
 
         int activeIndex = GetWeaponIndex(ActiveWeapon);
@@ -64,7 +64,7 @@ public class WeaponManager : MonoBehaviour
 
     public void PreviousWeapon()
     {
-        if (IsWeaponScoped(ActiveWeapon))
+        if (IsWeaponScoped(ActiveWeapon) || (ActiveWeapon as Gun).IsReloading)
             return; 
 
         int activeIndex = GetWeaponIndex(ActiveWeapon);

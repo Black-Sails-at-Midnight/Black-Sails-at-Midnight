@@ -59,11 +59,13 @@ public class Gun : Attack
     [SerializeField]
     public AudioClip reloadAudio;
     
+    
     Vector3 DefaultPosition;
     Quaternion DefaultRotation;
 
     public int clip {get; private set;}
     private bool isReloading = false;
+    public bool IsReloading { get { return isReloading; } }
     
     private Animator animator;
     private AudioSource audioSource;
