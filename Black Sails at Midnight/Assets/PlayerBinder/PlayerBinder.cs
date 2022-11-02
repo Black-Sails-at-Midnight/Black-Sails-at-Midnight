@@ -13,18 +13,17 @@ public class PlayerBinder : MonoBehaviour, IBindingSurface
     private GameObject boundPlayer;
     private float timeOfLastContact;
 
+    [SerializeField]
+    LayerMask boundLayer;
+
+    int defaultLayer;
+
     private void Update() 
     {
         if (boundPlayer != null)
         {
-            FirstPersonController FPController = boundPlayer.GetComponent<FirstPersonController>();
-            FPController.m_CharacterController.SimpleMove(GetComponent<NavMeshAgent>().velocity);
-
             if (Time.realtimeSinceStartup - timeOfLastContact > lostContactTimer)
             {
-                FPController.enableJumpSound = true;
-                FPController.m_UseHeadBob = true;
-
                 Unbind();
             }
         }
@@ -32,27 +31,37 @@ public class PlayerBinder : MonoBehaviour, IBindingSurface
 
     public void Bind(GameObject source)
     {
-        if (source.GetComponentInChildren<FirstPersonController>() == null)
-            return;
+        if (source.GetComponentInChildren<PlayerMovement>() == null || source.GetComponentInChildren<PlayerMovement>().disableMovement)
+            return;        
 
         if (boundPlayer == null)
         {
-            boundPlayer = source.GetComponentInChildren<FirstPersonController>().gameObject;
-            timeOfLastContact = Time.realtimeSinceStartup;
+            boundPlayer = source.GetComponentInChildren<PlayerMovement>().gameObject;
+            defaultLayer = boundPlayer.gameObject.layer;
 
-            FirstPersonController FPController = boundPlayer.GetComponent<FirstPersonController>();
-            FPController.enableJumpSound = false;
-            FPController.m_UseHeadBob = false;
+            PlayerMovement FPController = boundPlayer.GetComponent<PlayerMovement>();            
+            FPController.transform.parent = this.gameObject.transform;
+
+            FPController.gameObject.layer = Mathf.RoundToInt(Mathf.Log(boundLayer.value, 2));
         }
+
+        timeOfLastContact = Time.realtimeSinceStartup;
     }
 
     public void Unbind()
     {
-        boundPlayer = null;
+        if (boundPlayer != null)
+        {
+            PlayerMovement FPController = boundPlayer.GetComponent<PlayerMovement>();
+            FPController.gameObject.transform.parent = null;
+            FPController.gameObject.layer = defaultLayer;
+
+            boundPlayer = null;
+        }
     }
 
     public bool IsBound()
     {
         return boundPlayer != null;
-    }
+    }   
 }
