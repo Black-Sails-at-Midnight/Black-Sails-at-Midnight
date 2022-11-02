@@ -18,7 +18,7 @@ public class SimpleAI : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("FPSController").transform;
+        target = FindObjectOfType<PlayerMovement>().transform;
     }
 
     // Update is called once per frame
