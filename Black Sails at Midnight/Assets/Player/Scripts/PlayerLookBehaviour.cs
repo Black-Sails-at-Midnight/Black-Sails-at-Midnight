@@ -31,7 +31,8 @@ public class PlayerLookBehaviour : MonoBehaviour
         Vector3 targetDirection = (position - FPCamera.transform.position).normalized;
 
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection, FPController.transform.up);
-        FPController.transform.rotation = new Quaternion(0, targetRotation.y, 0, targetRotation.w);
-        FPController.GetComponentInChildren<Camera>().transform.rotation = new Quaternion(targetRotation.x, 0, 0, targetRotation.w);
+        Debug.Log(targetRotation);
+
+        FPController.GetComponentInChildren<Camera>().transform.rotation = new Quaternion(targetRotation.x, targetRotation.y, 0, targetRotation.w);
     }
 }
