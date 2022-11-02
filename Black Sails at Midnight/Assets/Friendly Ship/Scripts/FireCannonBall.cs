@@ -27,6 +27,9 @@ public class FireCannonBall : MonoBehaviour
     [SerializeField]
     string TagToFireUpon = "Enemy";
     [SerializeField]
+    string FinalTarget = "Island";
+    [SerializeField]
+    private bool isHostile = false;
     float range = 100f;
 
     FireCannonFX cannonFX;
@@ -36,6 +39,7 @@ public class FireCannonBall : MonoBehaviour
    
     private List<Transform> shipsInRange;
     bool cannonsReady = true;
+
     void Start()
     {
         cannonFX = gameObject.GetComponentInChildren<FireCannonFX>();
@@ -67,7 +71,6 @@ public class FireCannonBall : MonoBehaviour
                 cannonFX.FireLeftCannons();
                 StartCoroutine(FireCannons(LeftCannons));
             }
-            IsWithinFiringArc();
         }
     }
 
@@ -109,9 +112,15 @@ public class FireCannonBall : MonoBehaviour
         yield return new WaitForSeconds(TimeBetweenShots - timeSpent);
         cannonsReady = true;
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == TagToFireUpon && other is MeshCollider)
+        if (other.tag == FinalTarget && isHostile)
+        {
+            shipsInRange.Add(other.transform);
+
+        }
+        else if (other.tag == TagToFireUpon && other is MeshCollider)
         {
             shipsInRange.Add(other.transform);
         }

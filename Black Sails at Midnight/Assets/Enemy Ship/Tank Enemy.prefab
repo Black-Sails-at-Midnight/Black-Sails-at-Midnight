@@ -982,6 +982,8 @@ MonoBehaviour:
   - {fileID: 5108390089174928554}
   - {fileID: 289445090971475056}
   TagToFireUpon: FriendlyShip
+  FinalTarget: Island
+  isHostile: 1
   range: 100
   target: {fileID: 0}
 --- !u!114 &2183876600111949308
