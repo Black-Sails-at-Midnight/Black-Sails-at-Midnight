@@ -5,17 +5,11 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class PlayerRelocator : MonoBehaviour
 {
-    [SerializeField]
-    LayerMask noClipLayer;
-
-    private int defaultLayer;
     public void MovePlayer(Transform targetPosition)
     {
-        FirstPersonController FPController = FindObjectOfType<FirstPersonController>();
-        defaultLayer = FPController.gameObject.layer;
-        FPController.gameObject.layer = Mathf.RoundToInt(Mathf.Log(noClipLayer.value, 2));
-
-        FPController.m_CharacterController.Move(targetPosition.position - FPController.transform.position);
-        FPController.gameObject.layer = defaultLayer;
+        PlayerMovement FPController = FindObjectOfType<PlayerMovement>();
+        FPController.transform.position = targetPosition.position;
+        FPController.transform.rotation = targetPosition.rotation;
+        FPController.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 }

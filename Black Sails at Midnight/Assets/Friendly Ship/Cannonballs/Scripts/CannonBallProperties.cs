@@ -28,5 +28,11 @@ public class CannonBallProperties : MonoBehaviour
             other.GetComponent<ShipHealth>().Hit(Damage);
             Destroy(this.gameObject);
         }
+
+        else if (other.GetComponent<IslandHealth>() != null && this.tag == "Enemy")
+        {
+            other.GetComponent<IslandHealth>().Hit(Damage);
+            Destroy(this.gameObject);
+        }
     }
 }

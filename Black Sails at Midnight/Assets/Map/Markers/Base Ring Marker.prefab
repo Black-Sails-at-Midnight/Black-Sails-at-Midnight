@@ -14,8 +14,7 @@ GameObject:
   - component: {fileID: 6735602280596683658}
   - component: {fileID: 6330163123644149083}
   - component: {fileID: 4983744271427420702}
-  - component: {fileID: 1543860733377287908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base Ring Marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6166,18 +6165,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7166955785386034878}
-  m_Mesh: {fileID: 0}
---- !u!64 &1543860733377287908
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7166955785386034878}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}

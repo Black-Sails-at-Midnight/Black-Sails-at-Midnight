@@ -5,12 +5,12 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class PlayerLookBehaviour : MonoBehaviour
 {
-    private FirstPersonController FPController;
+    private PlayerMovement FPController;
     private Camera FPCamera;
 
     // Monobahaviour Methods
     public void Start() {
-        FPController = GetComponentInChildren<FirstPersonController>();
+        FPController = GetComponentInChildren<PlayerMovement>();
         FPCamera = Camera.main;
     }
 
@@ -31,7 +31,8 @@ public class PlayerLookBehaviour : MonoBehaviour
         Vector3 targetDirection = (position - FPCamera.transform.position).normalized;
 
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection, FPController.transform.up);
-        FPController.m_MouseLook.m_CharacterTargetRot = new Quaternion(0, targetRotation.y, 0, targetRotation.w);
-        FPController.m_MouseLook.m_CameraTargetRot = new Quaternion(targetRotation.x, 0, 0, targetRotation.w);
+        Debug.Log(targetRotation);
+
+        FPController.GetComponentInChildren<Camera>().transform.rotation = new Quaternion(targetRotation.x, targetRotation.y, 0, targetRotation.w);
     }
 }
