@@ -11,36 +11,28 @@ public class Bullet : MonoBehaviour
     public ParticleSystem hitEffect;
 
     private Gun shotBy;
-    public Gun ShotBy {set {shotBy = value;}}
+    public Gun ShotBy { set { shotBy = value; } }
 
     private float creationTime;
 
-    private void Start() {
+    private void Start()
+    {
         creationTime = Time.timeSinceLevelLoad;
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Projectile"), LayerMask.NameToLayer("Ship"));
     }
 
-    private void Update() 
+    private void Update()
     {
         if (Time.timeSinceLevelLoad - creationTime > maxFlightTime)
             Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter(Collision other) 
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Projectile" || other.gameObject.tag == "Player")
-            return;
-        
-        IAttackable attackable = other.gameObject.GetComponentInChildren<IAttackable>();
-        
-        if (attackable != null)
+        if (other.gameObject.tag == "EnemyCrew")
         {
-            attackable.Hit(shotBy.gameObject, shotBy);
+            other.gameObject.GetComponent<CrewHealth>().Hit(shotBy.gameObject, shotBy);
+            Destroy(gameObject);
         }
-
-        if (hitEffect != null)
-            Instantiate(hitEffect, transform.position, Quaternion.LookRotation(other.GetContact(0).normal));
-        
-        Destroy(this.gameObject);
     }
-    
 }

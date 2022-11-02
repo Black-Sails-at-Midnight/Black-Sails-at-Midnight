@@ -18,6 +18,7 @@ public class SimpleAI : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        target = FindObjectOfType<PlayerMovement>().transform;
     }
 
     // Update is called once per frame
@@ -26,4 +27,9 @@ public class SimpleAI : MonoBehaviour
         agent.destination = target.position;
         destination = agent.destination;
     }
+
+    public void TargetEntity(Transform target)
+    {
+        this.target = target;
+    }    
 }
