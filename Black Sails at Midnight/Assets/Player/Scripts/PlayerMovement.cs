@@ -82,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
         y = Input.GetAxisRaw("Vertical");
         jumping = Input.GetButton("Jump");
         crouching = Input.GetKey(KeyCode.LeftControl);
+        sprinting = Input.GetKey(KeyCode.LeftShift);
     }
 
     private void Movement()
@@ -127,6 +128,10 @@ public class PlayerMovement : MonoBehaviour
 
         // Movement while sliding
         if (grounded && crouching) multiplierV = 0f;
+
+        if (sprinting) this.maxSpeed = 40;
+        else this.maxSpeed = 20;
+        
 
         //Apply forces to move player
         if (!disableMovement)
