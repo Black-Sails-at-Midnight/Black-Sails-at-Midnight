@@ -15,7 +15,7 @@ public class CrewHealth : MonoBehaviour, IAttackable
             HealthUpdate();
         }
     }
-
+    [SerializeField]
     private float currentHealth;
 
     // Monobehaviour Methods
@@ -26,11 +26,13 @@ public class CrewHealth : MonoBehaviour, IAttackable
 
     public void Hit(Attack attack)
     {
+        Debug.Log(gameObject.name + " : " + Health);
         Health -= attack.attackSettings.damage * attack.attackSettings.damageMultiplier;
     }
 
     public void Hit(float damage)
     {
+        Debug.Log(gameObject.name + " : " + Health);
         Health -= damage;
     }
 

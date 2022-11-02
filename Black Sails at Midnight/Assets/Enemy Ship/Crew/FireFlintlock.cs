@@ -37,6 +37,7 @@ public class FireFlintlock : MonoBehaviour
 
     private IEnumerator FireWeapon()
     {
+        Debug.Log("Fuck Arse!");
         readyToShoot = false;
         GameObject instance = Instantiate(bulletPrefab, SpawnPosition.position, SpawnPosition.rotation);
         instance.GetComponent<Rigidbody>().AddForce((target.position - SpawnPosition.position).normalized * bulletSpeed, ForceMode.Impulse);
