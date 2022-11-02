@@ -951,7 +951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654993305821458759, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_text
-      value: Grape Shot - 4
+      value: Grape Shot -  4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
@@ -1155,11 +1155,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654993304765076570, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3654993305821458759, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_text
-      value: Canister Shot
+      value: Canister Shot - 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
@@ -1185,8 +1185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2863335ff56099148bd4467dcdeaaa63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
-  prefab: {fileID: 0}
+  cost: 20
+  prefab: {fileID: 3577484022123423614, guid: b2fa9e5110badbe4a81412c1d94f2059, type: 3}
   RingSelectionCanvas: {fileID: 5654557226398688715}
 --- !u!1001 &2635825525776716788
 PrefabInstance:
@@ -1412,7 +1412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654993305821458759, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_text
-      value: Chain Shot - 5
+      value: Chain Shot -  5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
@@ -2701,11 +2701,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654993304765076570, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3654993305821458759, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_text
-      value: Mine Layer
+      value: Mine Layer - 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
@@ -2731,8 +2731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2863335ff56099148bd4467dcdeaaa63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
-  prefab: {fileID: 0}
+  cost: 20
+  prefab: {fileID: 153108, guid: e85f2bf9c67508947b3180a99d776962, type: 3}
   RingSelectionCanvas: {fileID: 5654557226398688715}
 --- !u!1001 &8945960225075518774
 PrefabInstance:

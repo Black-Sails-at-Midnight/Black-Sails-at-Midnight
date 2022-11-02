@@ -49,7 +49,7 @@ public class IslandHealth : MonoBehaviour
     {
         if (Health < 0)
         {
-            Debug.Log("Game Over!");
+            Debug.Log("Game Over!"); // TODO: Actually implement a Game Over Function.
         }
     }
 
