@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Projectile
+  - FriendlyShip
+  - EnemyCrew
+  - Cannon Ball
+  - Weapon
+  - Enemy
+  - Ship
+  - Island
+  - PlayerDetection
   layers:
   - Default
   - TransparentFX
@@ -12,11 +20,11 @@ TagManager:
   - Phantom
   - Water
   - UI
+  - Map UI
   - 
-  - 
-  - 
-  - 
-  - 
+  - Ship
+  - Water Collider
+  - Projectile
   - 
   - 
   - 

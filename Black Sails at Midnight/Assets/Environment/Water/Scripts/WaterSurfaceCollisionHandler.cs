@@ -7,19 +7,20 @@ public class WaterSurfaceCollisionHandler : MonoBehaviour
 {
     [SerializeField]
     public Vector3 playerRespawnPosition;
-    private void OnCollisionEnter(Collision other) {
+    private void OnCollisionEnter(Collision other) 
+    {
         
-        if (other.gameObject.transform.parent != null && other.gameObject.transform.parent.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             foreach(PlayerBinder playerBinder in FindObjectsOfType<PlayerBinder>())
             {
-                if (playerBinder.parentedPlayer != null)
+                if (playerBinder.IsBound())
                 {
                     playerBinder.Unbind();
                 }
             }
 
-            FirstPersonController FPController = other.gameObject.GetComponent<FirstPersonController>();
+            PlayerMovement FPController = other.gameObject.GetComponent<PlayerMovement>();
             FPController.gameObject.GetComponentInParent<PlayerRespawnHandler>().RespawnPlayer();
         }
     }

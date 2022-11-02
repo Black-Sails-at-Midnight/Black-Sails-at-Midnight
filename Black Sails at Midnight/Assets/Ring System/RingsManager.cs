@@ -12,11 +12,18 @@ public class RingsManager : MonoBehaviour
     [Range(0, 90)]
     public int NumberOfPathingPoints = 6;
     [SerializeField]
-    [Range(0, 100000)]
     float SpaceBetweenRings = 64;
     [SerializeField]
     [Range(0, 100)]
     int NumberOfRings = 6;
+
+    [SerializeField]
+    int BaseShipCapacity = 4;
+    [SerializeField]
+    int IncreaseInShipCapacity = 4;
+
+    [SerializeField]
+    public bool isDoneGenerating;
 
     [SerializeField]
     List<GameObject> Rings;
@@ -27,28 +34,46 @@ public class RingsManager : MonoBehaviour
     private void Start()
     {
         Rings = new List<GameObject>();
-
+        int CurrentShipCapacity = BaseShipCapacity;
         for (int i = 0; i < NumberOfRings; i++)
         {
             GameObject ring = Instantiate(Ring,transform);
             RingSystem temp = ring.GetComponent<RingSystem>();
             temp.Origin = Origin;
-            temp.NumberOfPathingPoints = NumberOfPathingPoints;
+            temp.NumberOfPathingPoints = NumberOfPathingPoints + 2;
             temp.Radius = Radius + SpaceBetweenRings * i;
             temp.GenerateRing();
+            temp.GetComponentInChildren<RingMarkerHandler>().Radius = temp.Radius;
+
+            temp.SetupShipList(CurrentShipCapacity);
+            if (i == 0 || i == NumberOfRings - 1)
+            {
+                temp.DisableMarker = true;
+            } else {
+                CurrentShipCapacity += IncreaseInShipCapacity;
+            }
+
             Rings.Add(ring);
         }
+
+        GameObject.Find("WaveManager").GetComponent<PrimaryWaveSystem>().enabled = true;
+        GameObject.Find("WaveManager").GetComponent<FreeFormWaveSystem>().enabled = true;
     }
 
-    public RingSystem GetRing(int number)
+    public RingSystem GetRing(int index)
     {
-        if (number > Rings.Count || number < 0)
+        if (index > Rings.Count || index < 0)
         {
             return null;
         }
         else
         {
-            return Rings[number].GetComponent<RingSystem>();
+            return Rings[index].GetComponent<RingSystem>();
         }
+    }
+
+    public int GetNumberOfRings()
+    {
+        return Rings.Count;
     }
 }

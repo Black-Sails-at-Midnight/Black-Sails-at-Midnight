@@ -16,25 +16,32 @@ public class PlayerRespawnHandler : MonoBehaviour
     [SerializeField]
     LayerMask inFlightLayer;
 
+    [SerializeField]
+    KeyCode RespawnKey;
+
 
     public bool isLaunched {get; private set;} = false;
 
     private Vector3 startPosition;
     private int defaultLayer;
 
-    // Toglable Component References
-    WeaponManager weaponManager;
-
     // Monobehaviour Methods
     private void Start() {
-        weaponManager = ObjectToLauch.GetComponentInChildren<WeaponManager>(); 
+        defaultLayer = ObjectToLauch.gameObject.layer;
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(RespawnKey))
+        {
+            FindObjectOfType<PlayerRelocator>().MovePlayer(RespawnPoint);
+        }
+
         if (isLaunched && Vector3.Distance(ObjectToLauch.transform.position, RespawnPoint.position) < DistaceToLandingPoint)
         {
             PrepareForLanding();
+            ObjectToLauch.transform.position = RespawnPoint.transform.position;
+            ObjectToLauch.velocity = Vector3.zero;
             isLaunched = false;
         }
     }
@@ -64,28 +71,22 @@ public class PlayerRespawnHandler : MonoBehaviour
     }
 
     private void PrepareForLaunch()
-    {
-        ObjectToLauch.velocity = Vector3.zero;
-        ObjectToLauch.GetComponentInChildren<FirstPersonController>().enabled = false;
-        
-        startPosition = ObjectToLauch.GetComponentInChildren<FirstPersonController>().transform.position;
-        defaultLayer = ObjectToLauch.gameObject.layer;
+    {   
+        startPosition = ObjectToLauch.GetComponentInChildren<PlayerMovement>().transform.position;
         ObjectToLauch.gameObject.layer = Mathf.RoundToInt(Mathf.Log(inFlightLayer.value, 2));
 
-        // Disable Player Weapons
-        weaponManager.ToggleWeaponRenderers(false);
+        // Disable Player Elements
+        ObjectToLauch.GetComponentInChildren<WeaponManager>().ToggleWeaponRenderers(false);
+        ObjectToLauch.GetComponent<PlayerMovement>().disableMovement = true;
+        ObjectToLauch.velocity = Vector3.zero;
     }
 
     private void PrepareForLanding()
     {
         ObjectToLauch.gameObject.layer = defaultLayer;
 
-        FirstPersonController FPController = ObjectToLauch.GetComponentInChildren<FirstPersonController>();
-        FPController.enabled = true;
-        FPController.m_CharacterController.Move(RespawnPoint.position - startPosition);
-        FPController.m_CharacterController.Move(RespawnPoint.position - FPController.transform.position);
-
-        // Enable Player Weapons
-        weaponManager.ToggleWeaponRenderers(true);        
+        // Enable Player Elements
+        ObjectToLauch.GetComponentInChildren<WeaponManager>().ToggleWeaponRenderers(true);
+        ObjectToLauch.GetComponent<PlayerMovement>().disableMovement = false;  
     }
 }

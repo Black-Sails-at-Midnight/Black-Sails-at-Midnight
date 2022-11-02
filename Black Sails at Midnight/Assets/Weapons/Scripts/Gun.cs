@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Gun : Attack
 {
@@ -14,7 +15,7 @@ public class Gun : Attack
         public int palletsPerShot = 1;
 
         [Range(0, 90)]
-        public float palletSpread = 0;
+        public float pelletSpread = 0;
 
         [Min(0)]
         public int clipSize = 1;
@@ -57,8 +58,11 @@ public class Gun : Attack
 
     [SerializeField]
     public AudioClip reloadAudio;
+    
+    Vector3 DefaultPosition;
+    Quaternion DefaultRotation;
 
-    private int clip;
+    public int clip {get; private set;}
     private bool isReloading = false;
     
     private Animator animator;
@@ -68,13 +72,19 @@ public class Gun : Attack
     public void Start()
     {
         clip = gunSettings.clipSize;
+        DefaultPosition = new Vector3(1, -0.25f, -0.5f);
+        DefaultRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
     }
 
     public void OnEnable() 
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-
+        if (DefaultPosition != Vector3.zero && DefaultRotation != Quaternion.identity)
+        {
+            transform.localPosition = DefaultPosition;
+            transform.localRotation = DefaultRotation;
+        }
         StartCoroutine(ShootHandler());
     }
 
@@ -91,14 +101,17 @@ public class Gun : Attack
         {
             if (Input.GetButton("Fire1") && clip > 0 && !isReloading && attackSettings.canAttack)
             {
+                animator.SetTrigger("Fired");
+
                 for (int i = 0; i < gunSettings.palletsPerShot; i++)
                 {
                     Vector3 randomVector = 
-                                Quaternion.AngleAxis(Random.Range(-gunSettings.palletSpread, gunSettings.palletSpread), Vector3.Cross((transform.forward).normalized, Vector3.up)) * (transform.forward).normalized +
-                                Quaternion.AngleAxis(Random.Range(-gunSettings.palletSpread, gunSettings.palletSpread), Vector3.Cross((transform.forward).normalized, Vector3.right)) * (transform.forward).normalized;
+                                Quaternion.AngleAxis(Random.Range(-gunSettings.pelletSpread, gunSettings.pelletSpread), Vector3.Cross((transform.forward).normalized, Vector3.up)) * (transform.forward).normalized +
+                                Quaternion.AngleAxis(Random.Range(-gunSettings.pelletSpread, gunSettings.pelletSpread), Vector3.Cross((transform.forward).normalized, Vector3.right)) * (transform.forward).normalized;
 
                     GameObject _bullet = Instantiate(bulletPrefab, transform.position + ((transform.forward.normalized) * muzzleLength), transform.rotation);
                     _bullet.GetComponent<Rigidbody>().AddForce(randomVector.normalized * gunSettings.bulletVelocity, ForceMode.Impulse);
+                    _bullet.GetComponent<Rigidbody>().AddForce(FindObjectOfType<FirstPersonController>().GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
                     _bullet.GetComponent<Bullet>().ShotBy = this;
                 }
 
@@ -125,10 +138,11 @@ public class Gun : Attack
 
     private IEnumerator Reload()
     {
-        animator.SetTrigger("Reload");
-        audioSource.PlayOneShot(reloadAudio);
+        animator.SetBool("Reload", true);
+        animator.SetBool("IsScopedIn", false);
 
         yield return new WaitForSeconds(gunSettings.reloadTime);
+        animator.SetBool("Reload", false);
 
         clip = gunSettings.clipSize;
         isReloading = false;
