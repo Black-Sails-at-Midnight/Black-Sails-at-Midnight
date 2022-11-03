@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1403333290897697581
+--- !u!1001 &5019467421850027361
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3958876370598762665, guid: 2f6e3c0136c341e40af5edf19b362bc8, type: 3}
       propertyPath: m_Name
-      value: Fast Enemy Marker
+      value: Priest Enemy Marker
       objectReference: {fileID: 0}
     - target: {fileID: 4640328927792344600, guid: 2f6e3c0136c341e40af5edf19b362bc8, type: 3}
       propertyPath: m_RootOrder
@@ -58,6 +58,6 @@ PrefabInstance:
     - target: {fileID: 6864145758125809263, guid: 2f6e3c0136c341e40af5edf19b362bc8, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 53f28db04486e4a47a0fb3afb1b40d43, type: 3}
+      objectReference: {fileID: 2800000, guid: feb0977885662144b8344e52a81a6ac2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f6e3c0136c341e40af5edf19b362bc8, type: 3}
