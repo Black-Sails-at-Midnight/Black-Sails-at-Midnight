@@ -63,7 +63,13 @@ public class ShipHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            FindObjectOfType<EconomySystem>().Deposit(gameObject.GetComponent<BasicShipEquivelant>().GetBasicEquivelant());
+            BasicShipEquivelant BSE = gameObject.GetComponent<BasicShipEquivelant>();
+
+            if (BSE != null)
+            {
+                FindObjectOfType<EconomySystem>().Deposit(BSE.GetBasicEquivelant());
+            }
+
             Destroy(gameObject);            //TODO: have an animation or something, but it's FINE for now.
         }
     }
