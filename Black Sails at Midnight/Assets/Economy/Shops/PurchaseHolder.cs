@@ -25,7 +25,7 @@ public class PurchaseHolder : MonoBehaviour
 
     public void SpawnShip()
     {
-        if (!ringsManager.GetRing(RingNumber).isFull())
+        if (!ringsManager.GetRing(RingNumber).isFull() && PlayerWallet.Withdraw(ShipCost))
         {
             GameObject ship = Instantiate(shipToSpawn, spawnPoint);
 
@@ -34,8 +34,6 @@ public class PurchaseHolder : MonoBehaviour
             shipNav.RingNumber = RingNumber;
 
             shipNav.StartNavigation();
-
-            PlayerWallet.Withdraw(ShipCost);
         }
     }
 
