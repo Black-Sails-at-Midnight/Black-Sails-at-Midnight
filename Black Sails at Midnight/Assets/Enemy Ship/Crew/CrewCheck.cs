@@ -28,6 +28,8 @@ public class CrewCheck : MonoBehaviour
 
     public void DestroyShip()
     {
+        GetComponentInParent<PlayerBinder>().Unbind();
+        FindObjectOfType<PlayerRespawnHandler>().RespawnPlayer();
         transform.parent.GetComponent<ShipHealth>().Hit(9999); //Well, that should kill it. I hope. 
     }
 
