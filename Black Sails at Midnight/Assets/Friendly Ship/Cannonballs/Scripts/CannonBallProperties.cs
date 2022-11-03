@@ -25,12 +25,14 @@ public class CannonBallProperties : MonoBehaviour
     {
         if (other.GetComponent<ShipHealth>() != null && other.GetType() == typeof(MeshCollider))
         {
+            Debug.Log("Hit ship");
             other.GetComponent<ShipHealth>().Hit(Damage);
             Destroy(this.gameObject);
         }
 
         else if (other.GetComponent<IslandHealth>() != null && this.tag == "Enemy")
         {
+            Debug.Log("Hit island");
             other.GetComponent<IslandHealth>().Hit(Damage);
             Destroy(this.gameObject);
         }

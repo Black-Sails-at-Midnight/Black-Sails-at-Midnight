@@ -30,6 +30,8 @@ public class FireCannonBall : MonoBehaviour
     string FinalTarget = "Island";
     [SerializeField]
     private bool isHostile = false;
+    
+    [SerializeField]
     float range = 100f;
 
     FireCannonFX cannonFX;

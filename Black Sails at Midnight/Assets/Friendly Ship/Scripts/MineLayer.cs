@@ -25,6 +25,8 @@ public class MineLayer : MonoBehaviour
     IEnumerator LayMine()
     {
         isLayingMines = true;
+        GameObject mine = Instantiate(MineObject, LocationToSpawnMines, true);
+        Destroy(mine, 60f);
         yield return new WaitForSeconds(SecondsBetweenMines);
         isLayingMines = false;
     }
