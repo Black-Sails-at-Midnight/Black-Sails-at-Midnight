@@ -248,6 +248,63 @@ Transform:
   m_Father: {fileID: 136465135188696716}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &846351437451804290
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3348817219009078540}
+    m_Modifications:
+    - target: {fileID: 418124024075021177, guid: e1786c464138f1243805da6d584aadc6, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: e1786c464138f1243805da6d584aadc6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: e1786c464138f1243805da6d584aadc6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: e1786c464138f1243805da6d584aadc6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: e1786c464138f1243805da6d584aadc6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: e1786c464138f1243805da6d584aadc6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: e1786c464138f1243805da6d584aadc6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: e1786c464138f1243805da6d584aadc6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: e1786c464138f1243805da6d584aadc6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: e1786c464138f1243805da6d584aadc6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: e1786c464138f1243805da6d584aadc6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311527334909730248, guid: e1786c464138f1243805da6d584aadc6, type: 3}
+      propertyPath: m_Name
+      value: Shipright Enemy Marker
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1786c464138f1243805da6d584aadc6, type: 3}
 --- !u!1001 &4058070472610325459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -858,6 +915,9 @@ MonoBehaviour:
   - {fileID: 3342791364996747879, guid: eefa2928d42345f45b9a0c26ec07acd0, type: 3}
   - {fileID: 5381120938354096931, guid: eefa2928d42345f45b9a0c26ec07acd0, type: 3}
   TagToFireUpon: FriendlyShip
+  FinalTarget: Island
+  isHostile: 0
+  range: 100
   target: {fileID: 0}
 --- !u!1001 &7893696852498746014
 PrefabInstance:

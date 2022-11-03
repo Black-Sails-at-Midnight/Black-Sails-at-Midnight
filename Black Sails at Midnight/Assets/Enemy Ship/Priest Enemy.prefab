@@ -370,6 +370,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63185c578ce39584d867607cc562c3f7, type: 3}
+--- !u!1001 &6084686311671963809
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3105160034231274037}
+    m_Modifications:
+    - target: {fileID: 418124024075021177, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418124024075021177, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311527334909730248, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
+      propertyPath: m_Name
+      value: Priest Enemy Marker
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7c8a8d85da7bd94485f2d440d343900, type: 3}
 --- !u!1001 &6591034556144444420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -928,6 +985,9 @@ MonoBehaviour:
   - {fileID: 3342791364996747879, guid: eefa2928d42345f45b9a0c26ec07acd0, type: 3}
   - {fileID: 5381120938354096931, guid: eefa2928d42345f45b9a0c26ec07acd0, type: 3}
   TagToFireUpon: FriendlyShip
+  FinalTarget: Island
+  isHostile: 0
+  range: 100
   target: {fileID: 0}
 --- !u!114 &6023703909794148892
 MonoBehaviour:
