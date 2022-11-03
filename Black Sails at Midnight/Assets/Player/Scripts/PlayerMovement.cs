@@ -129,8 +129,8 @@ public class PlayerMovement : MonoBehaviour
         // Movement while sliding
         if (grounded && crouching) multiplierV = 0f;
 
-        if (sprinting) this.maxSpeed = 30;
-        else this.maxSpeed = 20;
+        if (sprinting) this.maxSpeed = 20;
+        else this.maxSpeed = 15;
         
 
         //Apply forces to move player
