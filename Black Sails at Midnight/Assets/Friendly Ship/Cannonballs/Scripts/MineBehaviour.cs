@@ -18,12 +18,13 @@ public class MineBehaviour : MonoBehaviour
             RaycastHit[] hits = Physics.SphereCastAll(this.transform.position, Radius, Vector3.up);
 
             foreach (RaycastHit hit in hits)
-            {
-                if(hit.rigidbody.tag == TagToDetonateOn)
+            {            
+                if(hit.rigidbody != null && hit.rigidbody.tag == TagToDetonateOn)
                 {
                     hit.rigidbody.GetComponent<ShipHealth>().Hit(Damage);
                 }
             }
+            Destroy(gameObject);
         }
     }
 }

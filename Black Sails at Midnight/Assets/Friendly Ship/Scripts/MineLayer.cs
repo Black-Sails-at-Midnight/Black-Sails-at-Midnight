@@ -26,7 +26,7 @@ public class MineLayer : MonoBehaviour
     {
         isLayingMines = true;
         GameObject mine = Instantiate(MineObject, LocationToSpawnMines.transform.position, Quaternion.identity, null);
-        Destroy(mine, 60f);
+        Destroy(mine, 30f);
         yield return new WaitForSeconds(SecondsBetweenMines);
         isLayingMines = false;
     }
