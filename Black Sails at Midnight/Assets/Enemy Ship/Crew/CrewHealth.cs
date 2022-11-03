@@ -26,13 +26,11 @@ public class CrewHealth : MonoBehaviour, IAttackable
 
     public void Hit(Attack attack)
     {
-        Debug.Log(gameObject.name + " : " + Health);
         Health -= attack.attackSettings.damage * attack.attackSettings.damageMultiplier;
     }
 
     public void Hit(float damage)
     {
-        Debug.Log(gameObject.name + " : " + Health);
         Health -= damage;
     }
 
@@ -48,7 +46,7 @@ public class CrewHealth : MonoBehaviour, IAttackable
     // Private Methods
     private void HealthUpdate()
     {
-        if (Health < 0)
+        if (Health <= 0)
         {
             this.gameObject.SetActive(false);
         }
