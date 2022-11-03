@@ -119,7 +119,7 @@ PrefabInstance:
     - target: {fileID: 1791800719562387388, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
       propertyPath: CannonBallType
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 127120, guid: 4b39499bfc991e54fb81c11b09ff2e10, type: 3}
     - target: {fileID: 1791800719562387388, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
       propertyPath: TimeBetweenShots
       value: 15
