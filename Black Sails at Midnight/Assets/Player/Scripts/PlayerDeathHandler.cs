@@ -7,6 +7,7 @@ public class PlayerDeathHandler : MonoBehaviour
 {
     public void Die(GameObject player)
     {
-        // Do whatever needs to happen when the player dies
+        player.GetComponent<PlayerRespawnHandler>().RespawnPlayer();
+        player.GetComponent<PlayerHealth>().Heal(gameObject,player.GetComponent<PlayerHealth>().maxHealth);
     }
 }
