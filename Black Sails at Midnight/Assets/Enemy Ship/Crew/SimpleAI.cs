@@ -24,6 +24,10 @@ public class SimpleAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target != null)
+        {
+            GetComponent<Animator>().SetBool("SpottedPlayer", true);
+        }
         agent.destination = target.position;
         destination = agent.destination;
     }
