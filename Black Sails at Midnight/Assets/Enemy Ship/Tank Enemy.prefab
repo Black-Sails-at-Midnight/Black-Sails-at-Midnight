@@ -716,6 +716,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1087043274296047499, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
+      propertyPath: m_BaseOffset
+      value: 2.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087043274296047499, guid: 5960d7d47cda3f541be56140dba306f9, type: 3}
       propertyPath: m_AgentTypeID
       value: -334000983
       objectReference: {fileID: 0}
