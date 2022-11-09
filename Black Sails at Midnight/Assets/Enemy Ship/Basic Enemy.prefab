@@ -346,12 +346,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db51b62e9beb33e4c846db9b6d3f97c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CannonBallType: {fileID: 0}
+  CannonBallType: {fileID: 8582425194649585216, guid: 5ab0fd4613b66964fb33208a1ad3594f, type: 3}
   TimeBetweenShots: 0
   CannonBallSpeed: 100
   FiringAngle: 30
   Cannon: {fileID: 3486000362587998258}
-  TagToFireUpon: Enemy
+  TagToFireUpon: FriendlyShip
   FinalTarget: Island
   isHostile: 0
   cannonFX: {fileID: 4531854625901928574}
