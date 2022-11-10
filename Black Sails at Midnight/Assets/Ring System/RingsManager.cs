@@ -56,8 +56,7 @@ public class RingsManager : MonoBehaviour
             Rings.Add(ring);
         }
 
-        GameObject.Find("WaveManager").GetComponent<PrimaryWaveSystem>().enabled = true;
-        GameObject.Find("WaveManager").GetComponent<FreeFormWaveSystem>().enabled = true;
+        GameObject.Find("WaveManager").GetComponent<PrimaryWaveSystem>().enabled = true;        
     }
 
     public RingSystem GetRing(int index)

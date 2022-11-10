@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class IslandHealth : MonoBehaviour
 {
+    public Canvas playerCanvas;
+    public Canvas deathCanvas;
+    public TextMeshProUGUI gameOverText;
+
     // Start is called before the first frame update
     [SerializeField]
     public float maxHealth = 100;
@@ -49,7 +54,9 @@ public class IslandHealth : MonoBehaviour
     {
         if (Health < 0)
         {
-            Debug.Log("Game Over!"); // TODO: Actually implement a Game Over Function.
+            playerCanvas.gameObject.SetActive(false);
+            deathCanvas.gameObject.SetActive(true);
+            gameOverText.gameObject.SetActive(true);
         }
     }
 
