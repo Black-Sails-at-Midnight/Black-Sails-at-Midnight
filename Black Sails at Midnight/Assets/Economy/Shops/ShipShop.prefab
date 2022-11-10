@@ -953,6 +953,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Grape Shot -  4
       objectReference: {fileID: 0}
+    - target: {fileID: 8969348284612198000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1704a98dfd6d8de459c18e0321e40061, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
 --- !u!224 &3435175059090461740 stripped
@@ -1161,6 +1165,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Canister Shot - 30
       objectReference: {fileID: 0}
+    - target: {fileID: 8969348284612198000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e1bf3942e66ba9b44a0a95ea22e963f3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
 --- !u!224 &1601300464259812392 stripped
@@ -1414,6 +1422,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Chain Shot -  5
       objectReference: {fileID: 0}
+    - target: {fileID: 8969348284612198000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1525564c9ac81624d9c85922e3764100, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
 --- !u!1 &1663351728665494116 stripped
@@ -1690,6 +1702,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Basic Cannon - 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8969348284612198000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ec3cb19589352d4dbb5444b7f04aa8d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
 --- !u!1 &1669595573 stripped
@@ -1816,6 +1832,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Incendiary - 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8969348284612198000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 884fd8630212b5f4fb1b336ff0cdb6fb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
 --- !u!224 &736284515230971429 stripped
@@ -2094,6 +2114,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Explosive Cannonball - 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8969348284612198000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 691d495d404c6644297b928442b65b3c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
 --- !u!224 &7600521715407359032 stripped
@@ -2707,6 +2731,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Mine Layer - 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8969348284612198000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6b8f0d889c7e24d449eb8e5f27dbba85, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
 --- !u!224 &5101161948124670204 stripped
