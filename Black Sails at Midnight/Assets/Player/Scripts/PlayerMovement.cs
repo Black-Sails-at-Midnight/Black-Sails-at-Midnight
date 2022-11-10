@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Movement
     public float moveSpeed = 4500;
-    public float maxSpeed = 20;
+    public float maxSpeed = 15;
     public bool grounded;
     public LayerMask whatIsGround;
 
@@ -129,8 +129,8 @@ public class PlayerMovement : MonoBehaviour
         // Movement while sliding
         if (grounded && crouching) multiplierV = 0f;
 
-        if (sprinting) this.maxSpeed = 20;
-        else this.maxSpeed = 15;
+        if (sprinting) this.maxSpeed = 15;
+        else this.maxSpeed = 10;
         
 
         //Apply forces to move player

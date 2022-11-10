@@ -228,7 +228,7 @@ MonoBehaviour:
   Range: 100
   MaxDistanceMulitplier: 0.8
   MinDistanceMultiplier: 0.25
-  SpringForce: 4.5
+  SpringForce: 10
   Dampening: 7
   MassScale: 4.5
   GrappleHookStart: {fileID: 1430492810219866524}
@@ -557,7 +557,7 @@ MonoBehaviour:
   orientation: {fileID: 233434297}
   sensitivity: 50
   sensMultiplier: 1
-  moveSpeed: 2000
+  moveSpeed: 1000
   maxSpeed: 10
   grounded: 0
   whatIsGround:
