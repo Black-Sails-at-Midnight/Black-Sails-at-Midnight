@@ -1360,6 +1360,7 @@ MonoBehaviour:
   TagToFireUpon: Enemy
   FinalTarget: Island
   isHostile: 0
+  range: 100
   target: {fileID: 0}
 --- !u!135 &6855219122393304112
 SphereCollider:
@@ -3226,6 +3227,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5436009822960305942}
     m_Modifications:
+    - target: {fileID: 1973953665802327061, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3654993304765076569, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3329,6 +3334,10 @@ PrefabInstance:
     - target: {fileID: 3654993305821458759, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
       propertyPath: m_text
       value: DETONATE SHIP
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969348284612198000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9250e05c7897ff1448d73d29c2f81d53, type: 3}
