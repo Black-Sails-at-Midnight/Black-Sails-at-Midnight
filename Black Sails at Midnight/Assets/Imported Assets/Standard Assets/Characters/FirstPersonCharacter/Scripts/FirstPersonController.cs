@@ -39,6 +39,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private CollisionFlags m_CollisionFlags;
         private bool m_PreviouslyGrounded;
         public Vector3 m_OriginalCameraPosition;
+        public bool m_isCameraLocked = false;
         private float m_StepCycle;
         private float m_NextStep;
         private bool m_Jumping;
@@ -187,14 +188,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_FootstepSounds[0] = m_AudioSource.clip;
         }
 
-
+        public void ForceUpdateCameraPosition()
+        {
+            m_Camera.transform.localPosition = m_OriginalCameraPosition;
+        }
         private void UpdateCameraPosition(float speed)
         {
             Vector3 newCameraPosition;
-            if (!m_UseHeadBob)
+
+            if (!m_UseHeadBob || m_isCameraLocked)
             {
                 return;
             }
+
             if (m_CharacterController.velocity.magnitude > 0 && m_CharacterController.isGrounded)
             {
                 m_Camera.transform.localPosition =

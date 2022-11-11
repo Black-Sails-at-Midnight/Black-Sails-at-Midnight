@@ -196,7 +196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1283453239144582675, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
       propertyPath: m_Radius
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1283453239144582675, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
       propertyPath: m_Center.x
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79427e3f0d6f01c40b821101c1770c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 5
+  Damage: 2
   SlowDownPercentage: 30
 --- !u!4 &7167553070481313252 stripped
 Transform:

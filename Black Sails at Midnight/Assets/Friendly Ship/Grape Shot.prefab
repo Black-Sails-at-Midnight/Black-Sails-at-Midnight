@@ -121,6 +121,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1791800719562387388, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
+      propertyPath: range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791800719562387388, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
       propertyPath: Spread
       value: 2
       objectReference: {fileID: 0}
@@ -139,6 +143,14 @@ PrefabInstance:
     - target: {fileID: 1791800719562387388, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
       propertyPath: NumberOfCannonBalls
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5647432402622132924, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855219122393304112, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
+      propertyPath: m_Radius
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}

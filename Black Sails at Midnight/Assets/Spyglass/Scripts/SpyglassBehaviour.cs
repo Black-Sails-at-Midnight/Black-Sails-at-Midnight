@@ -14,6 +14,9 @@ public class SpyglassBehaviour : MonoBehaviour
 
     [Header("Keybindings")]
     [SerializeField]
+    public KeyCode zoomKey = KeyCode.G;
+
+    [SerializeField]
     public KeyCode focusPreviousKey = KeyCode.A;
 
     [SerializeField]
@@ -21,6 +24,9 @@ public class SpyglassBehaviour : MonoBehaviour
 
     [SerializeField]
     public KeyCode teleportKey = KeyCode.Space;
+
+    [SerializeField]
+    public bool teleportOnRelease = true;
 
     [Header("Teleportation Settings")]
     [SerializeField]
@@ -30,35 +36,37 @@ public class SpyglassBehaviour : MonoBehaviour
     public LayerMask teleportLayerMask;
 
     private GameObject lastFocusedObject;
-    private FirstPersonController FPController;
+    private PlayerMovement FPController;
     private Camera FPCamera;
     private PlayerLookBehaviour playerLook;
     private WeaponManager weaponManager;
 
-    private Dictionary<string, object> defaultValues;
+    private Vector3 defaultCameraPosition;
+    private float defaultFov;
+
+    
     
 
     private void Start() {
-        FPController = FindObjectOfType<FirstPersonController>();
+        FPController = FindObjectOfType<PlayerMovement>();
         FPCamera = Camera.main;
         playerLook = FindObjectOfType<PlayerLookBehaviour>();
         weaponManager = FindObjectOfType<WeaponManager>();
 
-        defaultValues = new();
+        defaultCameraPosition = FPCamera.transform.position;
+        defaultFov = FPCamera.fieldOfView;
     }
 
     private void Update() {
-        // Testing
-        if (Input.GetKeyDown("g"))
+        if (Input.GetKeyDown(zoomKey) && !isZoomedIn)
         {
             ActivateSpyglass();
         }
 
-        if (Input.GetKeyUp("g"))
+        if ((Input.GetKeyUp(zoomKey) && !teleportOnRelease) && isZoomedIn)
         {
             DeactivateSpyglass();
         }
-        // Testing
 
         if (isZoomedIn)
         {
@@ -72,7 +80,7 @@ public class SpyglassBehaviour : MonoBehaviour
                 FocusOnObject(Direction.Next);
             }
 
-            if (Input.GetKeyDown(teleportKey))
+            if ((Input.GetKeyDown(teleportKey) && !teleportOnRelease) || (Input.GetKeyUp(zoomKey) && teleportOnRelease))
             {
                 RaycastHit raycastHit;
                 if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out raycastHit, teleportRange, teleportLayerMask, QueryTriggerInteraction.Ignore))
@@ -82,26 +90,25 @@ public class SpyglassBehaviour : MonoBehaviour
                     {
                         Transform targetLocation = teleportHandler.teleportPoint.transform;
                         PlayerRelocator relocator = FindObjectOfType<PlayerRelocator>();
-                        relocator.Move(targetLocation);
 
-                        DeactivateSpyglass();
+                        
+
+                        relocator.MovePlayer(targetLocation);
+                        teleportHandler.GetComponent<PlayerBinder>().Bind(FindObjectOfType<PlayerMovement>().gameObject);
                     }
+                }
+
+                if (Input.GetKeyUp(zoomKey) && teleportOnRelease)
+                {
+                    DeactivateSpyglass();
                 }
             }
         }
     }
 
-    
-
     private void ActivateSpyglass()
     {
-        defaultValues.Remove("CameraPosition");
-        defaultValues.Remove("FOV");
-
-        defaultValues.Add("CameraPosition", FPController.m_OriginalCameraPosition);
-        defaultValues.Add("FOV", FPCamera.fieldOfView);
-
-        FPController.m_OriginalCameraPosition = FPController.m_OriginalCameraPosition + new Vector3(0, 100, 0);
+        FPCamera.transform.position += new Vector3(0, 100, 0);
         FPCamera.fieldOfView = zoomFOV;
 
         ToggleMovement(false);
@@ -112,8 +119,8 @@ public class SpyglassBehaviour : MonoBehaviour
 
     private void DeactivateSpyglass()
     {
-        FPController.m_OriginalCameraPosition = (Vector3)defaultValues["CameraPosition"];
-        FPCamera.fieldOfView = (float)defaultValues["FOV"];
+        FPCamera.transform.position -= new Vector3(0, 100, 0);
+        FPCamera.fieldOfView = defaultFov;
         
         ToggleMovement(true);
         weaponManager.ToggleWeaponFire(true);
@@ -123,27 +130,14 @@ public class SpyglassBehaviour : MonoBehaviour
 
     private void ToggleMovement(bool active)
     {
-        if (active)
-        {
-            FPController.m_WalkSpeed = (float)defaultValues["WalkSpeed"];
-            FPController.m_RunSpeed = (float)defaultValues["RunSpeed"];
-            FPController.m_JumpEnabled = true;
-        } else {
-            defaultValues.Remove("WalkSpeed");
-            defaultValues.Remove("RunSpeed");
-
-            defaultValues.Add("WalkSpeed", FPController.m_WalkSpeed);
-            defaultValues.Add("RunSpeed", FPController.m_RunSpeed);
-            FPController.m_JumpEnabled = false;
-
-            FPController.m_WalkSpeed = 0;
-            FPController.m_RunSpeed = 0;
-        }
+        FPController.disableMovement = !active;
     }
 
     private void FocusOnObject(Direction direction)
     {
         List<GameObject> FocusObject = BuildFocusObjectList();
+        if (FocusObject.Count == 0)
+            return;
 
         int lastFocusedIndex = FocusObject.IndexOf(lastFocusedObject);
         int indexToFocusOn = lastFocusedIndex + ((int)direction);

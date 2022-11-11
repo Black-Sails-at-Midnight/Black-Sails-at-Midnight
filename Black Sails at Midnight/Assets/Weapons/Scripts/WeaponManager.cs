@@ -6,19 +6,9 @@ public class WeaponManager : MonoBehaviour
 {
     [SerializeField]
     Attack startWeapon;
-
-    [Header("Weapon Cycling")]
-    [SerializeField]
-    public KeyCode nextWeapon;
-
-    [SerializeField]
-    public KeyCode previousWeapon;
-
     
     public Attack ActiveWeapon {get; private set;}
     public List<Attack> AllWeapons {get; private set;}
-    
-    private bool weaponsActive = true;
     
 
     // Monobehaviour Methods
@@ -43,21 +33,21 @@ public class WeaponManager : MonoBehaviour
 
     public void Update() 
     {
-        if (Input.GetKeyDown(nextWeapon))
-        {
-            NextWeapon();
-        }
-
-        if (Input.GetKeyDown(previousWeapon))
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             PreviousWeapon();
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            NextWeapon();
         }
     }
 
     // Public Methods
     public void NextWeapon()
     {
-        if (IsWeaponScoped(ActiveWeapon))
+        if (IsWeaponScoped(ActiveWeapon) || (ActiveWeapon as Gun).IsReloading)
             return; 
 
         int activeIndex = GetWeaponIndex(ActiveWeapon);
@@ -74,7 +64,7 @@ public class WeaponManager : MonoBehaviour
 
     public void PreviousWeapon()
     {
-        if (IsWeaponScoped(ActiveWeapon))
+        if (IsWeaponScoped(ActiveWeapon) || (ActiveWeapon as Gun).IsReloading)
             return; 
 
         int activeIndex = GetWeaponIndex(ActiveWeapon);

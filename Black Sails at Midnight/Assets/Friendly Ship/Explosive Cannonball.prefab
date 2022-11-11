@@ -113,12 +113,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1791800719562387388, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
+      propertyPath: range
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791800719562387388, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
       propertyPath: CannonBallType
       value: 
       objectReference: {fileID: 133524, guid: b2cc7ecd38773a54b9c33102dbaa492b, type: 3}
     - target: {fileID: 1791800719562387388, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
       propertyPath: TimeBetweenShots
       value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5647432402622132924, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df9412a19f041b343bfa85a8d58b2ef6, type: 3}

@@ -122,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d125013a2ba58da4ca1bbdb7a597d533, type: 2}
     - target: {fileID: 1283453239144582675, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
       propertyPath: m_Radius
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1719713409384043034, guid: d6ea9f116a1f3d2479550de5440c37c7, type: 3}
       propertyPath: m_RootOrder
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e089270719e354a931f1db3c32ef2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 10
+  Damage: 3
   DamageOverTime: 6
   ChanceToExtinguish: 10
 --- !u!4 &8924977336512956186 stripped

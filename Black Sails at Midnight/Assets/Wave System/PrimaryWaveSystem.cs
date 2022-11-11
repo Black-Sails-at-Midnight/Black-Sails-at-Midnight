@@ -37,6 +37,9 @@ public class PrimaryWaveSystem : MonoBehaviour
     RingSystem RingSystem;
 
     [SerializeField]
+    MonoBehaviour nextScript;
+
+    [SerializeField]
     List<Wave> Waves;
 
     [SerializeField]
@@ -60,6 +63,7 @@ public class PrimaryWaveSystem : MonoBehaviour
         RingSystem = temp.GetComponent<RingsManager>().GetRing(temp.GetNumberOfRings() - 1);
 
         StartWave();
+        nextScript.enabled = false;
     }
 
     // Update is called once per frame
@@ -137,5 +141,9 @@ public class PrimaryWaveSystem : MonoBehaviour
 
         EnemySpawnID++;
         isSpawning = false;
+    }
+
+    private void OnDisable() {
+        nextScript.enabled = true;
     }
 }

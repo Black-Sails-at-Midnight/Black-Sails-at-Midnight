@@ -11,6 +11,8 @@ TagManager:
   - Weapon
   - Enemy
   - Ship
+  - Island
+  - PlayerDetection
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Crew
   - Ship
   - Water Collider
-  - 
+  - Projectile
   - 
   - 
   - 

@@ -17,7 +17,7 @@ public class SpeedBoostHostileShip : MonoBehaviour
     [SerializeField]
     float BaseSpeed;
 
-    bool isRegenerating = false;
+    bool isBuffing = false;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class SpeedBoostHostileShip : MonoBehaviour
 
     private void Update()
     {
-        if (!isRegenerating)
+        if (!isBuffing)
         {
             StartCoroutine(GiveSpeedBoost());
         }
@@ -40,22 +40,14 @@ public class SpeedBoostHostileShip : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            ShipsInRange.Remove(other.gameObject);
-        }
-    }
-
     IEnumerator GiveSpeedBoost()
     {
-        isRegenerating = true;
+        isBuffing = true;
         foreach (var item in ShipsInRange)
         {
             item.GetComponent<NavMeshAgent>().speed = BaseSpeed * SpeedMultiplier;
         }
         yield return new WaitForSeconds(TimeDelay);
-        isRegenerating = false;
+        isBuffing = false;
     }
 }

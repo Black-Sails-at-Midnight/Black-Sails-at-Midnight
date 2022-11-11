@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSettings:
-    damage: 5
+    damage: 7
     damageMultiplier: 1
     canAttack: 1
   gunSettings:

@@ -15,7 +15,7 @@ public class FireCannonBall : MonoBehaviour
     [SerializeField]
     float CannonBallSpeed = 100;
     [SerializeField]
-    float FiringAngle = 30;
+    float FiringAngle = 90f;
     [SerializeField]
     int NumberOfCannonBalls = 1;
     [SerializeField]
@@ -26,17 +26,36 @@ public class FireCannonBall : MonoBehaviour
     List<GameObject> LeftCannons;
     [SerializeField]
     string TagToFireUpon = "Enemy";
+    [SerializeField]
+    string FinalTarget = "Island";
+    [SerializeField]
+    private bool isHostile = false;
+    
+    [SerializeField]
+    float range = 100f;
 
     FireCannonFX cannonFX;
 
     [SerializeField]
     Transform target;
    
-
+    private List<Transform> shipsInRange;
     bool cannonsReady = true;
+
     void Start()
     {
         cannonFX = gameObject.GetComponentInChildren<FireCannonFX>();
+        shipsInRange = new List<Transform>();
+
+        if (GetComponent<SphereCollider>() != null)
+        {
+            GetComponent<SphereCollider>().radius = range;            
+        }
+
+        if (GetComponentInChildren<RingMarkerHandler>() != null)
+        {
+            GetComponentInChildren<RingMarkerHandler>().Radius = range;
+        }
     }
 
     void Update()
@@ -54,19 +73,15 @@ public class FireCannonBall : MonoBehaviour
                 cannonFX.FireLeftCannons();
                 StartCoroutine(FireCannons(LeftCannons));
             }
-            IsWithinFiringArc();
         }
     }
 
     private bool IsWithinFiringArc()
     {
-        float z = transform.InverseTransformDirection(target.position).z;
+        Vector3 vectorToTarget = (target.transform.position - transform.position).normalized;
+        float angleToTarget = Vector3.Angle(transform.forward, vectorToTarget);
 
-        if (z <= FiringAngle && z >= -FiringAngle)
-        {
-            return true;
-        }
-            return false;
+        return ((angleToTarget >= 90 - (FiringAngle / 2)) && (angleToTarget <= 90 + (FiringAngle / 2))) || ((angleToTarget >= 270 - (FiringAngle / 2)) && (angleToTarget <= 270 + (FiringAngle / 2)));
     }
 
     IEnumerator FireCannons(List<GameObject> cannons)
@@ -77,10 +92,7 @@ public class FireCannonBall : MonoBehaviour
         {
             for (int i = 0; i < NumberOfCannonBalls; i++)
             {
-                float timeDelay = Random.Range(0, 0.1f * TimeBetweenShots);
-                timeSpent += timeDelay;
-
-                if (target.IsDestroyed())
+                if (target.IsDestroyed() || target == null)
                 {
                     continue;
                 }
@@ -92,25 +104,80 @@ public class FireCannonBall : MonoBehaviour
                 GameObject instance = Instantiate(CannonBallType, item.transform.position, item.transform.rotation);
                 instance.GetComponent<Rigidbody>().AddForce(randomVector.normalized * CannonBallSpeed, ForceMode.Impulse);
                 Destroy(instance, 8f);
-                yield return new WaitForSeconds(timeDelay);
             }
+    
+            float timeDelay = Random.Range(0, 0.1f * TimeBetweenShots);
+            timeSpent += timeDelay;
+
+            yield return new WaitForSeconds(timeDelay);
         }
         yield return new WaitForSeconds(TimeBetweenShots - timeSpent);
         cannonsReady = true;
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == TagToFireUpon)
+        if (other.tag == FinalTarget && isHostile)
         {
-            target = other.transform;
+            shipsInRange.Add(other.transform);
+
+        }
+        else if (other.tag == TagToFireUpon && other is MeshCollider)
+        {
+            shipsInRange.Add(other.transform);
         }
     }
 
     private void OnTriggerExit(Collider other) 
     {
-        if (target != null && other.gameObject.transform == target.transform)
+        shipsInRange.RemoveAll(x => x == null || x.IsDestroyed());
+
+        if (other.tag == TagToFireUpon && shipsInRange.Contains(other.transform))
         {
-            target = null; // Clear Target;
+            shipsInRange.Remove(other.transform);
         }
+
+        if (target == other.transform)
+        {
+            target = null;
+        }
+    }
+
+    private void OnTriggerStay(Collider other) 
+    {
+        shipsInRange.RemoveAll(x => x == null || x.IsDestroyed());
+        shipsInRange.Sort(SortOnDistanceToIsland);
+        
+        if (shipsInRange.Count > 0)
+        {
+            target = shipsInRange[0];
+        }
+    }
+
+    private int SortOnDistanceToIsland(Transform a, Transform b)
+    {
+        Vector3 islandPosition = Vector3.zero;
+
+        float distanceA = Vector3.Distance(a.position, islandPosition);
+        float distanceB = Vector3.Distance(b.position, islandPosition);
+
+        if (distanceA > distanceB)
+            return 1;
+
+        if (distanceB > distanceA)
+            return -1;
+        
+        return 0;
+    }
+    
+
+    public List<ShipHealth> GetAllShipsInRange()
+    {
+        List<ShipHealth> enemyShips = new List<ShipHealth>();
+        foreach (var item in shipsInRange)
+        {
+            enemyShips.Add(item.gameObject.GetComponentInChildren<ShipHealth>());
+        }
+        return enemyShips;
     }
 }

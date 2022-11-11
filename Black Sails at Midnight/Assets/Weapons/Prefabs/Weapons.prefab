@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startWeapon: {fileID: 0}
-  nextWeapon: 91
+  nextWeapon: 111
   previousWeapon: 93
 --- !u!1001 &3607040598651842020
 PrefabInstance:
